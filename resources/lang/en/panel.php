@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'site_title' => 'mvp',
+    'site_title' => '(site name)',
 ];

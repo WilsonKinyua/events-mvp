@@ -1,2 +1,2 @@
 # MVP CMS
-### A simple CMS for the web to manage events 
+### {{ trans('panel.site_title') }}
