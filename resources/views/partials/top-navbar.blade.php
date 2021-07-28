@@ -7,8 +7,10 @@
     </div>
 
     <div class="logo-sn logo-sm ms-d-block-sm">
-      <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="index-2.html"><img src="assets/img/logo-sm-dark.png"
-          alt="logo"> </a>
+      <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="{{ route('admin.home')}}">
+        {{-- <img src="" alt="logo">  --}}
+        <h1 class="text-bold">Logo Name</h1>
+    </a>
     </div>
 
     <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
@@ -32,7 +34,7 @@
           <li class="ms-scrollable ms-dropdown-list">
             <a class="media p-2" href="#">
               <div class="ms-chat-status ms-status-offline ms-chat-img mr-2 align-self-center">
-                <img src="assets/img/people/people-5.jpg" class="ms-img-round" alt="people">
+                <img src="{{ asset('assets/img/people/people-5.jpg')}}" class="ms-img-round" alt="people">
               </div>
               <div class="media-body">
                 <span>Hey man, looking forward to your new project.</span>
@@ -41,7 +43,7 @@
             </a>
             <a class="media p-2" href="#">
               <div class="ms-chat-status ms-status-online ms-chat-img mr-2 align-self-center">
-                <img src="assets/img/people/people-9.jpg" class="ms-img-round" alt="people">
+                <img src="{{ asset('assets/img/people/people-9.jpg')}}" class="ms-img-round" alt="people">
               </div>
               <div class="media-body">
                 <span>Dear John, I was told you bought Mystic! Send me your feedback</span>
@@ -50,7 +52,7 @@
             </a>
             <a class="media p-2" href="#">
               <div class="ms-chat-status ms-status-offline ms-chat-img mr-2 align-self-center">
-                <img src="assets/img/people/people-3.jpg" class="ms-img-round" alt="people">
+                <img src="{{ asset('assets/img/people/people-3.jpg')}}" class="ms-img-round" alt="people">
               </div>
               <div class="media-body">
                 <span>How many people are we inviting to the dashboard?</span>
@@ -60,7 +62,7 @@
           </li>
           <li class="dropdown-divider"></li>
           <li class="dropdown-menu-footer text-center">
-            <a href="apps/email.html">Go to Inbox</a>
+            <a href="#">Go to Inbox</a>
           </li>
         </ul>
       </li>
@@ -111,27 +113,27 @@
       </li>
       <li class="ms-nav-item ms-nav-user dropdown">
         <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img
-            class="ms-user-img ms-img-round float-right" src="assets/img/people/people-5.jpg" alt="people"> </a>
+            class="ms-user-img ms-img-round float-right" src="{{ asset('assets/img/people/people-5.jpg')}}" alt="people"> </a>
         <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="userDropdown">
           <li class="dropdown-menu-header">
             <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">Welcome, Anny Farisha</span></h6>
           </li>
           <li class="dropdown-divider"></li>
           <li class="ms-dropdown-list">
-            <a class="media fs-14 p-2" href="pages/prebuilt-pages/user-profile.html"> <span><i
+            <a class="media fs-14 p-2" href="#"> <span><i
                   class="flaticon-user mr-2"></i> Profile</span> </a>
-            <a class="media fs-14 p-2" href="pages/apps/email.html"> <span><i class="flaticon-mail mr-2"></i>
+            <a class="media fs-14 p-2" href="#"> <span><i class="flaticon-mail mr-2"></i>
                 Inbox</span> <span class="badge badge-pill badge-info">3</span> </a>
-            <a class="media fs-14 p-2" href="pages/prebuilt-pages/user-profile.html"> <span><i
+            <a class="media fs-14 p-2" href="#"> <span><i
                   class="flaticon-gear mr-2"></i> Account Settings</span> </a>
           </li>
           <li class="dropdown-divider"></li>
           <li class="dropdown-menu-footer">
-            <a class="media fs-14 p-2" href="pages/prebuilt-pages/lock-screen.html"> <span><i
+            <a class="media fs-14 p-2" href="#"> <span><i
                   class="flaticon-security mr-2"></i> Lock</span> </a>
           </li>
           <li class="dropdown-menu-footer">
-            <a class="media fs-14 p-2" href="pages/prebuilt-pages/default-login.html"> <span><i
+            <a class="media fs-14 p-2" href="#"> <span><i
                   class="flaticon-shut-down mr-2"></i> Logout</span> </a>
           </li>
         </ul>
