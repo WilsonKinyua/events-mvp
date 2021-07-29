@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="{{ asset('vendors/iconic-fonts/flat-icons/flaticon.css')}}">
   <link rel="stylesheet" href="{{ asset('vendors/iconic-fonts/cryptocoins/cryptocoins.css')}}">
   <link rel="stylesheet" href="{{ asset('vendors/iconic-fonts/cryptocoins/cryptocoins-colors.css')}}">
+  {{-- Drop zone --}}
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
   <!-- Bootstrap core CSS -->
   <link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
   <!-- jQuery UI -->
@@ -25,6 +27,8 @@
   <link href="{{ asset('assets/css/style.css')}}" rel="stylesheet">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="https://ems.wezadevelopment.com/asset/img/favicon.ico">
+    {{-- toastr --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css')}}">
   @yield('css')
 
 </head>
@@ -56,7 +60,7 @@
   </div>
 
   <!-- Sidebar Navigation Left -->
- 
+
 
   <!-- Sidebar Right -->
   @include('partials.sidebar-right')
@@ -70,10 +74,25 @@
 
     <!-- Body Content Wrapper -->
     <div class="ms-content-wrapper">
-
+        @if(session('message'))
+            <div class="row mb-2">
+                <div class="col-lg-12">
+                    <div class="alert alert-success" role="alert">{{ session('message') }}</div>
+                </div>
+            </div>
+        @endif
+        @if($errors->count() > 0)
+            <div class="alert alert-danger">
+                <ul class="list-unstyled">
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         {{-- body content --}}
         @yield('content')
-     
+
 
   </main>
 
@@ -103,6 +122,22 @@
 
   <!-- Settings -->
   <script src="{{ asset('assets/js/settings.js')}}"></script>
+  {{-- Dropzone --}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+  {{-- <script src="{{ asset('js/main.js') }}"></script> --}}
+    {{-- notification --}}
+    <script src="{{ asset('assets/js/toastr.min.js')}}"></script>
+  <script>
+        // Get the Toast button
+        var toastButton = document.getElementById("toast-btn");
+        // Get the Toast element
+        var toastElement = document.getElementsByClassName("toast")[0];
+
+        toastButton.onclick = function() {
+            $('.toast').toast('show');
+        }
+    </script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
   @yield('scripts')
 </body>
 

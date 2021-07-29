@@ -1,76 +1,4 @@
 @charset "utf-8";
-/*===========================
- =  Table of Contents
-    * Keyframes
-  	* Core Styles
-      - Colors
-      - Style Reset
-      - Typography
-      - Main Panel Module
-      - Body Content
-      - Navbar
-      - Aside Navigation
-        - Aside Right
-        - Quickbar
-      - Footer
-      - Dropdowns
-    * Widgets
-    * Forms
-      - Form Elements
-      - Form Validation
-      - Form Wizard
-    * UI Elements
-      - Accordions
-      - Alerts
-      - Breadcrumbs
-      - Cards
-      - Progress Bars
-      - Buttons
-      - Badges
-      - Pagination
-      - Prelaoders
-      - Tabs
-      - Tooltips
-      - Lists
-    * Advanced UI Elements
-      - Draggables
-      - Sliders
-      - Modals
-      - Rating
-      - Tour
-      - Croppable
-      - Range Sliders
-    * Animations
-    * Icons
-    * Tables
-      - Basic Tables
-      - Data Tables
-    * Maps
-      - Google Maps
-    * Prebuilt pages
-      - Default Login and Signup
-      - Modal Login and Signup
-      - Lock screen
-      - Error 404
-      - Coming Soon
-      - User Profile
-      - Portfolio
-      - Invoice
-    * Apps
-      - Chat
-      - To-do-list
-      - Email
-    * Dashboards
-      - Web Analytics
-      - Crypto Currency
-      - Social Media
-      - Client Management
-    * Dark Theme
-    ** SETTINGS PANEL **
-    ** WELCOME PAGE **
-
-===========================*/
-
 /* ============= Keyframes ================*/
 @-webkit-keyframes notesMembers {
   0%{
@@ -4619,7 +4547,7 @@ table.dataTable thead .sorting_desc_disabled:after{
 .ms-auth-bg{
   position: relative;
   height: 100%;
-  
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -4956,7 +4884,7 @@ a.ms-g-plus,
   position: relative;
   display: flex;
   align-items: flex-end;
-  
+
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -6821,20 +6749,19 @@ body:not(.ms-settings-open) .ms-settings-toggle:hover{
   color: #83ccaf;
 }
 
-/* .files a {
-  font-size: 20px;
-} */
 
 .text-center {
   text-align: center;
 }
 
-.card-img-top {
-  /* height: 100px; */
-  /* padding: 10px; */
+.edit-button i {
+    font-size: 20px;
+    color: #83ccaf;
+    cursor: pointer;
+    float: right;
 }
 
-/* .campany-card-logo img {
-  height: 120px;
-  border-radius: 50%;
-} */
+.events small {
+    float: left;
+    margin-left: 5px;
+}

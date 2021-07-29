@@ -19,7 +19,7 @@ class UpdateEventSettingRequest extends FormRequest
         return [
             'event_name' => [
                 'string',
-                'required',
+                // 'required',
             ],
             'about' => [
                 'required',

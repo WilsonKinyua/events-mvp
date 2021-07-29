@@ -49,7 +49,7 @@ class EventSettingsController extends Controller
             Media::whereIn('id', $media)->update(['model_id' => $eventSetting->id]);
         }
 
-        return redirect()->route('admin.event-settings.index');
+        return redirect()->back()->with("success","Details successfully inserted");
     }
 
     public function edit(EventSetting $eventSetting)
@@ -88,7 +88,7 @@ class EventSettingsController extends Controller
             }
         }
 
-        return redirect()->route('admin.event-settings.index');
+        return redirect()->back()->with("success","Details updated successfully");
     }
 
     public function show(EventSetting $eventSetting)
