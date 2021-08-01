@@ -6760,7 +6760,11 @@ body:not(.ms-settings-open) .ms-settings-toggle:hover{
     cursor: pointer;
     float: right;
 }
-
+.edit-button-social i {
+    font-size: 20px;
+    color: #83ccaf;
+    cursor: pointer;
+}
 .events small {
     float: left;
     margin-left: 5px;

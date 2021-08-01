@@ -22,7 +22,7 @@ class UpdateEventSettingRequest extends FormRequest
                 // 'required',
             ],
             'about' => [
-                'required',
+                // 'required',
             ],
             'facebook' => [
                 'string',
