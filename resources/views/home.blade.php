@@ -215,9 +215,79 @@
                       <li class="ms-skill"><a href="#"><i class="fab fa-instagram"></i></a></li>
                       <li class="ms-skill"><a href="#"><i class="fab fa-youtube"></i></a></li>
                         @can('event_setting_access')
-                            <a class="edit-button-social m-3" title="Edit Sliders" data-toggle="modal" data-target="#slidersmodal"> <i class="fa fa-edit"></i></a>
-                        @endcan
+                        <a class="edit-button-social m-3" title="Edit About" data-toggle="modal" data-target="#socialmedialinks"> <i class="fa fa-edit"></i></a>
+                    @endcan
+                        {{-- social media links --}}
+                        <div class="modal fade events" id="socialmedialinks" tabindex="-1" role="dialog" aria-labelledby="socialmedialinks">
+                            <div class="modal-dialog modal-dialog-centered modal-min" role="document">
+                            <div class="modal-content">
 
+                                <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <form method="POST" action="{{ route("admin.event-settings.update", [$eventSetting->id]) }}" enctype="multipart/form-data">
+                                    @method('PUT')
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="facebook">{{ trans('cruds.eventSetting.fields.facebook') }}</label>
+                                        <input class="form-control {{ $errors->has('facebook') ? 'is-invalid' : '' }}" type="url" name="facebook" id="facebook" value="{{ old('facebook', $eventSetting->facebook) }}">
+                                        @if($errors->has('facebook'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('facebook') }}
+                                            </div>
+                                        @endif
+                                        <span class="help-block">{{ trans('cruds.eventSetting.fields.facebook_helper') }}</span>
+                                        <small><strong>eg https://facebook.com/newmark</strong></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="twitter">{{ trans('cruds.eventSetting.fields.twitter') }}</label>
+                                        <input class="form-control {{ $errors->has('twitter') ? 'is-invalid' : '' }}" type="url" name="twitter" id="twitter" value="{{ old('twitter', $eventSetting->twitter) }}">
+                                        @if($errors->has('twitter'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('twitter') }}
+                                            </div>
+                                        @endif
+                                        <span class="help-block">{{ trans('cruds.eventSetting.fields.twitter_helper') }}</span>
+                                        <small><strong>eg https://twitter.com/newmark</strong></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="linkedin">{{ trans('cruds.eventSetting.fields.linkedin') }}</label>
+                                        <input class="form-control {{ $errors->has('linkedin') ? 'is-invalid' : '' }}" type="url" name="linkedin" id="linkedin" value="{{ old('linkedin', $eventSetting->linkedin) }}">
+                                        @if($errors->has('linkedin'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('linkedin') }}
+                                            </div>
+                                        @endif
+                                        <span class="help-block">{{ trans('cruds.eventSetting.fields.linkedin_helper') }}</span>
+                                        <small><strong>eg https://linkedin.com/in/newmark</strong></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="instagram">{{ trans('cruds.eventSetting.fields.instagram') }}</label>
+                                        <input class="form-control {{ $errors->has('instagram') ? 'is-invalid' : '' }}" type="url" name="instagram" id="instagram" value="{{ old('instagram', $eventSetting->instagram) }}">
+                                        @if($errors->has('instagram'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('instagram') }}
+                                            </div>
+                                        @endif
+                                        <span class="help-block">{{ trans('cruds.eventSetting.fields.instagram_helper') }}</span>
+                                        <small><strong>eg https://instagram.com/newmark</strong></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="youtube">{{ trans('cruds.eventSetting.fields.youtube') }}</label>
+                                        <input class="form-control {{ $errors->has('youtube') ? 'is-invalid' : '' }}" type="url" name="youtube" id="youtube" value="{{ old('youtube', $eventSetting->youtube) }}">
+                                        @if($errors->has('youtube'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('youtube') }}
+                                            </div>
+                                        @endif
+                                        <span class="help-block">{{ trans('cruds.eventSetting.fields.youtube_helper') }}</span>
+                                        <small><strong>eg https://youtube.com/newmark</strong></small>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary shadow-none">Save Changes</button>
+                                </form>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                     </ul>
 
                   </div>
