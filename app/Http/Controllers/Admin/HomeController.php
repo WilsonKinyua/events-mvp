@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Company;
 use App\Models\EventSetting;
 
 class HomeController
@@ -9,6 +10,7 @@ class HomeController
     public function index()
     {
         $eventSetting = EventSetting::with(['media'])->get()->first();
-        return view('home', compact('eventSetting'));
+        $companies = Company::with(['media'])->get();
+        return view('home', compact('eventSetting','companies'));
     }
 }

@@ -4911,6 +4911,12 @@ a.ms-g-plus,
   border-radius: 5px;
   margin-bottom: 20px;
 }
+.campany-card-logo img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba( 0, 0, 0, 0.1 );
+    border-radius: 50%;
+}
 .ms-profile-user-info,
 .ms-profile-user-buttons{
   padding: 0 0 1.5rem 1.5rem;
