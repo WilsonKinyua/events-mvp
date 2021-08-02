@@ -90,8 +90,8 @@
                   class="flaticon-user"></i> <br>Companies </a></li>
                   <li role="presentation"><a href="#tab23" aria-controls="tab15" role="tab" data-toggle="tab"> <i
                     class="flaticon-user"></i> <br>Attendes </a></li>
-            <li role="presentation"><a href="#tab15" aria-controls="tab14" role="tab" data-toggle="tab"> <i
-                  class="flaticon-chat"></i> <br>Event Feed </a></li>
+            {{-- <li role="presentation"><a href="#tab15" aria-controls="tab14" role="tab" data-toggle="tab"> <i
+                  class="flaticon-chat"></i> <br>Event Feed </a></li> --}}
             <li role="presentation"><a href="#tab16" aria-controls="tab16" role="tab" data-toggle="tab"> <i
                   class="flaticon-internet"></i> <br>Agenda </a></li>
             <li role="presentation"><a href="#tab17" aria-controls="tab17" role="tab" data-toggle="tab"> <i
@@ -420,7 +420,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="website">{{ trans('cruds.company.fields.website') }}</label>
-                                        <input class="form-control {{ $errors->has('website') ? 'is-invalid' : '' }}" type="text" name="website" id="website" value="{{ old('website', '') }}">
+                                        <input class="form-control {{ $errors->has('website') ? 'is-invalid' : '' }}" type="url" name="website" id="website" value="{{ old('website', '') }}">
                                         @if($errors->has('website'))
                                             <div class="invalid-feedback">
                                                 {{ $errors->first('website') }}
@@ -1207,8 +1207,8 @@ Dropzone.options.slidersDropzone = {
     },
     params: {
       size: 2,
-      width: 200,
-      height: 200
+      width: 4096,
+      height: 4096
     },
     success: function (file, response) {
       $('form').find('input[name="logo"]').remove()

@@ -55,7 +55,8 @@ class CompaniesController extends Controller
             Media::whereIn('id', $media)->update(['model_id' => $company->id]);
         }
 
-        return redirect()->route('admin.companies.index');
+        // return redirect()->route('admin.companies.index');
+        return redirect()->back()->with("success","Company added successfully");
     }
 
     public function edit(Company $company)
