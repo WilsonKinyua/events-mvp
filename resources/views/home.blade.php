@@ -394,7 +394,7 @@
                     <i class="fa fa-copy"></i> {{ trans('global.app_csvImport') }}
                 </button>
                 @include('csvImport.modal', ['model' => 'Company', 'route' => 'admin.companies.parseCsvImport'])
-                {{-- add company modal --}} 
+                {{-- add company modal --}}
                 <div class="modal fade events" id="addCompanyModal" tabindex="-1" role="dialog" aria-labelledby="addCompanyModal">
                     <div class="modal-dialog modal-dialog-centered modal-lg modal-min" role="document">
                     <div class="modal-content">
@@ -552,7 +552,7 @@
                                     </div>
                                 </div>
                             </div>
-                          
+
                             <div class="form-group">
                                 <label for="about">{{ trans('cruds.company.fields.about') }}</label>
                                 <textarea class="form-control ckeditor {{ $errors->has('about') ? 'is-invalid' : '' }}" name="about" id="about">{!! old('about') !!}</textarea>
@@ -610,7 +610,7 @@
             </div>
             </div>
             @foreach($companies as $key => $company)
-                <div class="col-xl-3 col-md-3">
+                <div class="col-xl-2 col-md-2">
                 <div class="ms-panel">
                     <div class="ms-panel-body">
                     <a href="{{ route('admin.companies.show', $company->id) }}">
@@ -621,10 +621,10 @@
                                 <img src="https://www.latermicamalaga.com/book/files/uploads/logo-placeholder@2x.png" class="card-img-top company-display-logo">
                             @endif
                         </div>
-                        <h2 class="card-text text-center">
+                        <h5 class="card-text text-center">
                             {{-- {!! Str::limit($company->about, 140, '...') !!} --}}
                             {{ $company->name }}
-                    </h2>
+                    </h5>
                     </a>
                     </div>
                 </div>
