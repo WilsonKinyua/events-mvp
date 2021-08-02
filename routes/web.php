@@ -64,7 +64,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('companies/parse-csv-import', 'CompaniesController@parseCsvImport')->name('companies.parseCsvImport');
     Route::post('companies/process-csv-import', 'CompaniesController@processCsvImport')->name('companies.processCsvImport');
     Route::resource('companies', 'CompaniesController');
-
+    // Route::get('/link', function () {        
+    //     $target = '/home2/kwizera/mvp/storage/app/public';
+    //     $shortcut = '/home2/kwizera/public_html/mvp/storage';
+    //     symlink($target, $shortcut);
+    //  });
     Route::get('messenger', 'MessengerController@index')->name('messenger.index');
     Route::get('messenger/create', 'MessengerController@createTopic')->name('messenger.createTopic');
     Route::post('messenger', 'MessengerController@storeTopic')->name('messenger.storeTopic');
