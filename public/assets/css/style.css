@@ -6769,3 +6769,12 @@ body:not(.ms-settings-open) .ms-settings-toggle:hover{
     float: left;
     margin-left: 5px;
 }
+.btn-info {
+    background-color: #83ccaf;
+}
+.btn-info {
+  border: none !important;
+ }
+.text-italic {
+    font-style: italic;
+}
