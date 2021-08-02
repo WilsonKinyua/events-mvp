@@ -108,33 +108,34 @@
                   class="flaticon-browser"></i> <br>Rooms </a></li>
             @can('event_setting_access')
                 <a class="edit-button m-3" title="Edit Sliders" data-toggle="modal" data-target="#slidersmodal"> <i class="fa fa-edit"></i></a>
-            @endcan
-            {{-- Sliders modal --}}
-            <div class="modal fade events" id="slidersmodal" tabindex="-1" role="dialog" aria-labelledby="slidersmodal">
-                <div class="modal-dialog modal-dialog-centered modal-min" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <form method="POST" action="{{ route("admin.event-settings.update", [$eventSetting->id]) }}" enctype="multipart/form-data">
-                        @method('PUT')
-                        @csrf
-                        <div class="form-group">
-                            <label class="required" for="sliders">{{ trans('cruds.eventSetting.fields.sliders') }}</label>
-                            <div class="needsclick dropzone {{ $errors->has('sliders') ? 'is-invalid' : '' }}" id="sliders-dropzone">
-                            </div>
-                            @if($errors->has('sliders'))
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('sliders') }}
+
+                {{-- Sliders modal --}}
+                <div class="modal fade events" id="slidersmodal" tabindex="-1" role="dialog" aria-labelledby="slidersmodal">
+                    <div class="modal-dialog modal-dialog-centered modal-min" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <form method="POST" action="{{ route("admin.event-settings.update", [$eventSetting->id]) }}" enctype="multipart/form-data">
+                            @method('PUT')
+                            @csrf
+                            <div class="form-group">
+                                <label class="required" for="sliders">{{ trans('cruds.eventSetting.fields.sliders') }}</label>
+                                <div class="needsclick dropzone {{ $errors->has('sliders') ? 'is-invalid' : '' }}" id="sliders-dropzone">
                                 </div>
-                            @endif
-                            <span class="help-block">{{ trans('cruds.eventSetting.fields.sliders_helper') }}</span>
+                                @if($errors->has('sliders'))
+                                    <div class="invalid-feedback">
+                                        {{ $errors->first('sliders') }}
+                                    </div>
+                                @endif
+                                <span class="help-block">{{ trans('cruds.eventSetting.fields.sliders_helper') }}</span>
+                            </div>
+                            <button type="submit" class="btn btn-primary shadow-none">Save Changes</button>
+                        </form>
                         </div>
-                        <button type="submit" class="btn btn-primary shadow-none">Save Changes</button>
-                    </form>
+                    </div>
                     </div>
                 </div>
-                </div>
-            </div>
+            @endcan
           </ul>
         </div>
       </div>

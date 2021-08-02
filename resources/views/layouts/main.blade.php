@@ -29,6 +29,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="https://ems.wezadevelopment.com/asset/img/favicon.ico">
     {{-- toastr --}}
     <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css')}}">
+    {{-- custom css --}}
+    <link rel="stylesheet" href="{{ asset('css/custom.css')}}">
   @yield('css')
 
 </head>

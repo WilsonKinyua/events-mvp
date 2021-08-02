@@ -106,7 +106,7 @@ class CompaniesController extends Controller
             }
         }
 
-        return redirect()->route('admin.companies.index');
+        return redirect()->back()->with("success","Company updated successfully");
     }
 
     public function show(Company $company)

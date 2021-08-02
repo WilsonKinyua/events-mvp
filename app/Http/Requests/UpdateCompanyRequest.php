@@ -19,7 +19,7 @@ class UpdateCompanyRequest extends FormRequest
         return [
             'name' => [
                 'string',
-                'required',
+                // 'required',
             ],
             'website' => [
                 'string',
