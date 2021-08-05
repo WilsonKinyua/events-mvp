@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'site_title' => '(site name)',
+    'site_title' => 'Business Forum System',
 ];
