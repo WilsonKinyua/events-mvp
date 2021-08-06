@@ -24,6 +24,8 @@ class EventSetting extends Model implements HasMedia
     ];
 
     protected $dates = [
+        'event_start',
+        'event_end',
         'created_at',
         'updated_at',
         'deleted_at',

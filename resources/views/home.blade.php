@@ -149,7 +149,42 @@
                                                             enctype="multipart/form-data">
                                                             @method('PUT')
                                                             @csrf
-                                                            <div class="form-group">
+                                                            <h2>Update Event</h2>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="event_start">Start Date<span
+                                                                                class="text-danger">*</span></label>
+                                                                        <input
+                                                                            class="form-control date {{ $errors->has('event_start') ? 'is-invalid' : '' }}"
+                                                                            type="date" name="event_start" id="event_start"
+                                                                            value="{{ old('event_start', $eventSetting->event_start) }}"
+                                                                            required>
+                                                                        @if ($errors->has('event_start'))
+                                                                            <div class="invalid-event_start">
+                                                                                {{ $errors->first('event_start') }}
+                                                                            </div>
+                                                                        @endif
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="event_end">End Date<span
+                                                                                class="text-danger">*</span></label>
+                                                                        <input
+                                                                            class="form-control {{ $errors->has('event_end') ? 'is-invalid' : '' }}"
+                                                                            type="text" name="event_end" id="event_end"
+                                                                            value="{{ old('event_date', $eventSetting->event_end) }}"
+                                                                            required>
+                                                                        @if ($errors->has('event_end'))
+                                                                            <div class="invalid-event_end">
+                                                                                {{ $errors->first('event_end') }}
+                                                                            </div>
+                                                                        @endif
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group mt-4">
                                                                 <label class="required"
                                                                     for="about">{{ trans('cruds.eventSetting.fields.about') }}</label>
                                                                 <textarea
@@ -197,7 +232,13 @@
                                                         class="img-fluid rounded-start" alt="Company Logo">
                                                 @endif
                                             </div>
-                                            <h3 class="text-bold text-center mt-3"> 22nd - 25th Jun, 2021 </h3>
+                                            <h3 class="text-bold text-center mt-3">
+                                                @if ($eventSetting->event_date === '')
+                                                    Event Date
+                                                @else
+                                                    {!! $eventSetting->event_date !!}
+                                                @endif
+                                            </h3>
                                         </div>
                                         <div class="col-xl-8 col-md-12">
 
@@ -937,7 +978,7 @@
                                                     .message ?
                                                     `${genericErrorText}\n${xhr.status} ${response.message}` :
                                                     `${genericErrorText}\n ${xhr.status} ${xhr.statusText}`
-                                                    );
+                                                );
                                             }
 
                                             $('form').append(
@@ -951,7 +992,7 @@
 
                                         if (xhr.upload) {
                                             xhr.upload.addEventListener('progress', function(
-                                            e) {
+                                                e) {
                                                 if (e.lengthComputable) {
                                                     loader.uploadTotal = e.total;
                                                     loader.uploaded = e.loaded;
@@ -1133,7 +1174,7 @@
                                                     .message ?
                                                     `${genericErrorText}\n${xhr.status} ${response.message}` :
                                                     `${genericErrorText}\n ${xhr.status} ${xhr.statusText}`
-                                                    );
+                                                );
                                             }
 
                                             $('form').append(
@@ -1147,7 +1188,7 @@
 
                                         if (xhr.upload) {
                                             xhr.upload.addEventListener('progress', function(
-                                            e) {
+                                                e) {
                                                 if (e.lengthComputable) {
                                                     loader.uploadTotal = e.total;
                                                     loader.uploaded = e.loaded;

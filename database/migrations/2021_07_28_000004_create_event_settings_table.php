@@ -11,6 +11,8 @@ class CreateEventSettingsTable extends Migration
         Schema::create('event_settings', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('event_name');
+            $table->date('event_start')->nullable();
+            $table->date('event_end')->nullable();
             $table->longText('about');
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
