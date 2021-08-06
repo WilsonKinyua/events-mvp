@@ -28,7 +28,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="https://ems.wezadevelopment.com/asset/img/favicon.ico">
     {{-- toastr --}}
-    <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     {{-- Datepicker --}}
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
@@ -138,35 +139,46 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js">
     </script>
     {{-- notification --}}
-    <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
-    <script>
-        // Get the Toast button
-        var toastButton = document.getElementById("toast-btn");
-        // Get the Toast element
-        var toastElement = document.getElementsByClassName("toast")[0];
-
-        toastButton.onclick = function() {
-            $('.toast').toast('show');
-        }
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
-    {{-- <script src="{{ asset('js/main.js') }}"></script> --}}
+    <script src="{{ asset('js/main.js') }}"></script>
     <script>
-        // $(document).ready(function () {
-        //     $('.date').datepicker({
-        //         autoClose: true,
-        //         todayHighlight: true,
+        @if (Session::has('success'))
+            toastr.options =
+            {
+            "closeButton" : true,
+            "progressBar" : true
+            }
+            // toastr.options.positionClass = 'toast-bottom-right';
+            toastr.success("{{ session('success') }}");
+        @endif
 
-        //         // format: 'MM/DD/YYYY',
-        //         // locale: 'en',
-        //         // icons: {
-        //         // up: 'fas fa-chevron-up',
-        //         // down: 'fas fa-chevron-down',
-        //         // previous: 'fas fa-chevron-left',
-        //         // next: 'fas fa-chevron-right'
-        //         //}
-        //     }).datepicker('update',new Date());
-        // });
+        @if (Session::has('error'))
+            toastr.options =
+            {
+            "closeButton" : true,
+            "progressBar" : true
+            }
+            toastr.error("{{ session('error') }}");
+        @endif
+
+        @if (Session::has('info'))
+            toastr.options =
+            {
+            "closeButton" : true,
+            "progressBar" : true
+            }
+            toastr.info("{{ session('info') }}");
+        @endif
+
+        @if (Session::has('warning'))
+            toastr.options =
+            {
+            "closeButton" : true,
+            "progressBar" : true
+            }
+            toastr.warning("{{ session('warning') }}");
+        @endif
     </script>
     @yield('scripts')
 </body>

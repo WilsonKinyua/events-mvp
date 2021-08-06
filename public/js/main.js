@@ -1,74 +1,89 @@
 $(document).ready(function () {
-  window._token = $('meta[name="csrf-token"]').attr('content')
+    //   disable past date
+    $(function () {
+        var dtToday = new Date();
 
-  moment.updateLocale('en', {
-    week: {dow: 1} // Monday is the first day of the week
-  })
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+        if (month < 10) month = "0" + month.toString();
+        if (day < 10) day = "0" + day.toString();
 
-  $('.date').datetimepicker({
-    format: 'MM/DD/YYYY',
-    locale: 'en',
-    icons: {
-      up: 'fas fa-chevron-up',
-      down: 'fas fa-chevron-down',
-      previous: 'fas fa-chevron-left',
-      next: 'fas fa-chevron-right'
-    }
-  })
+        var maxDate = year + "-" + month + "-" + day;
+        $("#date").attr("min", maxDate);
+    });
 
-  $('.datetime').datetimepicker({
-    format: 'MM/DD/YYYY HH:mm:ss',
-    locale: 'en',
-    sideBySide: true,
-    icons: {
-      up: 'fas fa-chevron-up',
-      down: 'fas fa-chevron-down',
-      previous: 'fas fa-chevron-left',
-      next: 'fas fa-chevron-right'
-    }
-  })
+    window._token = $('meta[name="csrf-token"]').attr("content");
 
-  $('.timepicker').datetimepicker({
-    format: 'HH:mm:ss',
-    icons: {
-      up: 'fas fa-chevron-up',
-      down: 'fas fa-chevron-down',
-      previous: 'fas fa-chevron-left',
-      next: 'fas fa-chevron-right'
-    }
-  })
+    moment.updateLocale("en", {
+        week: { dow: 1 }, // Monday is the first day of the week
+    });
 
-  $('.select-all').click(function () {
-    let $select2 = $(this).parent().siblings('.select2')
-    $select2.find('option').prop('selected', 'selected')
-    $select2.trigger('change')
-  })
-  $('.deselect-all').click(function () {
-    let $select2 = $(this).parent().siblings('.select2')
-    $select2.find('option').prop('selected', '')
-    $select2.trigger('change')
-  })
+    $(".date").datetimepicker({
+        format: "MM/DD/YYYY",
+        locale: "en",
+        icons: {
+            up: "fas fa-chevron-up",
+            down: "fas fa-chevron-down",
+            previous: "fas fa-chevron-left",
+            next: "fas fa-chevron-right",
+        },
+    });
 
-  $('.select2').select2()
+    $(".datetime").datetimepicker({
+        format: "MM/DD/YYYY HH:mm:ss",
+        locale: "en",
+        sideBySide: true,
+        icons: {
+            up: "fas fa-chevron-up",
+            down: "fas fa-chevron-down",
+            previous: "fas fa-chevron-left",
+            next: "fas fa-chevron-right",
+        },
+    });
 
-  $('.treeview').each(function () {
-    var shouldExpand = false
-    $(this).find('li').each(function () {
-      if ($(this).hasClass('active')) {
-        shouldExpand = true
-      }
-    })
-    if (shouldExpand) {
-      $(this).addClass('active')
-    }
-  })
+    $(".timepicker").datetimepicker({
+        format: "HH:mm:ss",
+        icons: {
+            up: "fas fa-chevron-up",
+            down: "fas fa-chevron-down",
+            previous: "fas fa-chevron-left",
+            next: "fas fa-chevron-right",
+        },
+    });
 
-  $('.c-header-toggler.mfs-3.d-md-down-none').click(function (e) {
-    $('#sidebar').toggleClass('c-sidebar-lg-show');
+    $(".select-all").click(function () {
+        let $select2 = $(this).parent().siblings(".select2");
+        $select2.find("option").prop("selected", "selected");
+        $select2.trigger("change");
+    });
+    $(".deselect-all").click(function () {
+        let $select2 = $(this).parent().siblings(".select2");
+        $select2.find("option").prop("selected", "");
+        $select2.trigger("change");
+    });
 
-    setTimeout(function () {
-      $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
-    }, 400);
-  });
+    $(".select2").select2();
 
-})
+    $(".treeview").each(function () {
+        var shouldExpand = false;
+        $(this)
+            .find("li")
+            .each(function () {
+                if ($(this).hasClass("active")) {
+                    shouldExpand = true;
+                }
+            });
+        if (shouldExpand) {
+            $(this).addClass("active");
+        }
+    });
+
+    $(".c-header-toggler.mfs-3.d-md-down-none").click(function (e) {
+        $("#sidebar").toggleClass("c-sidebar-lg-show");
+
+        setTimeout(function () {
+            $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+        }, 400);
+    });
+});

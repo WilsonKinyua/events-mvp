@@ -150,16 +150,16 @@
                                                             @method('PUT')
                                                             @csrf
                                                             <h2>Update Event</h2>
+                                                            <hr>
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label for="event_start">Start Date<span
                                                                                 class="text-danger">*</span></label>
-                                                                        <input
-                                                                            class="form-control date {{ $errors->has('event_start') ? 'is-invalid' : '' }}"
+                                                                        <input id="date"
+                                                                            class="form-control {{ $errors->has('event_start') ? 'is-invalid' : '' }}"
                                                                             type="date" name="event_start" id="event_start"
-                                                                            value="{{ old('event_start', $eventSetting->event_start) }}"
-                                                                            required>
+                                                                            value="{{ old('event_start', $eventSetting->event_start) }}">
                                                                         @if ($errors->has('event_start'))
                                                                             <div class="invalid-event_start">
                                                                                 {{ $errors->first('event_start') }}
@@ -171,11 +171,10 @@
                                                                     <div class="form-group">
                                                                         <label for="event_end">End Date<span
                                                                                 class="text-danger">*</span></label>
-                                                                        <input
+                                                                        <input id="date"
                                                                             class="form-control {{ $errors->has('event_end') ? 'is-invalid' : '' }}"
-                                                                            type="text" name="event_end" id="event_end"
-                                                                            value="{{ old('event_date', $eventSetting->event_end) }}"
-                                                                            required>
+                                                                            type="date" name="event_end" id="event_end"
+                                                                            value="{{ old('event_date', $eventSetting->event_end) }}">
                                                                         @if ($errors->has('event_end'))
                                                                             <div class="invalid-event_end">
                                                                                 {{ $errors->first('event_end') }}
@@ -233,11 +232,9 @@
                                                 @endif
                                             </div>
                                             <h3 class="text-bold text-center mt-3">
-                                                @if ($eventSetting->event_date === '')
-                                                    Event Date
-                                                @else
-                                                    {!! $eventSetting->event_date !!}
-                                                @endif
+                                                @if ($eventSetting->event_start === null)
+                                                    Event Start Date @else {!! $eventSetting->event_start->toFormattedDateString() !!} @endif - @if ($eventSetting->event_end === null) Event
+                                                    End Date @else {!! $eventSetting->event_end->toFormattedDateString() !!} @endif
                                             </h3>
                                         </div>
                                         <div class="col-xl-8 col-md-12">

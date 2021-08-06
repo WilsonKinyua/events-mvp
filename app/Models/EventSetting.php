@@ -39,6 +39,8 @@ class EventSetting extends Model implements HasMedia
         'linkedin',
         'instagram',
         'youtube',
+        'event_start',
+        'event_end',
         'created_at',
         'updated_at',
         'deleted_at',
