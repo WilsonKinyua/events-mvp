@@ -11,8 +11,25 @@ Route::get('/home', function () {
 
 Auth::routes();
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'app', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
+
+    // attendee
+    Route::get('attendee', 'AttendeeController@index')->name('view.attendee');
+
+    // attendee
+    Route::get('meeting', 'MeetingController@index')->name('view.meeting');
+
+    // speakers tab
+    Route::get('speaker', 'SpeakerController@index')->name('view.speaker');
+
+    // event feed tab
+    Route::get('feed', 'EventFeedController@index')->name('view.event-feed');
+
+    // agenda
+    Route::get('agenda', 'AgendaController@index')->name('view.agenda');
+
+
     // Permissions
     Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');
     Route::resource('permissions', 'PermissionsController');
@@ -64,7 +81,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('companies/parse-csv-import', 'CompaniesController@parseCsvImport')->name('companies.parseCsvImport');
     Route::post('companies/process-csv-import', 'CompaniesController@processCsvImport')->name('companies.processCsvImport');
     Route::resource('companies', 'CompaniesController');
-    // Route::get('/link', function () {        
+    // Route::get('/link', function () {
     //     $target = '/home2/kwizera/mvp/storage/app/public';
     //     $shortcut = '/home2/kwizera/public_html/mvp/storage';
     //     symlink($target, $shortcut);

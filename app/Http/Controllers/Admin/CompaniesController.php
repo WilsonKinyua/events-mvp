@@ -9,6 +9,7 @@ use App\Http\Requests\MassDestroyCompanyRequest;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
 use App\Models\Company;
+use App\Models\EventSetting;
 use Gate;
 use Illuminate\Http\Request;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -24,8 +25,9 @@ class CompaniesController extends Controller
         abort_if(Gate::denies('company_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $companies = Company::with(['media'])->get();
+        $eventSetting = EventSetting::with(['media'])->get()->first();
 
-        return view('admin.companies.index', compact('companies'));
+        return view('admin.companies.index', compact('companies','eventSetting'));
     }
 
     public function create()
