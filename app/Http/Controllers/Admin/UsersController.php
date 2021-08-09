@@ -8,6 +8,7 @@ use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyUserRequest;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Models\Interest;
 use App\Models\Role;
 use App\Models\User;
 use Gate;
@@ -24,7 +25,7 @@ class UsersController extends Controller
     {
         abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $users = User::with(['roles', 'media'])->get();
+        $users = User::with(['interests', 'roles', 'media'])->get();
 
         return view('admin.users.index', compact('users'));
     }
@@ -33,14 +34,17 @@ class UsersController extends Controller
     {
         abort_if(Gate::denies('user_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $roles = Role::all()->pluck('title', 'id');
+        $interests = Interest::pluck('name', 'id');
 
-        return view('admin.users.create', compact('roles'));
+        $roles = Role::pluck('title', 'id');
+
+        return view('admin.users.create', compact('interests', 'roles'));
     }
 
     public function store(StoreUserRequest $request)
     {
         $user = User::create($request->all());
+        $user->interests()->sync($request->input('interests', []));
         $user->roles()->sync($request->input('roles', []));
         if ($request->input('avatar', false)) {
             $user->addMedia(storage_path('tmp/uploads/' . basename($request->input('avatar'))))->toMediaCollection('avatar');
@@ -57,16 +61,19 @@ class UsersController extends Controller
     {
         abort_if(Gate::denies('user_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $roles = Role::all()->pluck('title', 'id');
+        $interests = Interest::pluck('name', 'id');
 
-        $user->load('roles');
+        $roles = Role::pluck('title', 'id');
 
-        return view('admin.users.edit', compact('roles', 'user'));
+        $user->load('interests', 'roles');
+
+        return view('admin.users.edit', compact('interests', 'roles', 'user'));
     }
 
     public function update(UpdateUserRequest $request, User $user)
     {
         $user->update($request->all());
+        $user->interests()->sync($request->input('interests', []));
         $user->roles()->sync($request->input('roles', []));
         if ($request->input('avatar', false)) {
             if (!$user->avatar || $request->input('avatar') !== $user->avatar->file_name) {
@@ -86,7 +93,7 @@ class UsersController extends Controller
     {
         abort_if(Gate::denies('user_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $user->load('roles', 'userUserAlerts');
+        $user->load('interests', 'roles', 'userUserAlerts');
 
         return view('admin.users.show', compact('user'));
     }

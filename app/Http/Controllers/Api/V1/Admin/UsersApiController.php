@@ -20,12 +20,13 @@ class UsersApiController extends Controller
     {
         abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return new UserResource(User::with(['roles'])->get());
+        return new UserResource(User::with(['interests', 'roles'])->get());
     }
 
     public function store(StoreUserRequest $request)
     {
         $user = User::create($request->all());
+        $user->interests()->sync($request->input('interests', []));
         $user->roles()->sync($request->input('roles', []));
         if ($request->input('avatar', false)) {
             $user->addMedia(storage_path('tmp/uploads/' . basename($request->input('avatar'))))->toMediaCollection('avatar');
@@ -40,12 +41,13 @@ class UsersApiController extends Controller
     {
         abort_if(Gate::denies('user_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return new UserResource($user->load(['roles']));
+        return new UserResource($user->load(['interests', 'roles']));
     }
 
     public function update(UpdateUserRequest $request, User $user)
     {
         $user->update($request->all());
+        $user->interests()->sync($request->input('interests', []));
         $user->roles()->sync($request->input('roles', []));
         if ($request->input('avatar', false)) {
             if (!$user->avatar || $request->input('avatar') !== $user->avatar->file_name) {

@@ -204,6 +204,26 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 49,
+                'title' => 'interest_create',
+            ],
+            [
+                'id'    => 50,
+                'title' => 'interest_edit',
+            ],
+            [
+                'id'    => 51,
+                'title' => 'interest_show',
+            ],
+            [
+                'id'    => 52,
+                'title' => 'interest_delete',
+            ],
+            [
+                'id'    => 53,
+                'title' => 'interest_access',
+            ],
+            [
+                'id'    => 54,
                 'title' => 'profile_password_edit',
             ],
         ];

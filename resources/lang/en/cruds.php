@@ -83,6 +83,8 @@ return [
             'website_helper'           => 'eg. www.newmark-imc.com',
             'industry'                 => 'Industry',
             'industry_helper'          => ' ',
+            'interests'                => 'Interests',
+            'interests_helper'         => ' ',
         ],
     ],
     'taskManagement' => [
@@ -251,6 +253,22 @@ return [
             'updated_at_helper'   => ' ',
             'deleted_at'          => 'Deleted at',
             'deleted_at_helper'   => ' ',
+        ],
+    ],
+    'interest' => [
+        'title'          => 'Interests',
+        'title_singular' => 'Interest',
+        'fields'         => [
+            'id'                => 'ID',
+            'id_helper'         => ' ',
+            'name'              => 'Name',
+            'name_helper'       => ' ',
+            'created_at'        => 'Created at',
+            'created_at_helper' => ' ',
+            'updated_at'        => 'Updated at',
+            'updated_at_helper' => ' ',
+            'deleted_at'        => 'Deleted at',
+            'deleted_at_helper' => ' ',
         ],
     ],
 ];

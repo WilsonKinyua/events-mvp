@@ -125,6 +125,16 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.user.fields.interests') }}
+                        </th>
+                        <td>
+                            @foreach($user->interests as $key => $interests)
+                                <span class="label label-info">{{ $interests->name }}</span>
+                            @endforeach
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.user.fields.email_verified_at') }}
                         </th>
                         <td>

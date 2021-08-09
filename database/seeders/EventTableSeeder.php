@@ -36,7 +36,7 @@ class EventTableSeeder extends Seeder
                 erat
                 nec dui. Nam at facilisis nulla.
                 </p>
-               "
+               ",
            ],
         ];
 

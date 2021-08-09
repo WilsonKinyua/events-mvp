@@ -86,6 +86,13 @@ Route::group(['prefix' => 'app', 'as' => 'admin.', 'namespace' => 'Admin', 'midd
     //     $shortcut = '/home2/kwizera/public_html/mvp/storage';
     //     symlink($target, $shortcut);
     //  });
+
+    // Interests
+    Route::delete('interests/destroy', 'InterestsController@massDestroy')->name('interests.massDestroy');
+    Route::post('interests/parse-csv-import', 'InterestsController@parseCsvImport')->name('interests.parseCsvImport');
+    Route::post('interests/process-csv-import', 'InterestsController@processCsvImport')->name('interests.processCsvImport');
+    Route::resource('interests', 'InterestsController');
+
     Route::get('messenger', 'MessengerController@index')->name('messenger.index');
     Route::get('messenger/create', 'MessengerController@createTopic')->name('messenger.createTopic');
     Route::post('messenger', 'MessengerController@storeTopic')->name('messenger.storeTopic');

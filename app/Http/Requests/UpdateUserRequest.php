@@ -48,6 +48,12 @@ class UpdateUserRequest extends FormRequest
                 'string',
                 'nullable',
             ],
+            'interests.*' => [
+                'integer',
+            ],
+            'interests' => [
+                'array',
+            ],
             'roles.*' => [
                 'integer',
             ],

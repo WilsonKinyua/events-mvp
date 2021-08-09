@@ -48,6 +48,12 @@ class StoreUserRequest extends FormRequest
                 'string',
                 'nullable',
             ],
+            'interests.*' => [
+                'integer',
+            ],
+            'interests' => [
+                'array',
+            ],
             'password' => [
                 'required',
             ],

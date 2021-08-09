@@ -66,6 +66,9 @@
                             {{ trans('cruds.user.fields.avatar') }}
                         </th>
                         <th>
+                            {{ trans('cruds.user.fields.interests') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.user.fields.email_verified_at') }}
                         </th>
                         <th>
@@ -124,6 +127,11 @@
                                         <img src="{{ $user->avatar->getUrl('thumb') }}">
                                     </a>
                                 @endif
+                            </td>
+                            <td>
+                                @foreach($user->interests as $key => $item)
+                                    <span class="badge badge-info">{{ $item->name }}</span>
+                                @endforeach
                             </td>
                             <td>
                                 {{ $user->email_verified_at ?? '' }}

@@ -100,7 +100,7 @@
             </li>
         @endcan
         @can('user_management_access')
-            <li class="c-sidebar-nav-dropdown {{ request()->is("admin/permissions*") ? "c-show" : "" }} {{ request()->is("admin/roles*") ? "c-show" : "" }} {{ request()->is("admin/users*") ? "c-show" : "" }} {{ request()->is("admin/user-alerts*") ? "c-show" : "" }}">
+            <li class="c-sidebar-nav-dropdown {{ request()->is("admin/permissions*") ? "c-show" : "" }} {{ request()->is("admin/roles*") ? "c-show" : "" }} {{ request()->is("admin/users*") ? "c-show" : "" }} {{ request()->is("admin/user-alerts*") ? "c-show" : "" }} {{ request()->is("admin/interests*") ? "c-show" : "" }}">
                 <a class="c-sidebar-nav-dropdown-toggle" href="#">
                     <i class="fa-fw fas fa-users c-sidebar-nav-icon">
 
@@ -145,6 +145,16 @@
 
                                 </i>
                                 {{ trans('cruds.userAlert.title') }}
+                            </a>
+                        </li>
+                    @endcan
+                    @can('interest_access')
+                        <li class="c-sidebar-nav-item">
+                            <a href="{{ route("admin.interests.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/interests") || request()->is("admin/interests/*") ? "c-active" : "" }}">
+                                <i class="fa-fw far fa-edit c-sidebar-nav-icon">
+
+                                </i>
+                                {{ trans('cruds.interest.title') }}
                             </a>
                         </li>
                     @endcan
