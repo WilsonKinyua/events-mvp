@@ -87,6 +87,10 @@ return [
             'interests_helper'         => ' ',
         ],
     ],
+    'attendee' => [
+        'title'          => 'Attendees',
+        'title_singular' => 'Attendee',
+    ],
     'taskManagement' => [
         'title'          => 'Task management',
         'title_singular' => 'Task management',

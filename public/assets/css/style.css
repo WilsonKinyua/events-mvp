@@ -805,7 +805,7 @@ body:not(.ms-aside-left-open) .ms-aside-toggler .ms-toggler-bar{
 }
 .ms-horizontal-layout .ms-panel .navbar .navbar-nav li.nav-item > a{
   display: block;
-  padding: 0.5rem;
+  padding: 0.2rem;
   border-right: 1px solid rgba(0,0,0,0.1);
 }
 .ms-horizontal-layout .ms-panel .navbar .navbar-nav li.nav-item:last-child > a{
@@ -2995,8 +2995,8 @@ input:checked + .ms-switch-slider.ms-switch-dark{
 }
 .ms-btn-icon-outline.btn-success,
 .btn-outline-success{
-  color: #07be6e;
-  border-color: #07be6e;
+  color: #83ccaf;
+  border-color: #83ccaf;
 }
 .ms-btn-icon-outline.btn-info,
 .btn-outline-info{
@@ -6784,3 +6784,5 @@ body:not(.ms-settings-open) .ms-settings-toggle:hover{
 .text-italic {
     font-style: italic;
 }
+
+/* ============================================================================== */

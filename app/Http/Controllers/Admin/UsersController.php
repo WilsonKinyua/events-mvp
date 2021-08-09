@@ -54,7 +54,8 @@ class UsersController extends Controller
             Media::whereIn('id', $media)->update(['model_id' => $user->id]);
         }
 
-        return redirect()->route('admin.users.index');
+        // return redirect()->route('admin.users.index');
+        return redirect()->back()->with("success", "Attendee added successfully");
     }
 
     public function edit(User $user)

@@ -4,6 +4,15 @@
     Attendees
 @endsection
 
+@section('css')
+    <style>
+        .ms-panel-body {
+            padding: 0
+        }
+
+    </style>
+@endsection
+
 @section('content')
     <div class="row">
 
@@ -50,21 +59,21 @@
                     </div>
                     <ul class="nav nav-tabs d-flex nav-justified " role="tablist">
                         <li role="presentation">
-                            <a href="{{ route('admin.home')}}">
+                            <a href="{{ route('admin.home') }}">
                                 <i class="flaticon-browser"></i> <br>
                                 Reception
                             </a>
                         </li>
-                        <li role="presentation"><a href="{{ route('admin.view.agenda')}}"> <i
+                        <li role="presentation"><a href="{{ route('admin.view.agenda') }}"> <i
                                     class="flaticon-internet"></i> <br>Agenda </a></li>
-                        <li role="presentation"><a href="{{ route('admin.view.event-feed')}}"> <i
+                        <li role="presentation"><a href="{{ route('admin.view.event-feed') }}"> <i
                                     class="flaticon-chat"></i> <br>Event Feed </a></li>
-                        <li role="presentation"><a href="{{ route('admin.view.speaker')}}"> <i
-                                    class="flaticon-user"></i> <br>Speakers </a></li>
-                        <li role="presentation"><a href="{{ route('admin.companies.index')}}"> <i
+                        <li role="presentation"><a href="{{ route('admin.view.speaker') }}"> <i class="flaticon-user"></i>
+                                <br>Speakers </a></li>
+                        <li role="presentation"><a href="{{ route('admin.companies.index') }}"> <i
                                     class="flaticon-user"></i> <br>Companies </a></li>
                         <li role="presentation"><a class="active" href="{{ route('admin.view.attendee') }}"> <i
-                                    class="flaticon-user"></i> <br>Attendes </a></li>
+                                    class="flaticon-user"></i> <br>Attendees </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.meeting') }}"> <i
                                     class="flaticon-layers"></i> <br>Meetings </a></li>
                     </ul>
@@ -77,13 +86,67 @@
 
                     <div class="row">
                         <div class="col-xl-12 col-md-12">
-                            <div class="ms-panel">
-                                <div class="ms-panel-body text-center">
-                                    <h2 class="text-danger">Coming Soon attendee!!</h2>
+                            @can('user_create')
+                                <div style="margin-bottom: 10px;" class="row">
+                                    <div class="col-lg-12">
+                                        {{-- <a class="btn btn-success" href="{{ route('admin.users.create') }}">
+                                            {{ trans('global.add') }} {{ trans('cruds.attendee.title_singular') }}
+                                        </a> --}}
+                                        <button class="btn btn-success" data-toggle="modal" data-target="#addUserModal">
+                                            {{ trans('global.add') }} {{ trans('cruds.attendee.title_singular') }}
+                                        </button>
+                                        @include('modal.add-users')
+
+                                        <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
+                                            {{ trans('global.app_csvImport') }}
+                                        </button>
+                                        @include('csvImport.modal', ['model' => 'User', 'route' =>
+                                        'admin.users.parseCsvImport'])
+                                    </div>
                                 </div>
-                            </div>
+                            @endcan
+
                         </div>
 
+                        @foreach ($users as $key => $user)
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="card mb-3">
+                                    <div class="row g-0 no-gutters">
+                                        <div class="col-md-4">
+                                            @if ($user->avatar)
+                                                <img src="{{ $user->avatar->getUrl() }}"
+                                                    class="img-fluid profile-img rounded-start" alt="Profile picture">
+                                            @else
+                                                <img src="https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"
+                                                    class="img-fluid profile-img rounded-start" alt="...">
+                                            @endif
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h4 class="card-title">{{ $user->name ?? '' }}</h4>
+                                                <p class="card-text">{{ $user->designation ?? '' }}</p>
+                                                <p class="card-text"><small
+                                                        class="text-muted">{{ $user->organisation ?? '' }}</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @if (Auth::user()->id == $user->id)
+                                        <div class="d-flex justify-content-around m-4">
+                                        </div>
+                                    @else
+                                        <div class="d-flex justify-content-around mb-2">
+                                            <div>
+                                                <button class="btn btn-chat btn-pill btn-sm">Meet</button>
+                                            </div>
+                                            <div>
+                                                <button class="btn btn-chat btn-pill btn-sm">chat</button>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -91,4 +154,60 @@
         </div>
 
     </div>
+@endsection
+@section('scripts')
+    <script>
+        Dropzone.options.avatarDropzone = {
+            url: '{{ route('admin.users.storeMedia') }}',
+            maxFilesize: 5, // MB
+            acceptedFiles: '.jpeg,.jpg,.png,.gif',
+            maxFiles: 1,
+            addRemoveLinks: true,
+            headers: {
+                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            },
+            params: {
+                size: 5,
+                width: 4096,
+                height: 4096
+            },
+            success: function(file, response) {
+                $('form').find('input[name="avatar"]').remove()
+                $('form').append('<input type="hidden" name="avatar" value="' + response.name + '">')
+            },
+            removedfile: function(file) {
+                file.previewElement.remove()
+                if (file.status !== 'error') {
+                    $('form').find('input[name="avatar"]').remove()
+                    this.options.maxFiles = this.options.maxFiles + 1
+                }
+            },
+            init: function() {
+                @if (isset($user) && $user->avatar)
+                    var file = {!! json_encode($user->avatar) !!}
+                    this.options.addedfile.call(this, file)
+                    this.options.thumbnail.call(this, file, file.preview)
+                    file.previewElement.classList.add('dz-complete')
+                    $('form').append('<input type="hidden" name="avatar" value="' + file.file_name + '">')
+                    this.options.maxFiles = this.options.maxFiles - 1
+                @endif
+            },
+            error: function(file, response) {
+                if ($.type(response) === 'string') {
+                    var message = response //dropzone sends it's own error messages in string
+                } else {
+                    var message = response.errors.file
+                }
+                file.previewElement.classList.add('dz-error')
+                _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
+                _results = []
+                for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                    node = _ref[_i]
+                    _results.push(node.textContent = message)
+                }
+
+                return _results
+            }
+        }
+    </script>
 @endsection

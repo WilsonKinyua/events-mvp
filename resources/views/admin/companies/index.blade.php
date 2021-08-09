@@ -313,7 +313,7 @@
                         {{-- add company --}}
                         <div class="col-xl-12 col-md-12">
                             <div class="add-company">
-                                @can('event_setting_access')
+                                @can('event_setting_create')
                                     <button class="btn btn-info btn-sm mb-4" data-toggle="modal"
                                         data-target="#addCompanyModal"><i class="fa fa-plus"></i> Add Company</button>
                                     <button class="btn btn-warning btn-sm mb-4" data-toggle="modal"

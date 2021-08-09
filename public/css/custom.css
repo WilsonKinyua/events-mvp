@@ -18,11 +18,11 @@ table.dataTable tbody th.select-checkbox::after {
 .dataTables_filter,
 .dt-buttons {
     margin-bottom: 0.333em;
-    margin-top: .2rem;
+    margin-top: 0.2rem;
 }
 
 .dataTables_filter {
-    margin-right: .2rem;
+    margin-right: 0.2rem;
 }
 
 .dt-buttons .btn {
@@ -79,7 +79,7 @@ table.dataTable thead .sorting_desc {
 
 .btn-default.focus,
 .btn-default:focus {
-    box-shadow: 0 0 0 .2rem rgba(209, 213, 215, .5);
+    box-shadow: 0 0 0 0.2rem rgba(209, 213, 215, 0.5);
 }
 
 .btn-default:hover {
@@ -100,12 +100,12 @@ table.dataTable thead .sorting_desc {
     font-weight: bold;
 }
 .searchable-fields {
-    padding-left:5px;
+    padding-left: 5px;
 }
 .searchable-link {
-    padding:0 5px 0 5px;
+    padding: 0 5px 0 5px;
 }
-.searchable-link:hover   {
+.searchable-link:hover {
     cursor: pointer;
     background: #eaeaea;
 }
@@ -133,4 +133,66 @@ table.dataTable thead .sorting_desc {
 
 .text-bold {
     font-size: 900;
+}
+
+/* .btn-primary {
+    color: #fff;
+    border-color: #31c77f;
+    background-color: #31c77f;
+}
+
+.btn-secondary {
+    color: #fff;
+    border-color: #6b39bd;
+    background-color: #6b39bd;
+}
+
+.btn-warning {
+    color: #fff;
+    border-color: #f19711;
+    background-color: #f19711;
+}
+
+.btn-danger {
+    color: #fff;
+    border-color: #e72660;
+    background-color: #e72660;
+}
+
+.btn-dark {
+    color: #fff;
+    border-color: #171724;
+    background-color: #171724;
+} */
+
+/* .panel-body {
+    padding: 5px;
+} */
+.card-body p {
+    line-height: 0 !important;
+}
+
+.profile-img {
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 1px solid rgba( 0, 0, 0, 0.1 );
+    /* height:50px; */
+}
+
+.btn-chat {
+    background: linear-gradient(0deg, #60b3c2 0%, #76c2b3 57.68%, #80c9ac 100%);
+    outline: none;
+    box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 11%),
+        0px 1px 3px 0px rgb(0 0 0 / 6%);
+    border: 2px;
+    border-radius: 25px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.btn-chat:hover {
+    box-shadow: -2px 11px 5px -8px rgba(0, 0, 0, 0.42);
+    -webkit-box-shadow: -2px 11px 5px -8px rgba(0, 0, 0, 0.42);
+    -moz-box-shadow: -2px 11px 5px -8px rgba(0, 0, 0, 0.42);
 }

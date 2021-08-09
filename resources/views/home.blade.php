@@ -65,7 +65,7 @@
                                     class="flaticon-user"></i> <br>Companies </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.attendee') }}"> <i
                                     class="flaticon-user"></i>
-                                <br>Attendes </a></li>
+                                <br>Attendees </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.meeting') }}"> <i
                                     class="flaticon-layers"></i><br>Meetings </a></li>
                         {{-- <li role="presentation"><a href="#tab3" aria-controls="tab5" role="tab" data-toggle="tab"> <i
@@ -78,7 +78,7 @@
                   class="flaticon-archive"></i> <br>Lounge </a></li>
             <li role="presentation"><a href="#tab22" aria-controls="tab22" role="tab" data-toggle="tab"> <i
                   class="flaticon-browser"></i> <br>Rooms </a></li> --}}
-                        @can('event_setting_access')
+                        @can('event_setting_create')
                             <a class="edit-button m-3" title="Edit Sliders" data-toggle="modal" data-target="#slidersmodal"> <i
                                     class="fa fa-edit"></i></a>
 
@@ -130,12 +130,12 @@
                             <div class="ms-panel">
                                 <div class="ms-panel-body">
                                     <h2 class="section-title">About
-                                        @can('event_setting_access')
+                                        @can('event_setting_create')
                                             <a class="edit-button" title="Edit About" data-toggle="modal"
                                                 data-target="#modal-10"> <i class="fa fa-edit"></i></a>
                                         @endcan
                                     </h2>
-                                    @can('event_setting_access')
+                                    @can('event_setting_create')
                                         {{-- events settings modal(insert) --}}
                                         <div class="modal fade events" id="modal-10" tabindex="-1" role="dialog"
                                             aria-labelledby="modal-10">
@@ -258,7 +258,7 @@
                                             <li class="ms-skill"><a href="#"><i class="fab fa-linkedin"></i></a></li>
                                             <li class="ms-skill"><a href="#"><i class="fab fa-instagram"></i></a></li>
                                             <li class="ms-skill"><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                            @can('event_setting_access')
+                                            @can('event_setting_create')
                                                 <a class="edit-button-social m-3" title="Edit About" data-toggle="modal"
                                                     data-target="#socialmedialinks"> <i class="fa fa-edit"></i></a>
 
@@ -479,7 +479,7 @@
                     <div class="row">
                         <div class="col-xl-12 col-md-12">
                             <div class="add-company">
-                                @can('event_setting_access')
+                                @can('event_setting_create')
                                     <button class="btn btn-info btn-sm mb-4" data-toggle="modal"
                                         data-target="#addCompanyModal"><i class="fa fa-plus"></i> Add Company</button>
                                     <button class="btn btn-warning btn-sm mb-4" data-toggle="modal"
