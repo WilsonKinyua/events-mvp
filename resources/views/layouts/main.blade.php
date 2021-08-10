@@ -143,7 +143,6 @@
     </script>
     {{-- notification --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
     {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
     <script src="{{ asset('js/main.js') }}"></script>
     {{-- <script>
@@ -194,6 +193,8 @@
         @endif
     </script>
     @yield('scripts')
+    <script src="//cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script> --}}
 </body>
 
 
