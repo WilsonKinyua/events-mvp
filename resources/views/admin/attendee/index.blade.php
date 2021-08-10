@@ -132,16 +132,20 @@
                                         <div class="col-md-8 user-details" data-toggle="modal"
                                             data-target="#userDetailsModal{{ $user->id }}">
                                             <div class="card-body">
-                                                <h4 class="card-title">{{ $user->name ?? '' }}</h4>
-                                                <p class="card-text">{{ $user->designation ?? '' }}</p>
+                                                <h4 class="card-title">{{ $user->name ?? '' }}
+                                                    {{-- @can('user_edit')
+                                                        @foreach ($user->roles as $key => $item)
+                                                            <span
+                                                                class="badge badge-warning text-capitalize">{{ $item->title }}</span>
+                                                        @endforeach
+                                                    @endcan --}}
+                                                </h4>
+                                                <p class="card-text">
+                                                    {{ Str::limit($user->designation ?? '', 20, '...') }}</p>
                                                 <p class="card-text"><small
-                                                        class="text-muted">{{ $user->organisation ?? '' }}</small></p>
-                                                @can('user_edit')
-                                                    @foreach ($user->roles as $key => $item)
-                                                        <span
-                                                            class="badge badge-warning text-capitalize">{{ $item->title }}</span>
-                                                    @endforeach
-                                                @endcan
+                                                        class="text-muted">{{ Str::limit($user->organisation ?? '', 30, '...') }}</small>
+                                                </p>
+
                                             </div>
                                         </div>
                                     </div>
@@ -232,7 +236,7 @@
                                             </div>
                                             <div class="profile-about p-3 mb-2">
                                                 <h2>About</h2>
-                                                <p>{{ $user->about ?? '' }}</p>
+                                                <p>{!! $user->about ?? '' !!}</p>
                                             </div>
                                         </div>
                                     </div>

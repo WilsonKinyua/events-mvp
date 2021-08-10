@@ -3,7 +3,22 @@
 @section('title')
     Speaker
 @endsection
+@section('css')
+    <style>
+        .ms-panel-body {
+            padding: 0
+        }
 
+        .modal-body {
+            padding: 1rem !important;
+        }
+
+        .modalUserDetails .modal-body {
+            padding: 0rem !important;
+        }
+
+    </style>
+@endsection
 @section('content')
     <div class="row">
 
@@ -64,7 +79,7 @@
                         <li role="presentation"><a href="{{ route('admin.companies.index')}}"> <i
                                     class="flaticon-user"></i> <br>Companies </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.attendee') }}"> <i
-                                    class="flaticon-user"></i> <br>Attendes </a></li>
+                                    class="flaticon-user"></i> <br>Attendees </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.meeting') }}"> <i
                                     class="flaticon-layers"></i> <br>Meetings </a></li>
                     </ul>
@@ -77,13 +92,93 @@
 
                     <div class="row">
                         <div class="col-xl-12 col-md-12">
-                            <div class="ms-panel">
-                                <div class="ms-panel-body text-center">
-                                    <h2 class="text-danger">Coming Soon speaker!!</h2>
+                            @can('user_create')
+                                <div style="margin-bottom: 10px;" class="row">
+                                    <div class="col-lg-12">
+                                        <button class="btn btn-success" data-toggle="modal" data-target="#addUserModal">
+                                            Add Speaker
+                                        </button>
+                                        @include('modal.add-users')
+                                    </div>
                                 </div>
-                            </div>
+                            @endcan
+
                         </div>
 
+                        @foreach ($users as $key => $user)
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="card mb-3">
+                                    <div class="row g-0 no-gutters">
+                                        <div class="col-md-4 mb-2 mt-2">
+                                            @if ($user->avatar)
+                                                <img src="{{ $user->avatar->getUrl() }}"
+                                                    class="img-fluid profile-img rounded-start" alt="Profile picture">
+                                            @else
+                                                <img src="https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"
+                                                    class="img-fluid profile-img rounded-start" alt="...">
+                                            @endif
+                                        </div>
+                                        <div class="col-md-8 user-details" data-toggle="modal"
+                                            data-target="#userDetailsModal{{ $user->id }}">
+                                            <div class="card-body">
+                                                <h4 class="card-title">{{ $user->name ?? '' }}</h4>
+                                                <p class="card-text">{{ Str::limit($user->designation ?? '', 20, '...') }}</p>
+                                                <p class="card-text"><small
+                                                        class="text-muted">{{ Str::limit($user->organisation ?? '', 30, '...') }}</small></p>
+                                                {{-- @can('user_edit')
+                                                    @foreach ($user->roles as $key => $item)
+                                                        <span
+                                                            class="badge badge-warning text-capitalize">{{ $item->title }}</span>
+                                                    @endforeach
+                                                @endcan --}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            {{-- single user details modal --}}
+                            <div class="modal modalUserDetails fade events" id="userDetailsModal{{ $user->id }}"
+                                tabindex="-1" role="dialog" aria-labelledby="userDetailsModal{{ $user->id }}">
+                                <div class="modal-dialog modal-lg modal-min" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body profile-main">
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <div class="d-flex justify-content-start profile-start p-4">
+                                                <div class="mr-3">
+                                                    @if ($user->avatar)
+                                                        <img src="{{ $user->avatar->getUrl() }}"
+                                                            class="img-fluid rounded-start profile-img-modal"
+                                                            alt="Profile picture">
+                                                    @else
+                                                        <img src="https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"
+                                                            class="img-fluid rounded-start profile-img-modal" alt="...">
+                                                    @endif
+                                                </div>
+                                                <div class="mt-3">
+                                                    @foreach ($user->roles as $key => $item)
+                                                        <span class="badge badge-warning text-capitalize">{{ $item->title }}</span>
+                                                    @endforeach
+                                                    <h1 class="text-white text-title">{{ $user->name ?? '' }}</h1>
+                                                    <h3 class="text-gray"><small>{{ $user->organisation ?? '' }}</small>
+                                                    </h3> <br>
+                                                    <h4 class="text-white">
+                                                        {{ $user->designation ?? '' }}
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                            <div class="profile-about p-3 mb-2">
+                                                <h2>About</h2>
+                                                <p>{!! $user->about ?? '' !!}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        @endforeach
                     </div>
                 </div>
             </div>

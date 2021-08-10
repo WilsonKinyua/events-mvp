@@ -25,7 +25,9 @@ class AttendeeController extends Controller
 
         $roles = Role::pluck('title', 'id');
         $users = User::with(['interests', 'roles', 'media'])->get();
-
+        // $users = User::with(["roles", "media"])->whereHas("roles", function ($query) {
+        //     $query->where("id", 2);
+        // })->get();
         return view('admin.attendee.index', compact('interests', 'roles','users'));
     }
 }
