@@ -16,9 +16,11 @@
         .modalUserDetails .modal-body {
             padding: 0rem !important;
         }
+
         .fa-facebook {
             color: #3b5997;
         }
+
         .fa-twitter {
             color: #3da4f1;
         }
@@ -33,6 +35,10 @@
 
         .fa-google-plus-g {
             color: #dc4e41;
+        }
+
+        .user-details {
+            height: 150px;
         }
     </style>
 @endsection
@@ -146,19 +152,24 @@
                                                 </p>
                                                 <ul class="speaker-social-media text-center">
                                                     <li class="speaker-social">
-                                                        <a href="#"><i class="fab fa-facebook"></i></a>
+                                                        <a target="_blank" href="{{ $user->facebook }}"><i
+                                                                class="fab fa-facebook"></i></a>
                                                     </li>
                                                     <li class="speaker-social">
-                                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                                        <a target="_blank" href="{{ $user->twitter }}"><i
+                                                                class="fab fa-twitter"></i></a>
                                                     </li>
                                                     <li class="speaker-social">
-                                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                                        <a target="_blank" href="{{ $user->linkedin }}"><i
+                                                                class="fab fa-linkedin-in"></i></a>
                                                     </li>
                                                     <li class="speaker-social">
-                                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                                        <a target="_blank" href="{{ $user->instagram }}"><i
+                                                                class="fab fa-instagram"></i></a>
                                                     </li>
                                                     <li class="speaker-social">
-                                                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                        <a href="malto:{{ $user->email }}"><i
+                                                                class="fab fa-google-plus-g"></i></a>
                                                     </li>
                                                 </ul>
                                                 {{-- @can('user_edit')

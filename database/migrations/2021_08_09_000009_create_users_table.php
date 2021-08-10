@@ -18,6 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('state')->nullable();
             $table->string('city_town')->nullable();
             $table->string('website')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('twitter')->nullable();
             $table->string('country')->nullable();
             $table->string('industry')->nullable();
             $table->longText('about')->nullable();
