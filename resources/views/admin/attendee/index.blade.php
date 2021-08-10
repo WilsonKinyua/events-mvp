@@ -10,6 +10,14 @@
             padding: 0
         }
 
+        .modal-body {
+            padding: 1rem !important;
+        }
+
+        .modalUserDetails .modal-body {
+            padding: 0rem !important;
+        }
+
     </style>
 @endsection
 
@@ -121,31 +129,116 @@
                                                     class="img-fluid profile-img rounded-start" alt="...">
                                             @endif
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-8 user-details" data-toggle="modal"
+                                            data-target="#userDetailsModal{{ $user->id }}">
                                             <div class="card-body">
                                                 <h4 class="card-title">{{ $user->name ?? '' }}</h4>
                                                 <p class="card-text">{{ $user->designation ?? '' }}</p>
                                                 <p class="card-text"><small
                                                         class="text-muted">{{ $user->organisation ?? '' }}</small></p>
+                                                @can('user_edit')
+                                                    @foreach ($user->roles as $key => $item)
+                                                        <span
+                                                            class="badge badge-warning text-capitalize">{{ $item->title }}</span>
+                                                    @endforeach
+                                                @endcan
                                             </div>
                                         </div>
                                     </div>
-                                    @if (Auth::user()->id == $user->id)
+                                    {{-- @if (Auth::user()->id == $user->id)
                                         <div class="d-flex justify-content-around m-4">
                                         </div>
-                                    @else
-                                        <div class="d-flex justify-content-around mb-2">
-                                            <div>
-                                                <button class="btn btn-chat btn-pill btn-sm">Meet</button>
-                                            </div>
-                                            <div>
-                                                <button class="btn btn-chat btn-pill btn-sm">chat</button>
-                                            </div>
+                                    @else --}}
+                                    <div class="d-flex justify-content-around mb-2">
+                                        <div>
+                                            <button class="btn btn-chat btn-pill btn-sm">Meet</button>
                                         </div>
-                                    @endif
+                                        <div>
+                                            <button class="btn btn-chat btn-pill btn-sm">chat</button>
+                                        </div>
+                                    </div>
+                                    {{-- @endif --}}
 
                                 </div>
                             </div>
+
+                            {{-- single user details modal --}}
+                            <div class="modal modalUserDetails fade events" id="userDetailsModal{{ $user->id }}"
+                                tabindex="-1" role="dialog" aria-labelledby="userDetailsModal{{ $user->id }}">
+                                <div class="modal-dialog modal-lg modal-min" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body profile-main">
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <div class="d-flex justify-content-start profile-start p-4">
+                                                <div class="mr-3">
+                                                    @if ($user->avatar)
+                                                        <img src="{{ $user->avatar->getUrl() }}"
+                                                            class="img-fluid rounded-start profile-img-modal"
+                                                            alt="Profile picture">
+                                                    @else
+                                                        <img src="https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"
+                                                            class="img-fluid rounded-start profile-img-modal" alt="...">
+                                                    @endif
+                                                </div>
+                                                <div class="mt-3">
+                                                    <h1 class="text-white text-title">{{ $user->name ?? '' }}</h1>
+                                                    <h3 class="text-gray"><small>{{ $user->organisation ?? '' }}</small>
+                                                    </h3> <br>
+                                                    <h4 class="text-white">
+                                                        {{ $user->designation ?? '' }}
+                                                    </h4>
+                                                    <div class="d-flex justify-content-around mb-2 mt-4">
+                                                        <div>
+                                                            <button class="btn btn-chat btn-pill btn-sm">Meet</button>
+                                                        </div>
+                                                        <div>
+                                                            <button class="btn btn-chat btn-pill btn-sm">chat</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @if (count($user->interests) > 0)
+                                                <div class="interests p-3">
+                                                    <hr>
+                                                    <h2>Interests</h2>
+                                                    @foreach ($user->interests as $key => $item)
+                                                        <button type="button"
+                                                            class="btn btn-pill btn-sm btn-gradient-light">{{ $item->name }}</button>
+                                                    @endforeach
+
+                                                </div>
+                                            @endif
+                                            <div class="similar-profiles p-3">
+                                                <h5 class="text-white text-capitalize">SIMILAR PROFILES</h5>
+                                                <div class="d-flex justify-content-start">
+                                                    <div>
+                                                        <img src="https://cdn.hubilo.com/profile/5594995783_1624079343023.jpeg"
+                                                            alt="">
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://cdn.hubilo.com/profile/5594995783_1624079343023.jpeg"
+                                                            alt="">
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://cdn.hubilo.com/profile/5594995783_1624079343023.jpeg"
+                                                            alt="">
+                                                    </div>
+                                                    <div>
+                                                        <img src="https://cdn.hubilo.com/profile/5594995783_1624079343023.jpeg"
+                                                            alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="profile-about p-3 mb-2">
+                                                <h2>About</h2>
+                                                <p>{{ $user->about ?? '' }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         @endforeach
                     </div>
                 </div>

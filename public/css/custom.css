@@ -176,7 +176,7 @@ table.dataTable thead .sorting_desc {
     border-radius: 50%;
     margin-left: 10px;
     margin-top: 10px;
-    border: 1px solid rgba( 0, 0, 0, 0.1 );
+    border: 1px solid rgba(0, 0, 0, 0.1);
     /* height:50px; */
 }
 
@@ -195,4 +195,46 @@ table.dataTable thead .sorting_desc {
     box-shadow: -2px 11px 5px -8px rgba(0, 0, 0, 0.42);
     -webkit-box-shadow: -2px 11px 5px -8px rgba(0, 0, 0, 0.42);
     -moz-box-shadow: -2px 11px 5px -8px rgba(0, 0, 0, 0.42);
+}
+.user-details {
+    cursor: pointer;
+}
+
+.profile-img-modal {
+    border-radius: 10px;
+    height: 200px;
+    /* border: 2px solid rgba( 0, 0, 0, 0.5 ); */
+}
+.profile-start,
+.similar-profiles {
+    background-color: #353535;
+}
+/* .profile-main {
+    background-color: #353535;
+}
+.profile-main{
+    color: #fff;
+} */
+
+.text-gray {
+    color: #a5a5a5;
+}
+
+.text-title {
+    text-transform: capitalize;
+}
+
+.profile-about {
+    background-color: #fff;
+    padding: 10px;
+}
+
+.similar-profiles img {
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.similar-profiles {
+    border-top: 0.5px solid rgb(128, 124, 124);
 }
