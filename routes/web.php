@@ -93,6 +93,16 @@ Route::group(['prefix' => 'app', 'as' => 'admin.', 'namespace' => 'Admin', 'midd
     Route::post('interests/process-csv-import', 'InterestsController@processCsvImport')->name('interests.processCsvImport');
     Route::resource('interests', 'InterestsController');
 
+    // Posts
+    Route::delete('posts/destroy', 'PostsController@massDestroy')->name('posts.massDestroy');
+    Route::post('posts/media', 'PostsController@storeMedia')->name('posts.storeMedia');
+    Route::post('posts/ckmedia', 'PostsController@storeCKEditorImages')->name('posts.storeCKEditorImages');
+    Route::resource('posts', 'PostsController');
+
+    // Comments
+    Route::delete('comments/destroy', 'CommentsController@massDestroy')->name('comments.massDestroy');
+    Route::resource('comments', 'CommentsController');
+
     Route::get('messenger', 'MessengerController@index')->name('messenger.index');
     Route::get('messenger/create', 'MessengerController@createTopic')->name('messenger.createTopic');
     Route::post('messenger', 'MessengerController@storeTopic')->name('messenger.storeTopic');

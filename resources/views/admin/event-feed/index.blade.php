@@ -4,6 +4,16 @@
     Speaker
 @endsection
 
+@section('css')
+    <style>
+        input::placeholder,
+        textarea::placeholder {
+            color: #999;
+            font-size: 13px
+        }
+
+    </style>
+@endsection
 @section('content')
     <div class="row">
 
@@ -87,14 +97,35 @@
                                                         class="ms-img-round ms-img-small" alt="This is another feature">
                                                 </div>
                                                 <div class="col-xl-11 col-md-12">
-                                                    <p>Have something on your mind? Share it with the community</p>
-                                                    <form>
-                                                        <div class="mb-1 mt-4">
-                                                            <textarea name="post" id="post" cols="30" rows="10"
-                                                                class="ckeditor form-control"
-                                                                placeholder="write something......."></textarea>
+                                                    <h2>Have something on your mind? Share it with the community....</h2>
+                                                    <form method="POST" action="{{ route('admin.posts.store') }}"
+                                                        enctype="multipart/form-data">
+                                                        @csrf
+                                                        <div class="mb-2">
+                                                            <input
+                                                                class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}"
+                                                                type="text" name="title" id="title"
+                                                                placeholder="Enter topic...."
+                                                                value="{{ old('title', '') }}" required>
                                                         </div>
-                                                        <button
+                                                        <div class="mb-1 mt-4">
+                                                            <label for="post">Body</label>
+                                                            <textarea
+                                                                class="form-control ckeditor {{ $errors->has('body') ? 'is-invalid' : '' }}"
+                                                                placeholder="write something......" name="body"
+                                                                id="body">{!! old('body') !!}</textarea>
+                                                            @if ($errors->has('body'))
+                                                                <div class="invalid-feedback">
+                                                                    {{ $errors->first('body') }}
+                                                                </div>
+                                                            @endif
+                                                            <input type="hidden" name="created_by_id"
+                                                                value="{{ Auth::user()->id }}">
+                                                            {{-- <textarea name="post" id="post" cols="30" rows="10"
+                                                                class="form-control"
+                                                                placeholder="write something......."></textarea> --}}
+                                                        </div>
+                                                        <button type="submit"
                                                             class="btn btn-chat btn-pill btn-sm float-right">publish</button>
                                                     </form>
                                                 </div>
@@ -201,8 +232,19 @@
 
                         <div class="col-xl-3 col-md-12">
                             <div class="ms-panel">
-                                <div class="ms-panel-body text-center">
-                                    <h2 class="text-danger">Coming Soon event feed!!</h2>
+                                <div class="ms-panel-body">
+                                    <form class="ms-form">
+                                        <div class="ms-form-group my-0 mb-0 has-icon fs-14">
+                                            <input type="search" class="ms-form-input" name="search"
+                                                placeholder="Search here..." value="">
+                                            {{-- <button class="btn btn-primary btn-sm">Search</button> --}}
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="ms-panel">
+                                <div class="ms-panel-body">
+                                    <h3 class="text-center">Something here</h3>
                                 </div>
                             </div>
                         </div>

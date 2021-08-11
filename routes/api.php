@@ -15,4 +15,11 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
 
     // Interests
     Route::apiResource('interests', 'InterestsApiController');
+
+    // Posts
+    Route::post('posts/media', 'PostsApiController@storeMedia')->name('posts.storeMedia');
+    Route::apiResource('posts', 'PostsApiController');
+
+    // Comments
+    Route::apiResource('comments', 'CommentsApiController');
 });
