@@ -143,7 +143,7 @@
                                                 <p class="card-text">
                                                     {{ Str::limit($user->designation ?? '', 20, '...') }}</p>
                                                 <p class="card-text"><small
-                                                        class="text-muted">{{ Str::limit($user->organisation ?? '', 30, '...') }}</small>
+                                                        class="text-muted">{{ Str::limit($user->organisation ?? '', 20, '...') }}</small>
                                                 </p>
 
                                             </div>

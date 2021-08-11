@@ -12,6 +12,10 @@
             font-size: 13px
         }
 
+        .ms-list-item a {
+            color: #337ab7 !important;
+        }
+
     </style>
 @endsection
 @section('content')
@@ -74,7 +78,7 @@
                         <li role="presentation"><a href="{{ route('admin.companies.index') }}"> <i
                                     class="flaticon-user"></i> <br>Companies </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.attendee') }}"> <i
-                                    class="flaticon-user"></i> <br>Attendes </a></li>
+                                    class="flaticon-user"></i> <br>Attendees </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.meeting') }}"> <i
                                     class="flaticon-layers"></i> <br>Meetings </a></li>
                     </ul>
@@ -93,23 +97,23 @@
                                         <div class="ms-panel-body">
                                             <div class="row no-gutters">
                                                 <div class="col-xl-1 col-md-12">
-                                                    <img src="../../assets/img/people/people-12.jpg"
+                                                    <img src="https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"
                                                         class="ms-img-round ms-img-small" alt="This is another feature">
                                                 </div>
                                                 <div class="col-xl-11 col-md-12">
-                                                    <h2>Have something on your mind? Share it with the community....</h2>
+                                                    <h4>Have something on your mind? Share it with the community....</h4>
                                                     <form method="POST" action="{{ route('admin.posts.store') }}"
                                                         enctype="multipart/form-data">
                                                         @csrf
-                                                        <div class="mb-2">
+                                                        {{-- <div class="mb-2">
                                                             <input
                                                                 class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}"
                                                                 type="text" name="title" id="title"
                                                                 placeholder="Enter topic...."
                                                                 value="{{ old('title', '') }}" required>
-                                                        </div>
+                                                        </div> --}}
                                                         <div class="mb-1 mt-4">
-                                                            <label for="post">Body</label>
+                                                            {{-- <label for="post">Body</label> --}}
                                                             <textarea
                                                                 class="form-control ckeditor {{ $errors->has('body') ? 'is-invalid' : '' }}"
                                                                 placeholder="write something......" name="body"
@@ -135,97 +139,45 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-12 col-md-12">
-                                    <div class="ms-panel ms-panel-fh">
-                                        <div class="ms-panel-body p-0">
-                                            <ul class="ms-list ms-feed ms-twitter-feed ms-recent-support-tickets">
-                                                <li class="ms-list-item">
-                                                    <a href="#" class="media clearfix">
-                                                        <img src="../../assets/img/people/people-12.jpg"
-                                                            class="ms-img-round ms-img-small" alt="This is another feature">
-                                                        <div class="media-body">
-                                                            <div class="d-flex justify-content-between">
-                                                                <h4 class="ms-feed-user mb-0">Lorem ipsum dolor</h4>
-                                                                <span class="badge badge-success"> Open </span>
-                                                            </div>
-                                                            <span class="my-2 d-block"> <i
-                                                                    class="material-icons">date_range</i> February 24,
-                                                                2020</span>
-                                                            <p class="d-block"> Lorem ipsum dolor sit amet, consectetur
-                                                                adipiscing elit. Nulla luctus lectus a facilisis bibendum.
-                                                                Duis quis convallis sapien ... </p>
-                                                            <div class="d-flex justify-content-between align-items-end">
+                                @foreach ($posts as $key => $post)
+                                    <div class="col-xl-12 col-md-12">
+                                        <div class="ms-panel ms-panel-fh">
+                                            <div class="ms-panel-body p-0">
+                                                <ul class="ms-list ms-feed ms-twitter-feed">
+
+                                                    <li class="ms-list-item">
+                                                        <div class="media clearfix">
+                                                            <img src="https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"
+                                                                class="ms-img-round ms-img-small" alt="people">
+
+                                                            <div class="media-body">
+                                                                <h4 class="ms-feed-user">
+                                                                    {{ $post->created_by->avatar }}
+                                                                    {{ $post->created_by->name ?? '' }} <span
+                                                                        class="my-2 d-block ">{{ $post->created_at->diffForHumans() }}
+                                                                    </span></h4>
+                                                                <p>
+                                                                    {!! $post->body ?? '' !!}
+                                                                </p>
                                                                 <div class="ms-feed-controls">
                                                                     <span>
                                                                         <i class="fa fa-comments"></i>16</span>
                                                                     <span>
                                                                         <i class="fa fa-heart"></i> 3
                                                                     </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li class="ms-list-item">
-                                                    <a href="#" class="media clearfix">
-                                                        <img src="../../assets/img/people/people-10.jpg"
-                                                            class="ms-img-round ms-img-small" alt="This is another feature">
-                                                        <div class="media-body">
-                                                            <div class="d-flex justify-content-between">
-                                                                <h4 class="ms-feed-user mb-0">Lorem ipsum dolor</h4>
-                                                                <span class="badge badge-success"> Open </span>
-                                                            </div>
-                                                            <span class="my-2 d-block"> <i
-                                                                    class="material-icons">date_range</i> February 24,
-                                                                2020</span>
-                                                            <p class="d-block"> Lorem ipsum dolor sit amet, consectetur
-                                                                adipiscing elit. Nulla luctus lectus a facilisis bibendum.
-                                                                Duis quis convallis sapien ... </p>
-                                                            <div class="d-flex justify-content-between align-items-end">
-                                                                <div class="ms-feed-controls">
                                                                     <span>
-                                                                        <i class="material-icons">chat</i> 11
-                                                                    </span>
-                                                                    <span>
-                                                                        <i class="material-icons">attachment</i> 1
+                                                                        <i class="material-icons">reply</i>
                                                                     </span>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </a>
-                                                </li>
-                                                <li class="ms-list-item">
-                                                    <a href="#" class="media clearfix">
-                                                        <img src="../../assets/img/people/people-11.jpg"
-                                                            class="ms-img-round ms-img-small" alt="This is another feature">
-                                                        <div class="media-body">
-                                                            <div class="d-flex justify-content-between">
-                                                                <h4 class="ms-feed-user mb-0">Lorem ipsum dolor</h4>
-                                                                <span class="badge badge-danger"> Closed </span>
-                                                            </div>
-                                                            <span class="my-2 d-block"> <i
-                                                                    class="material-icons">date_range</i> February 24,
-                                                                2020</span>
-                                                            <p class="d-block"> Lorem ipsum dolor sit amet, consectetur
-                                                                adipiscing elit. Nulla luctus lectus a facilisis bibendum.
-                                                                Duis quis convallis sapien ... </p>
-                                                            <div class="d-flex justify-content-between align-items-end">
-                                                                <div class="ms-feed-controls">
-                                                                    <span>
-                                                                        <i class="material-icons">chat</i> 21
-                                                                    </span>
-                                                                    <span>
-                                                                        <i class="material-icons">attachment</i> 5
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endforeach
                             </div>
 
                         </div>
@@ -237,7 +189,6 @@
                                         <div class="ms-form-group my-0 mb-0 has-icon fs-14">
                                             <input type="search" class="ms-form-input" name="search"
                                                 placeholder="Search here..." value="">
-                                            {{-- <button class="btn btn-primary btn-sm">Search</button> --}}
                                         </div>
                                     </form>
                                 </div>

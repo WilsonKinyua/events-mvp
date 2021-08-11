@@ -296,7 +296,7 @@
                         <li role="presentation"><a class="active" href="{{ route('admin.companies.index') }}"> <i
                                     class="flaticon-user"></i> <br>Companies </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.attendee') }}"> <i
-                                    class="flaticon-user"></i> <br>Attendes </a></li>
+                                    class="flaticon-user"></i> <br>Attendees </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.meeting') }}"> <i
                                     class="flaticon-layers"></i>
                                 <br>Meetings </a></li>

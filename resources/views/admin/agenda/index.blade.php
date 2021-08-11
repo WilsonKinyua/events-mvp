@@ -4,6 +4,18 @@
     Agenda
 @endsection
 
+@section('css')
+    <style>
+        .fa-calendar-alt {
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+        .btn-calendar:hover {
+            color: black !important
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="row">
 
@@ -76,11 +88,706 @@
                 <div role="tabpanel" class="tab-pane active show fade in" id="tab23">
 
                     <div class="row">
-                        <div class="col-xl-12 col-md-12">
+                        <div class="col-xl-1 col-md-12">
+                        </div>
+                        <div class="col-xl-2 col-md-12">
                             <div class="ms-panel">
-                                <div class="ms-panel-body text-center">
-                                    <h2 class="text-danger">Coming Soon agenda!!</h2>
+                                <div class="ms-panel-body">
+                                    <ul class="event-date-shedule text-center">
+                                        <h2>2021</h2>
+                                        <li role="presentation" ><a class="btn btn-theme p-3 btn-block" href="#tab16" aria-controls="tab16" class="active" role="tab" data-toggle="tab">JUN 23 FRI</a></li>
+                                        <li role="presentation" ><a class="btn btn-theme p-3 btn-block" href="#tab17" aria-controls="tab17" role="tab" data-toggle="tab">JUN 24 FRI</a></li>
+                                        <li role="presentation" ><a class="btn btn-theme p-3 btn-block" href="#tab18" aria-controls="tab18" role="tab" data-toggle="tab">JUN 25 FRI</a></li>
+                                        <li role="presentation" ><a class="btn btn-theme p-3 btn-block" href="#tab18" aria-controls="tab18" role="tab" data-toggle="tab">JUN 25 FRI</a></li>
+                                    </ul>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-md-12">
+                            <div class="ms-panel">
+                                <div class="ms-panel-header bg-dark">
+                                    <div class="d-flex justify-content-start">
+                                        <div>
+                                            <button class="btn btn-calendar btn-block">10:30AM - 12:00PM <i class="fa fa-calendar-alt"></i></button>
+                                        </div>
+                                        <div>
+                                            <h1 class="text-white ml-4 mt-2">Exhibitor Pitch Session</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms-panel-header bg-darker">
+                                    <button class="btn btn-chat btn-pill btn-sm"><i class="fa fa-play mr-1"></i> watch session</button>
+                                </div>
+                                <div class="ms-panel-body">
+                                    <div class="about-agenda">
+                                        <p>Lorem ipsum dolor sit, amet consectetur totam quisquam eligendi dicta consectetur libero eaque eius quaerat quibusdam laboriosam recusandae exercitationem iure. Velit a autem laudantium fugiat.</p>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between m-2">
+                                        <div>
+                                            <h2 class="text-theme">SPEAKERS</h2>
+                                        </div>
+                                        <div>
+                                            <h4 data-toggle="modal" data-target="#viewAllSpeakers" class="text-theme view-all">VIEW ALL <i class="fa fa-chevron-right"></i></h4>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-start">
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- modal view all --}}
+                                <div class="modal fade" id="viewAllSpeakers" tabindex="-1" role="dialog" aria-labelledby="viewAllSpeakers">
+                                    <div class="modal-dialog modal-dialog-centered modal-max" role="document">
+                                      <div class="modal-content">
+
+                                        <div class="modal-body">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                          <h1>Speakers</h1>
+                                          <ul class="ms-list">
+                                            <li class="ms-list-item media">
+                                              <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                              <div class="media-body">
+                                                  <h4>Mark Mwenda</h4>
+                                                <p>Marketing Manager, FFOAB</p>
+                                              </div>
+                                            </li>
+                                            <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                          </ul>
+                                        </div>
+
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="ms-panel">
+                                <div class="ms-panel-header bg-dark">
+                                    <div class="d-flex justify-content-start">
+                                        <div>
+                                            <button class="btn btn-calendar btn-block">10:30AM - 12:00PM <i class="fa fa-calendar-alt"></i></button>
+                                        </div>
+                                        <div>
+                                            <h1 class="text-white ml-4 mt-2">Exhibitor Pitch Session</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms-panel-header bg-darker">
+                                    <button class="btn btn-chat btn-pill btn-sm"><i class="fa fa-play mr-1"></i> watch session</button>
+                                </div>
+                                <div class="ms-panel-body">
+                                    <div class="about-agenda">
+                                        <p>Lorem ipsum dolor sit, amet consectetur totam quisquam eligendi dicta consectetur libero eaque eius quaerat quibusdam laboriosam recusandae exercitationem iure. Velit a autem laudantium fugiat.</p>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between m-2">
+                                        <div>
+                                            <h2 class="text-theme">SPEAKERS</h2>
+                                        </div>
+                                        <div>
+                                            <h4 data-toggle="modal" data-target="#viewAllSpeakers" class="text-theme view-all">VIEW ALL <i class="fa fa-chevron-right"></i></h4>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-start">
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- modal view all --}}
+                                <div class="modal fade" id="viewAllSpeakers" tabindex="-1" role="dialog" aria-labelledby="viewAllSpeakers">
+                                    <div class="modal-dialog modal-dialog-centered modal-max" role="document">
+                                      <div class="modal-content">
+
+                                        <div class="modal-body">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                          <h1>Speakers</h1>
+                                          <ul class="ms-list">
+                                            <li class="ms-list-item media">
+                                              <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                              <div class="media-body">
+                                                  <h4>Mark Mwenda</h4>
+                                                <p>Marketing Manager, FFOAB</p>
+                                              </div>
+                                            </li>
+                                            <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                          </ul>
+                                        </div>
+
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="ms-panel">
+                                <div class="ms-panel-header bg-dark">
+                                    <div class="d-flex justify-content-start">
+                                        <div>
+                                            <button class="btn btn-calendar btn-block">10:30AM - 12:00PM <i class="fa fa-calendar-alt"></i></button>
+                                        </div>
+                                        <div>
+                                            <h1 class="text-white ml-4 mt-2">Exhibitor Pitch Session</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms-panel-header bg-darker">
+                                    <button class="btn btn-chat btn-pill btn-sm"><i class="fa fa-play mr-1"></i> watch session</button>
+                                </div>
+                                <div class="ms-panel-body">
+                                    <div class="about-agenda">
+                                        <p>Lorem ipsum dolor sit, amet consectetur totam quisquam eligendi dicta consectetur libero eaque eius quaerat quibusdam laboriosam recusandae exercitationem iure. Velit a autem laudantium fugiat.</p>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between m-2">
+                                        <div>
+                                            <h2 class="text-theme">SPEAKERS</h2>
+                                        </div>
+                                        <div>
+                                            <h4 data-toggle="modal" data-target="#viewAllSpeakers" class="text-theme view-all">VIEW ALL <i class="fa fa-chevron-right"></i></h4>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-start">
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- modal view all --}}
+                                <div class="modal fade" id="viewAllSpeakers" tabindex="-1" role="dialog" aria-labelledby="viewAllSpeakers">
+                                    <div class="modal-dialog modal-dialog-centered modal-max" role="document">
+                                      <div class="modal-content">
+
+                                        <div class="modal-body">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                          <h1>Speakers</h1>
+                                          <ul class="ms-list">
+                                            <li class="ms-list-item media">
+                                              <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                              <div class="media-body">
+                                                  <h4>Mark Mwenda</h4>
+                                                <p>Marketing Manager, FFOAB</p>
+                                              </div>
+                                            </li>
+                                            <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                          </ul>
+                                        </div>
+
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="ms-panel">
+                                <div class="ms-panel-header bg-dark">
+                                    <div class="d-flex justify-content-start">
+                                        <div>
+                                            <button class="btn btn-calendar btn-block">10:30AM - 12:00PM <i class="fa fa-calendar-alt"></i></button>
+                                        </div>
+                                        <div>
+                                            <h1 class="text-white ml-4 mt-2">Exhibitor Pitch Session</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms-panel-header bg-darker">
+                                    <button class="btn btn-chat btn-pill btn-sm"><i class="fa fa-play mr-1"></i> watch session</button>
+                                </div>
+                                <div class="ms-panel-body">
+                                    <div class="about-agenda">
+                                        <p>Lorem ipsum dolor sit, amet consectetur totam quisquam eligendi dicta consectetur libero eaque eius quaerat quibusdam laboriosam recusandae exercitationem iure. Velit a autem laudantium fugiat.</p>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between m-2">
+                                        <div>
+                                            <h2 class="text-theme">SPEAKERS</h2>
+                                        </div>
+                                        <div>
+                                            <h4 data-toggle="modal" data-target="#viewAllSpeakers" class="text-theme view-all">VIEW ALL <i class="fa fa-chevron-right"></i></h4>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-start">
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- modal view all --}}
+                                <div class="modal fade" id="viewAllSpeakers" tabindex="-1" role="dialog" aria-labelledby="viewAllSpeakers">
+                                    <div class="modal-dialog modal-dialog-centered modal-max" role="document">
+                                      <div class="modal-content">
+
+                                        <div class="modal-body">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                          <h1>Speakers</h1>
+                                          <ul class="ms-list">
+                                            <li class="ms-list-item media">
+                                              <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                              <div class="media-body">
+                                                  <h4>Mark Mwenda</h4>
+                                                <p>Marketing Manager, FFOAB</p>
+                                              </div>
+                                            </li>
+                                            <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                          </ul>
+                                        </div>
+
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="ms-panel">
+                                <div class="ms-panel-header bg-dark">
+                                    <div class="d-flex justify-content-start">
+                                        <div>
+                                            <button class="btn btn-calendar btn-block">10:30AM - 12:00PM <i class="fa fa-calendar-alt"></i></button>
+                                        </div>
+                                        <div>
+                                            <h1 class="text-white ml-4 mt-2">Exhibitor Pitch Session</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms-panel-header bg-darker">
+                                    <button class="btn btn-chat btn-pill btn-sm"><i class="fa fa-play mr-1"></i> watch session</button>
+                                </div>
+                                <div class="ms-panel-body">
+                                    <div class="about-agenda">
+                                        <p>Lorem ipsum dolor sit, amet consectetur totam quisquam eligendi dicta consectetur libero eaque eius quaerat quibusdam laboriosam recusandae exercitationem iure. Velit a autem laudantium fugiat.</p>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between m-2">
+                                        <div>
+                                            <h2 class="text-theme">SPEAKERS</h2>
+                                        </div>
+                                        <div>
+                                            <h4 data-toggle="modal" data-target="#viewAllSpeakers" class="text-theme view-all">VIEW ALL <i class="fa fa-chevron-right"></i></h4>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-start">
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- modal view all --}}
+                                <div class="modal fade" id="viewAllSpeakers" tabindex="-1" role="dialog" aria-labelledby="viewAllSpeakers">
+                                    <div class="modal-dialog modal-dialog-centered modal-max" role="document">
+                                      <div class="modal-content">
+
+                                        <div class="modal-body">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                          <h1>Speakers</h1>
+                                          <ul class="ms-list">
+                                            <li class="ms-list-item media">
+                                              <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                              <div class="media-body">
+                                                  <h4>Mark Mwenda</h4>
+                                                <p>Marketing Manager, FFOAB</p>
+                                              </div>
+                                            </li>
+                                            <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                          </ul>
+                                        </div>
+
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="ms-panel">
+                                <div class="ms-panel-header bg-dark">
+                                    <div class="d-flex justify-content-start">
+                                        <div>
+                                            <button class="btn btn-calendar btn-block">10:30AM - 12:00PM <i class="fa fa-calendar-alt"></i></button>
+                                        </div>
+                                        <div>
+                                            <h1 class="text-white ml-4 mt-2">Exhibitor Pitch Session</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms-panel-header bg-darker">
+                                    <button class="btn btn-chat btn-pill btn-sm"><i class="fa fa-play mr-1"></i> watch session</button>
+                                </div>
+                                <div class="ms-panel-body">
+                                    <div class="about-agenda">
+                                        <p>Lorem ipsum dolor sit, amet consectetur totam quisquam eligendi dicta consectetur libero eaque eius quaerat quibusdam laboriosam recusandae exercitationem iure. Velit a autem laudantium fugiat.</p>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between m-2">
+                                        <div>
+                                            <h2 class="text-theme">SPEAKERS</h2>
+                                        </div>
+                                        <div>
+                                            <h4 data-toggle="modal" data-target="#viewAllSpeakers" class="text-theme view-all">VIEW ALL <i class="fa fa-chevron-right"></i></h4>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-start">
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- modal view all --}}
+                                <div class="modal fade" id="viewAllSpeakers" tabindex="-1" role="dialog" aria-labelledby="viewAllSpeakers">
+                                    <div class="modal-dialog modal-dialog-centered modal-max" role="document">
+                                      <div class="modal-content">
+
+                                        <div class="modal-body">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                          <h1>Speakers</h1>
+                                          <ul class="ms-list">
+                                            <li class="ms-list-item media">
+                                              <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                              <div class="media-body">
+                                                  <h4>Mark Mwenda</h4>
+                                                <p>Marketing Manager, FFOAB</p>
+                                              </div>
+                                            </li>
+                                            <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                          </ul>
+                                        </div>
+
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="ms-panel">
+                                <div class="ms-panel-header bg-dark">
+                                    <div class="d-flex justify-content-start">
+                                        <div>
+                                            <button class="btn btn-calendar btn-block">10:30AM - 12:00PM <i class="fa fa-calendar-alt"></i></button>
+                                        </div>
+                                        <div>
+                                            <h1 class="text-white ml-4 mt-2">Exhibitor Pitch Session</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms-panel-header bg-darker">
+                                    <button class="btn btn-chat btn-pill btn-sm"><i class="fa fa-play mr-1"></i> watch session</button>
+                                </div>
+                                <div class="ms-panel-body">
+                                    <div class="about-agenda">
+                                        <p>Lorem ipsum dolor sit, amet consectetur totam quisquam eligendi dicta consectetur libero eaque eius quaerat quibusdam laboriosam recusandae exercitationem iure. Velit a autem laudantium fugiat.</p>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between m-2">
+                                        <div>
+                                            <h2 class="text-theme">SPEAKERS</h2>
+                                        </div>
+                                        <div>
+                                            <h4 data-toggle="modal" data-target="#viewAllSpeakers" class="text-theme view-all">VIEW ALL <i class="fa fa-chevron-right"></i></h4>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-start">
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                        <div>
+                                            <img class="speaker-img" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- modal view all --}}
+                                <div class="modal fade" id="viewAllSpeakers" tabindex="-1" role="dialog" aria-labelledby="viewAllSpeakers">
+                                    <div class="modal-dialog modal-dialog-centered modal-max" role="document">
+                                      <div class="modal-content">
+
+                                        <div class="modal-body">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                          <h1>Speakers</h1>
+                                          <ul class="ms-list">
+                                            <li class="ms-list-item media">
+                                              <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                              <div class="media-body">
+                                                  <h4>Mark Mwenda</h4>
+                                                <p>Marketing Manager, FFOAB</p>
+                                              </div>
+                                            </li>
+                                            <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                              <li class="ms-list-item media">
+                                                <img class="speaker-img-modal" src="https://cdn.hubilo.com/speaker/1402283/350/4810660743_1625916785889.jpeg" alt="Speaker">
+                                                <div class="media-body">
+                                                    <h4>Mark Mwenda</h4>
+                                                  <p>Marketing Manager, FFOAB</p>
+                                                </div>
+                                              </li>
+                                          </ul>
+                                        </div>
+
+                                      </div>
+                                    </div>
+                                  </div>
                             </div>
                         </div>
 

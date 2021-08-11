@@ -19,8 +19,8 @@ class StorePostRequest extends FormRequest
         return [
             'title' => [
                 'string',
-                'required',
-                'unique:posts',
+                // 'required',
+                // 'unique:posts',
             ],
             'body' => [
                 'required',

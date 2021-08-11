@@ -10,7 +10,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title')->unique();
+            $table->string('title')->nullable();
             $table->longText('body');
             $table->timestamps();
             $table->softDeletes();

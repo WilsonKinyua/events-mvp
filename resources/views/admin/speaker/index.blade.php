@@ -148,7 +148,7 @@
                                                 <p class="card-text">
                                                     {{ Str::limit($user->designation ?? '', 20, '...') }}</p>
                                                 <p class="card-text"><small
-                                                        class="text-muted">{{ Str::limit($user->organisation ?? '', 30, '...') }}</small>
+                                                        class="text-muted">{{ Str::limit($user->organisation ?? '', 20, '...') }}</small>
                                                 </p>
                                                 <ul class="speaker-social-media text-center">
                                                     <li class="speaker-social">
@@ -217,6 +217,17 @@
                                                     </h4>
                                                 </div>
                                             </div>
+                                            @if (count($user->interests) > 0)
+                                            <div class="interests p-3">
+                                                <hr>
+                                                <h2>Interests</h2>
+                                                @foreach ($user->interests as $key => $item)
+                                                    <button type="button"
+                                                        class="btn btn-pill btn-sm btn-gradient-light">{{ $item->name }}</button>
+                                                @endforeach
+
+                                            </div>
+                                        @endif
                                             <div class="profile-about p-3 mb-2">
                                                 <h2>About</h2>
                                                 <p>{!! $user->about ?? '' !!}</p>

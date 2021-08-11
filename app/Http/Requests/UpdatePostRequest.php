@@ -19,8 +19,8 @@ class UpdatePostRequest extends FormRequest
         return [
             'title' => [
                 'string',
-                'required',
-                'unique:posts,title,' . request()->route('post')->id,
+                // 'required',
+                // 'unique:posts,title,' . request()->route('post')->id,
             ],
             'body' => [
                 'required',
