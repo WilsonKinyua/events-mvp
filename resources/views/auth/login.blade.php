@@ -23,17 +23,12 @@
 
     <!-- Style css -->
     <link href="{{ asset('login_assets/css/style.css') }}" rel="stylesheet" />
-    <link href="{{ asset('login_assets/css/dark.css') }}" rel="stylesheet" />
-    <link href="{{ asset('login_assets/css/skin-modes.css') }}" rel="stylesheet" />
-
-    <!-- Animate css -->
-    <link href="{{ asset('login_assets/css/animated.css') }}" rel="stylesheet" />
-
     <!---Icons css-->
     <link href="{{ asset('login_assets/css/icons.css') }}" rel="stylesheet" />
 
     <!-- Color Skin css -->
-    <link id="theme" href="{{ asset('login_assets/colors/color1.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('login_assets/colors/color1.css') }}" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body class="h-100vh page-style1">
@@ -161,23 +156,6 @@
         </div>
     </div>
 
-    <!-- Jquery js-->
-    <script src="{{ asset('login_assets/js/jquery-3.5.1.min.js') }}"></script>
-
-    <!-- Bootstrap4 js-->
-    <script src="{{ asset('login_assets/plugins/bootstrap/popper.min.js') }}"></script>
-    <script src="{{ asset('login_assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
-
-    <!--Othercharts js-->
-    <script src="{{ asset('login_assets/plugins/othercharts/jquery.sparkline.min.js') }}"></script>
-
-    <!-- Circle-progress js-->
-    <script src="{{ asset('login_assets/js/circle-progress.min.js') }}"></script>
-
-    <!-- Jquery-rating js-->
-    <script src="{{ asset('login_assets/plugins/rating/jquery.rating-stars.js') }}"></script>
-    <!-- Custom js-->
-    <script src="{{ asset('login_assets/js/custom.js') }}"></script>
 </body>
 
 

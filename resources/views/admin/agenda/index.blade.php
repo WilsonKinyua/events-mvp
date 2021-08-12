@@ -103,11 +103,11 @@
                                 2015</a></li> --}}
                         @if (count($agendaDates) > 0)
                             @foreach ($agendaDates as $dates)
-                                <li role="presentation"><a href="#tab18" aria-controls="tab18" role="tab"
+                                <li role="presentation"><a href="#tab17" aria-controls="tab17" role="tab"
                                         data-toggle="tab">{{ $dates->agenda_date->toFormattedDateString() }}</a></li>
                             @endforeach
                         @else
-                            <li role="presentation"><a href="#tab18" aria-controls="tab18" class="text-danger" role="tab"
+                            <li role="presentation"><a href="#tab18" aria-controls="tab16" class="text-danger" role="tab"
                                     data-toggle="tab">No agenda available!!</a></li>
                         @endif
 
@@ -120,7 +120,7 @@
                     </ul>
 
                     <div class="tab-content agenda-cards">
-                        <div role="tabpanel" class="tab-pane active show fade in" id="tab16">
+                        <div role="tabpanel" class="tab-pane active show fade in" id="tab17">
                             <div class="row">
 
                                 <div class="col-xl-6 col-md-12">
