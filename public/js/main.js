@@ -86,4 +86,7 @@ $(document).ready(function () {
             $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
         }, 400);
     });
+
+    // adding class active to the agenda tab
+    $(".event-shedule li a").first().addClass("active");
 });

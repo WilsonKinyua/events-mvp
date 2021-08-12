@@ -264,7 +264,31 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 64,
+                'title' => 'agenda_date_create',
+            ],
+            [
+                'id'    => 65,
+                'title' => 'agenda_date_edit',
+            ],
+            [
+                'id'    => 66,
+                'title' => 'agenda_date_show',
+            ],
+            [
+                'id'    => 67,
+                'title' => 'agenda_date_delete',
+            ],
+            [
+                'id'    => 68,
+                'title' => 'agenda_date_access',
+            ],
+            [
+                'id'    => 69,
                 'title' => 'profile_password_edit',
+            ],
+            [
+                'id'    => 70,
+                'title' => 'no_role',
             ],
         ];
 

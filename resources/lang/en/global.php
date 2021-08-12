@@ -32,6 +32,7 @@ return [
     'reset_password'                 => 'Reset Password',
     'send_password'                  => 'Send Password Reset Link',
     'save'                           => 'Save',
+    'add'                            => 'Add',
     'search'                         => 'Search',
     'searching'                      => 'Searching',
     'no_results'                     => 'No results',

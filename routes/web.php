@@ -103,6 +103,10 @@ Route::group(['prefix' => 'app', 'as' => 'admin.', 'namespace' => 'Admin', 'midd
     Route::delete('comments/destroy', 'CommentsController@massDestroy')->name('comments.massDestroy');
     Route::resource('comments', 'CommentsController');
 
+    // Agenda Dates
+    Route::delete('agenda-dates/destroy', 'AgendaDatesController@massDestroy')->name('agenda-dates.massDestroy');
+    Route::resource('agenda-dates', 'AgendaDatesController');
+    
     Route::get('messenger', 'MessengerController@index')->name('messenger.index');
     Route::get('messenger/create', 'MessengerController@createTopic')->name('messenger.createTopic');
     Route::post('messenger', 'MessengerController@storeTopic')->name('messenger.storeTopic');

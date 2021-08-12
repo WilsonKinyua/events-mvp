@@ -386,7 +386,7 @@
                             @foreach($company->downloads as $key => $media)
                             <tr>
                                 {{-- <td>{{ $media->collection_name}}</td> --}}
-                                <td>View File</td>
+                                <td>{{ $media->file_name }}</td>
                                 <td><a target="_blank" href="{{ $media->getUrl() }}"><i class="fa fa-download"></i></a></td>
                             </tr>
 

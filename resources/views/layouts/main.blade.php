@@ -32,13 +32,14 @@
     {{-- toastr --}}
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    {{-- custom css --}}
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     {{-- Datepicker --}}
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
         rel="stylesheet" />
 
-    {{-- custom css --}}
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     @yield('css')
 
 </head>
@@ -137,14 +138,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
     {{-- <script src="{{ asset('js/main.js') }}"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
-    {{-- datepicker --}}
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js">
     </script>
     {{-- notification --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
-    <script src="{{ asset('js/main.js') }}"></script>
     {{-- <script>
         Swal.fire({
             position: 'top-end',
@@ -192,9 +189,13 @@
             toastr.warning("{{ session('warning') }}");
         @endif
     </script>
-    @yield('scripts')
     <script src="//cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js">
+    </script>
     {{-- <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script> --}}
+    <script src="{{ asset('js/main.js') }}"></script>
+    @yield('scripts')
 </body>
 
 

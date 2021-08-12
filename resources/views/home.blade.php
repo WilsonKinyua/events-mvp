@@ -174,7 +174,7 @@
                                                                                 class="text-danger">*</span></label>
                                                                         <input id="date"
                                                                             class="form-control {{ $errors->has('event_end') ? 'is-invalid' : '' }}"
-                                                                            type="date" name="event_end" id="event_end"
+                                                                            type="date" name="event_end" id="date"
                                                                             value="{{ old('event_date', $eventSetting->event_end) }}">
                                                                         @if ($errors->has('event_end'))
                                                                             <div class="invalid-event_end">
@@ -265,7 +265,7 @@
                                                 {{-- social media links --}}
                                                 <div class="modal fade events" id="socialmedialinks" tabindex="-1" role="dialog"
                                                     aria-labelledby="socialmedialinks">
-                                                    <div class="modal-dialog modal-dialog-centered modal-min" role="document">
+                                                    <div class="modal-dialog modal-min" role="document">
                                                         <div class="modal-content">
 
                                                             <div class="modal-body">
@@ -363,7 +363,7 @@
                                                                                 https://youtube.com/newmark</strong></small>
                                                                     </div>
                                                                     <button type="submit"
-                                                                        class="btn btn-primary shadow-none">Save
+                                                                        class="btn btn-primary float right shadow-none">Save
                                                                         Changes</button>
                                                                 </form>
                                                             </div>
@@ -397,75 +397,30 @@
                             </div>
 
                             <div class="ms-panel">
+                                <div class="ms-panel-header">
+                                    <h6>Post Event</h6>
+                                </div>
                                 <div class="ms-panel-body">
-                                    <h2 class="section-title">Few questions</h2>
-                                    <div class="accordion has-gap ms-accordion-chevron" id="accordionExample4">
-                                        <div class="card">
-                                            <div class="card-header" data-toggle="collapse" role="button"
-                                                data-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
-                                                <span class="has-icon"> <i class="flaticon-email"></i> Lorem Ipsum has been
-                                                    the industry
-                                                    standard dummy text </span>
+                                    <ul class="ms-activity-log">
+                                        <li>
+                                            <div class="ms-btn-icon btn-pill icon btn-success">
+                                                <i class="flaticon-tick-inside-circle"></i>
                                             </div>
-
-                                            <div id="collapseTen" class="collapse" data-parent="#accordionExample4">
-                                                <div class="card-body">
-                                                    Leverage agile frameworks to provide a robust synopsis for high level
-                                                    overviews. Iterative
-                                                    approaches to corporate strategy foster collaborative thinking to
-                                                    further the overall
-                                                    value proposition.
-                                                    Organically grow the holistic world view of disruptive innovation via
-                                                    workplace diversity
-                                                    and empowerment.
-                                                </div>
+                                            <h6>Lorem ipsum dolor sit</h6>
+                                            <span> <i class="material-icons">event</i>1 January, 2018</span>
+                                            <p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Quisque scelerisque diam non nisi semper, ula in sodales vehicula....</p>
+                                        </li>
+                                        <li>
+                                            <div class="ms-btn-icon btn-pill icon btn-danger">
+                                                <i class="flaticon-alert-1"></i>
                                             </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header" data-toggle="collapse" role="button"
-                                                data-target="#collapseEleven" aria-expanded="false"
-                                                aria-controls="collapseEleven">
-                                                <span class="has-icon"> <i class="flaticon-start"></i> Lorem Ipsum has been
-                                                    the industry
-                                                    standard dummy text </span>
-                                            </div>
-
-                                            <div id="collapseEleven" class="collapse" data-parent="#accordionExample4">
-                                                <div class="card-body">
-                                                    Leverage agile frameworks to provide a robust synopsis for high level
-                                                    overviews. Iterative
-                                                    approaches to corporate strategy foster collaborative thinking to
-                                                    further the overall
-                                                    value proposition.
-                                                    Organically grow the holistic world view of disruptive innovation via
-                                                    workplace diversity
-                                                    and empowerment.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header" data-toggle="collapse" role="button"
-                                                data-target="#collapseTwelve" aria-expanded="false"
-                                                aria-controls="collapseTwelve">
-                                                <span class="has-icon"> <i class="flaticon-conversation"></i> Lorem Ipsum
-                                                    has been the
-                                                    industry standard dummy text </span>
-                                            </div>
-
-                                            <div id="collapseTwelve" class="collapse" data-parent="#accordionExample4">
-                                                <div class="card-body">
-                                                    Leverage agile frameworks to provide a robust synopsis for high level
-                                                    overviews. Iterative
-                                                    approaches to corporate strategy foster collaborative thinking to
-                                                    further the overall
-                                                    value proposition.
-                                                    Organically grow the holistic world view of disruptive innovation via
-                                                    workplace diversity
-                                                    and empowerment.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                            <h6>Lorem ipsum dolor sit</h6>
+                                            <span> <i class="material-icons">event</i>1 March, 2020</span>
+                                            <p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Quisque scelerisque diam non nisi semper, ula in sodales vehicula....</p>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -473,467 +428,7 @@
                 </div>
 
 
-                <!-- second tab -->
 
-                <div role="tabpanel" class="tab-pane fade" id="tab5">
-                    <div class="row">
-                        <div class="col-xl-12 col-md-12">
-                            <div class="add-company">
-                                @can('event_setting_create')
-                                    <button class="btn btn-info btn-sm mb-4" data-toggle="modal"
-                                        data-target="#addCompanyModal"><i class="fa fa-plus"></i> Add Company</button>
-                                    <button class="btn btn-warning btn-sm mb-4" data-toggle="modal"
-                                        data-target="#csvImportModal">
-                                        <i class="fa fa-copy"></i> {{ trans('global.app_csvImport') }}
-                                    </button>
-                                    @include('csvImport.modal', ['model' => 'Company', 'route' =>
-                                    'admin.companies.parseCsvImport'])
-                                    {{-- add company modal --}}
-                                    <div class="modal fade events" id="addCompanyModal" tabindex="-1" role="dialog"
-                                        aria-labelledby="addCompanyModal">
-                                        <div class="modal-dialog modal-dialog-centered modal-lg modal-min" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                    <form method="POST" action="{{ route('admin.companies.store') }}"
-                                                        enctype="multipart/form-data">
-                                                        @csrf
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <h2>Add Company</h2>
-                                                                <p class="text-italic">The field labels marked with * are
-                                                                    required input fields.</p>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label class="required"
-                                                                        for="name">{{ trans('cruds.company.fields.name') }}
-                                                                        <span class="text-danger">*</span></label>
-                                                                    <input
-                                                                        class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
-                                                                        type="text" name="name" id="name"
-                                                                        value="{{ old('name', '') }}" required>
-                                                                    @if ($errors->has('name'))
-                                                                        <div class="invalid-feedback">
-                                                                            {{ $errors->first('name') }}
-                                                                        </div>
-                                                                    @endif
-                                                                    <span
-                                                                        class="help-block">{{ trans('cruds.company.fields.name_helper') }}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="website">{{ trans('cruds.company.fields.website') }}</label>
-                                                                    <input
-                                                                        class="form-control {{ $errors->has('website') ? 'is-invalid' : '' }}"
-                                                                        type="url" name="website" id="website"
-                                                                        value="{{ old('website', '') }}">
-                                                                    @if ($errors->has('website'))
-                                                                        <div class="invalid-feedback">
-                                                                            {{ $errors->first('website') }}
-                                                                        </div>
-                                                                    @endif
-                                                                    <span
-                                                                        class="help-block">{{ trans('cruds.company.fields.website_helper') }}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="headquarters">{{ trans('cruds.company.fields.headquarters') }}</label>
-                                                                    <input
-                                                                        class="form-control {{ $errors->has('headquarters') ? 'is-invalid' : '' }}"
-                                                                        type="text" name="headquarters" id="headquarters"
-                                                                        value="{{ old('headquarters', '') }}">
-                                                                    @if ($errors->has('headquarters'))
-                                                                        <div class="invalid-feedback">
-                                                                            {{ $errors->first('headquarters') }}
-                                                                        </div>
-                                                                    @endif
-                                                                    <span
-                                                                        class="help-block">{{ trans('cruds.company.fields.headquarters_helper') }}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="type">{{ trans('cruds.company.fields.type') }}</label>
-                                                                    <input
-                                                                        class="form-control {{ $errors->has('type') ? 'is-invalid' : '' }}"
-                                                                        type="text" name="type" id="type"
-                                                                        value="{{ old('type', '') }}">
-                                                                    @if ($errors->has('type'))
-                                                                        <div class="invalid-feedback">
-                                                                            {{ $errors->first('type') }}
-                                                                        </div>
-                                                                    @endif
-                                                                    <span
-                                                                        class="help-block">{{ trans('cruds.company.fields.type_helper') }}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="industry">{{ trans('cruds.company.fields.industry') }}</label>
-                                                                    <input
-                                                                        class="form-control {{ $errors->has('industry') ? 'is-invalid' : '' }}"
-                                                                        type="text" name="industry" id="industry"
-                                                                        value="{{ old('industry', '') }}">
-                                                                    @if ($errors->has('industry'))
-                                                                        <div class="invalid-feedback">
-                                                                            {{ $errors->first('industry') }}
-                                                                        </div>
-                                                                    @endif
-                                                                    <span
-                                                                        class="help-block">{{ trans('cruds.company.fields.industry_helper') }}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="facebook">{{ trans('cruds.company.fields.facebook') }}</label>
-                                                                    <input
-                                                                        class="form-control {{ $errors->has('facebook') ? 'is-invalid' : '' }}"
-                                                                        type="text" name="facebook" id="facebook"
-                                                                        value="{{ old('facebook', '') }}">
-                                                                    @if ($errors->has('facebook'))
-                                                                        <div class="invalid-feedback">
-                                                                            {{ $errors->first('facebook') }}
-                                                                        </div>
-                                                                    @endif
-                                                                    <span
-                                                                        class="help-block">{{ trans('cruds.company.fields.facebook_helper') }}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="twitter">{{ trans('cruds.company.fields.twitter') }}</label>
-                                                                    <input
-                                                                        class="form-control {{ $errors->has('twitter') ? 'is-invalid' : '' }}"
-                                                                        type="text" name="twitter" id="twitter"
-                                                                        value="{{ old('twitter', '') }}">
-                                                                    @if ($errors->has('twitter'))
-                                                                        <div class="invalid-feedback">
-                                                                            {{ $errors->first('twitter') }}
-                                                                        </div>
-                                                                    @endif
-                                                                    <span
-                                                                        class="help-block">{{ trans('cruds.company.fields.twitter_helper') }}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="instagram">{{ trans('cruds.company.fields.instagram') }}</label>
-                                                                    <input
-                                                                        class="form-control {{ $errors->has('instagram') ? 'is-invalid' : '' }}"
-                                                                        type="text" name="instagram" id="instagram"
-                                                                        value="{{ old('instagram', '') }}">
-                                                                    @if ($errors->has('instagram'))
-                                                                        <div class="invalid-feedback">
-                                                                            {{ $errors->first('instagram') }}
-                                                                        </div>
-                                                                    @endif
-                                                                    <span
-                                                                        class="help-block">{{ trans('cruds.company.fields.instagram_helper') }}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="linkedin">{{ trans('cruds.company.fields.linkedin') }}</label>
-                                                                    <input
-                                                                        class="form-control {{ $errors->has('linkedin') ? 'is-invalid' : '' }}"
-                                                                        type="text" name="linkedin" id="linkedin"
-                                                                        value="{{ old('linkedin', '') }}">
-                                                                    @if ($errors->has('linkedin'))
-                                                                        <div class="invalid-feedback">
-                                                                            {{ $errors->first('linkedin') }}
-                                                                        </div>
-                                                                    @endif
-                                                                    <span
-                                                                        class="help-block">{{ trans('cruds.company.fields.linkedin_helper') }}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="youtube">{{ trans('cruds.company.fields.youtube') }}</label>
-                                                                    <input
-                                                                        class="form-control {{ $errors->has('youtube') ? 'is-invalid' : '' }}"
-                                                                        type="text" name="youtube" id="youtube"
-                                                                        value="{{ old('youtube', '') }}">
-                                                                    @if ($errors->has('youtube'))
-                                                                        <div class="invalid-feedback">
-                                                                            {{ $errors->first('youtube') }}
-                                                                        </div>
-                                                                    @endif
-                                                                    <span
-                                                                        class="help-block">{{ trans('cruds.company.fields.youtube_helper') }}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="phone">{{ trans('cruds.company.fields.phone') }}</label>
-                                                                    <input
-                                                                        class="form-control {{ $errors->has('phone') ? 'is-invalid' : '' }}"
-                                                                        type="text" name="phone" id="phone"
-                                                                        value="{{ old('phone', '') }}">
-                                                                    @if ($errors->has('phone'))
-                                                                        <div class="invalid-feedback">
-                                                                            {{ $errors->first('phone') }}
-                                                                        </div>
-                                                                    @endif
-                                                                    <span
-                                                                        class="help-block">{{ trans('cruds.company.fields.phone_helper') }}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="email">{{ trans('cruds.company.fields.email') }}</label>
-                                                                    <input
-                                                                        class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
-                                                                        type="text" name="email" id="email"
-                                                                        value="{{ old('email', '') }}">
-                                                                    @if ($errors->has('email'))
-                                                                        <div class="invalid-feedback">
-                                                                            {{ $errors->first('email') }}
-                                                                        </div>
-                                                                    @endif
-                                                                    <span
-                                                                        class="help-block">{{ trans('cruds.company.fields.email_helper') }}</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label
-                                                                for="about">{{ trans('cruds.company.fields.about') }}</label>
-                                                            <textarea
-                                                                class="form-control ckeditor {{ $errors->has('about') ? 'is-invalid' : '' }}"
-                                                                name="about" id="about">{!! old('about') !!}</textarea>
-                                                            @if ($errors->has('about'))
-                                                                <div class="invalid-feedback">
-                                                                    {{ $errors->first('about') }}
-                                                                </div>
-                                                            @endif
-                                                            <span
-                                                                class="help-block">{{ trans('cruds.company.fields.about_helper') }}</span>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label
-                                                                for="logo">{{ trans('cruds.company.fields.logo') }}</label>
-                                                            <div class="needsclick dropzone {{ $errors->has('logo') ? 'is-invalid' : '' }}"
-                                                                id="logo-dropzone">
-                                                            </div>
-                                                            @if ($errors->has('logo'))
-                                                                <div class="invalid-feedback">
-                                                                    {{ $errors->first('logo') }}
-                                                                </div>
-                                                            @endif
-                                                            <span
-                                                                class="help-block">{{ trans('cruds.company.fields.logo_helper') }}</span>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label
-                                                                for="cover_image">{{ trans('cruds.company.fields.cover_image') }}</label>
-                                                            <div class="needsclick dropzone {{ $errors->has('cover_image') ? 'is-invalid' : '' }}"
-                                                                id="cover_image-dropzone">
-                                                            </div>
-                                                            @if ($errors->has('cover_image'))
-                                                                <div class="invalid-feedback">
-                                                                    {{ $errors->first('cover_image') }}
-                                                                </div>
-                                                            @endif
-                                                            <span
-                                                                class="help-block">{{ trans('cruds.company.fields.cover_image_helper') }}</span>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label
-                                                                for="downloads">{{ trans('cruds.company.fields.downloads') }}</label>
-                                                            <div class="needsclick dropzone {{ $errors->has('downloads') ? 'is-invalid' : '' }}"
-                                                                id="downloads-dropzone">
-                                                            </div>
-                                                            @if ($errors->has('downloads'))
-                                                                <div class="invalid-feedback">
-                                                                    {{ $errors->first('downloads') }}
-                                                                </div>
-                                                            @endif
-                                                            <span
-                                                                class="help-block">{{ trans('cruds.company.fields.downloads_helper') }}</span>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <button class="btn btn-info" type="submit">
-                                                                {{ trans('global.save') }}
-                                                            </button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endcan
-                            </div>
-                        </div>
-                        @foreach ($companies as $key => $company)
-                            <div class="col-xl-2 col-md-2">
-                                <div class="ms-panel">
-                                    <div class="ms-panel-body">
-                                        <a href="{{ route('admin.companies.show', $company->id) }}">
-                                            <div class="campany-card-logo text-center">
-                                                @if ($company->logo)
-                                                    <img src="{{ $company->logo->getUrl() }}"
-                                                        class="card-img-top company-display-logo">
-                                                @else
-                                                    <img src="https://www.latermicamalaga.com/book/files/uploads/logo-placeholder@2x.png"
-                                                        class="card-img-top company-display-logo">
-                                                @endif
-                                            </div>
-                                            <h5 class="card-text text-center">
-                                                {{-- {!! Str::limit($company->about, 140, '...') !!} --}}
-                                                {{ $company->name }}
-                                            </h5>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-
-
-                    </div>
-                </div>
-
-                <div role="tabpanel" class="tab-pane fade" id="tab3">
-
-                    <div class="row">
-                        <div class="col-xl-12 col-md-12">
-                            <div class="ms-panel">
-                                <div class="ms-panel-body text-center">
-                                    <h2 class="text-danger">Coming Soon!!</h2>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div role="tabpanel" class="tab-pane fade" id="tab2">
-
-                    <div class="row">
-                        <div class="col-xl-12 col-md-12">
-                            <div class="ms-panel">
-                                <div class="ms-panel-body text-center">
-                                    <h2 class="text-danger">Coming Soon!!</h2>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div role="tabpanel" class="tab-pane fade" id="tab4">
-
-                    <div class="row">
-                        <div class="col-xl-12 col-md-12">
-                            <div class="ms-panel">
-                                <div class="ms-panel-body text-center">
-                                    <h2 class="text-danger">Coming Soon!!</h2>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div role="tabpanel" class="tab-pane fade" id="tab18">
-
-                    <div class="row">
-                        <div class="col-xl-12 col-md-12">
-                            <div class="ms-panel">
-                                <div class="ms-panel-body text-center">
-                                    <h2 class="text-danger">Coming Soon!!</h2>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div role="tabpanel" class="tab-pane fade" id="tab19">
-
-                    <div class="row">
-                        <div class="col-xl-12 col-md-12">
-                            <div class="ms-panel">
-                                <div class="ms-panel-body text-center">
-                                    <h2 class="text-danger">Coming Soon!!</h2>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div role="tabpanel" class="tab-pane fade" id="tab6">
-
-                    <div class="row">
-                        <div class="col-xl-12 col-md-12">
-                            <div class="ms-panel">
-                                <div class="ms-panel-body text-center">
-                                    <h2 class="text-danger">Coming Soon!!</h2>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div role="tabpanel" class="tab-pane fade" id="tab21">
-
-                    <div class="row">
-                        <div class="col-xl-12 col-md-12">
-                            <div class="ms-panel">
-                                <div class="ms-panel-body text-center">
-                                    <h2 class="text-danger">Coming Soon!!</h2>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div role="tabpanel" class="tab-pane fade" id="tab22">
-
-                    <div class="row">
-                        <div class="col-xl-12 col-md-12">
-                            <div class="ms-panel">
-                                <div class="ms-panel-body text-center">
-                                    <h2 class="text-danger">Coming Soon!!</h2>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div role="tabpanel" class="tab-pane fade" id="tab23">
-
-                    <div class="row">
-                        <div class="col-xl-12 col-md-12">
-                            <div class="ms-panel">
-                                <div class="ms-panel-body text-center">
-                                    <h2 class="text-danger">Coming Soon!!</h2>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
             </div>
 
         </div>

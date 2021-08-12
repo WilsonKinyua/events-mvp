@@ -16,37 +16,67 @@
             </a>
         </li>
         @can('events_management_access')
-            <li class="c-sidebar-nav-dropdown {{ request()->is("admin/event-settings*") ? "c-show" : "" }} {{ request()->is("admin/companies*") ? "c-show" : "" }}">
-                <a class="c-sidebar-nav-dropdown-toggle" href="#">
-                    <i class="fa-fw fas fa-calendar-alt c-sidebar-nav-icon">
+        <li class="c-sidebar-nav-dropdown {{ request()->is("admin/event-settings*") ? "c-show" : "" }} {{ request()->is("admin/companies*") ? "c-show" : "" }} {{ request()->is("admin/posts*") ? "c-show" : "" }} {{ request()->is("admin/comments*") ? "c-show" : "" }} {{ request()->is("admin/agenda-dates*") ? "c-show" : "" }}">
+            <a class="c-sidebar-nav-dropdown-toggle" href="#">
+                <i class="fa-fw fas fa-calendar-alt c-sidebar-nav-icon">
 
-                    </i>
-                    {{ trans('cruds.eventsManagement.title') }}
-                </a>
-                <ul class="c-sidebar-nav-dropdown-items">
-                    @can('event_setting_access')
-                        <li class="c-sidebar-nav-item">
-                            <a href="{{ route("admin.event-settings.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/event-settings") || request()->is("admin/event-settings/*") ? "c-active" : "" }}">
-                                <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+                </i>
+                {{ trans('cruds.eventsManagement.title') }}
+            </a>
+            <ul class="c-sidebar-nav-dropdown-items">
+                @can('event_setting_access')
+                    <li class="c-sidebar-nav-item">
+                        <a href="{{ route("admin.event-settings.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/event-settings") || request()->is("admin/event-settings/*") ? "c-active" : "" }}">
+                            <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
 
-                                </i>
-                                {{ trans('cruds.eventSetting.title') }}
-                            </a>
-                        </li>
-                    @endcan
-                    @can('company_access')
-                        <li class="c-sidebar-nav-item">
-                            <a href="{{ route("admin.companies.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/companies") || request()->is("admin/companies/*") ? "c-active" : "" }}">
-                                <i class="fa-fw fab fa-houzz c-sidebar-nav-icon">
+                            </i>
+                            {{ trans('cruds.eventSetting.title') }}
+                        </a>
+                    </li>
+                @endcan
+                @can('company_access')
+                    <li class="c-sidebar-nav-item">
+                        <a href="{{ route("admin.companies.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/companies") || request()->is("admin/companies/*") ? "c-active" : "" }}">
+                            <i class="fa-fw fab fa-houzz c-sidebar-nav-icon">
 
-                                </i>
-                                {{ trans('cruds.company.title') }}
-                            </a>
-                        </li>
-                    @endcan
-                </ul>
-            </li>
-        @endcan
+                            </i>
+                            {{ trans('cruds.company.title') }}
+                        </a>
+                    </li>
+                @endcan
+                @can('post_access')
+                    <li class="c-sidebar-nav-item">
+                        <a href="{{ route("admin.posts.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/posts") || request()->is("admin/posts/*") ? "c-active" : "" }}">
+                            <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                            </i>
+                            {{ trans('cruds.post.title') }}
+                        </a>
+                    </li>
+                @endcan
+                @can('comment_access')
+                    <li class="c-sidebar-nav-item">
+                        <a href="{{ route("admin.comments.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/comments") || request()->is("admin/comments/*") ? "c-active" : "" }}">
+                            <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                            </i>
+                            {{ trans('cruds.comment.title') }}
+                        </a>
+                    </li>
+                @endcan
+                @can('agenda_date_access')
+                    <li class="c-sidebar-nav-item">
+                        <a href="{{ route("admin.agenda-dates.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/agenda-dates") || request()->is("admin/agenda-dates/*") ? "c-active" : "" }}">
+                            <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                            </i>
+                            {{ trans('cruds.agendaDate.title') }}
+                        </a>
+                    </li>
+                @endcan
+            </ul>
+        </li>
+    @endcan
         @can('task_management_access')
             <li class="c-sidebar-nav-dropdown {{ request()->is("admin/task-statuses*") ? "c-show" : "" }} {{ request()->is("admin/task-tags*") ? "c-show" : "" }} {{ request()->is("admin/tasks*") ? "c-show" : "" }} {{ request()->is("admin/tasks-calendars*") ? "c-show" : "" }}">
                 <a class="c-sidebar-nav-dropdown-toggle" href="#">
