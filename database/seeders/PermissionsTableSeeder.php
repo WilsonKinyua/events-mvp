@@ -290,6 +290,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 70,
                 'title' => 'no_role',
             ],
+            [
+                'id'    => 71,
+                'title' => 'event_schedule_create',
+            ],
+            [
+                'id'    => 72,
+                'title' => 'event_schedule_edit',
+            ],
+            [
+                'id'    => 73,
+                'title' => 'event_schedule_show',
+            ],
+            [
+                'id'    => 74,
+                'title' => 'event_schedule_delete',
+            ],
+            [
+                'id'    => 75,
+                'title' => 'event_schedule_access',
+            ],
         ];
 
         Permission::insert($permissions);

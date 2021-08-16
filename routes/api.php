@@ -25,4 +25,7 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
 
     // Agenda Dates
     Route::apiResource('agenda-dates', 'AgendaDatesApiController');
+
+    // Event Schedule
+    Route::apiResource('event-schedules', 'EventScheduleApiController');
 });

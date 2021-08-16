@@ -111,6 +111,10 @@ Route::group(['prefix' => 'app', 'as' => 'admin.', 'namespace' => 'Admin', 'midd
     Route::delete('agenda-dates/destroy', 'AgendaDatesController@massDestroy')->name('agenda-dates.massDestroy');
     Route::resource('agenda-dates', 'AgendaDatesController');
 
+    // Event Schedule
+    Route::delete('event-schedules/destroy', 'EventScheduleController@massDestroy')->name('event-schedules.massDestroy');
+    Route::resource('event-schedules', 'EventScheduleController');
+
     Route::get('messenger', 'MessengerController@index')->name('messenger.index');
     Route::get('messenger/create', 'MessengerController@createTopic')->name('messenger.createTopic');
     Route::post('messenger', 'MessengerController@storeTopic')->name('messenger.storeTopic');
