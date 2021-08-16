@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-dialog-centered modal-min" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                {{ trans('global.create') }} {{ trans('cruds.agendaDate.title_singular') }}
+                {{ trans('global.create') }} Event Program Date
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
             </div>

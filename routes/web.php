@@ -1,4 +1,8 @@
 <?php
+// capture errors using sentry
+Route::get('/debug-sentry', function () {
+    throw new Exception('My first Sentry error!');
+});
 
 Route::redirect('/', '/login');
 Route::get('/home', function () {
@@ -106,7 +110,7 @@ Route::group(['prefix' => 'app', 'as' => 'admin.', 'namespace' => 'Admin', 'midd
     // Agenda Dates
     Route::delete('agenda-dates/destroy', 'AgendaDatesController@massDestroy')->name('agenda-dates.massDestroy');
     Route::resource('agenda-dates', 'AgendaDatesController');
-    
+
     Route::get('messenger', 'MessengerController@index')->name('messenger.index');
     Route::get('messenger/create', 'MessengerController@createTopic')->name('messenger.createTopic');
     Route::post('messenger', 'MessengerController@storeTopic')->name('messenger.storeTopic');

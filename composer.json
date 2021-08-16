@@ -21,6 +21,7 @@
         "laravel/ui": "^3.3",
         "livewire/livewire": "^2.5",
         "nuovo/spreadsheet-reader": "^0.5.11",
+        "sentry/sentry-laravel": "^2.8",
         "spatie/laravel-medialibrary": "^8.7",
         "yajra/laravel-datatables-oracle": "^9.11"
     },
