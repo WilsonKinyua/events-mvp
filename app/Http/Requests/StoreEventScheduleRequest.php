@@ -23,11 +23,11 @@ class StoreEventScheduleRequest extends FormRequest
             ],
             'time_start' => [
                 'required',
-                'date_format:' . config('panel.time_format'),
+                // 'date_format:' . config('panel.time_format'),
             ],
             'time_end' => [
                 'required',
-                'date_format:' . config('panel.time_format'),
+                // 'date_format:' . config('panel.time_format'),
             ],
             'topic' => [
                 'string',

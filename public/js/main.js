@@ -88,5 +88,5 @@ $(document).ready(function () {
     });
 
     // adding class active to the agenda tab
-    $(".event-shedule li a").first().addClass("active");
+    // $(".event-shedule li a").first().addClass("active");
 });

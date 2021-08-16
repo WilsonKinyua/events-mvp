@@ -48,7 +48,7 @@
 
 
     <!-- Preloader -->
-    <div id="preloader-wrap">
+    {{-- <div id="preloader-wrap">
     <div class="spinner spinner-8">
       <div class="ms-circle1 ms-child"></div>
       <div class="ms-circle2 ms-child"></div>
@@ -63,7 +63,7 @@
       <div class="ms-circle11 ms-child"></div>
       <div class="ms-circle12 ms-child"></div>
     </div>
-  </div>
+  </div> --}}
 
     <!-- Overlays -->
     <div class="ms-aside-overlay ms-overlay-left ms-toggler" data-target="#ms-side-nav" data-toggle="slideLeft"></div>

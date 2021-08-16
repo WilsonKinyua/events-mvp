@@ -32,6 +32,7 @@ Route::group(['prefix' => 'app', 'as' => 'admin.', 'namespace' => 'Admin', 'midd
 
     // agenda
     Route::get('agenda', 'AgendaController@index')->name('view.agenda');
+    Route::get('agenda/{id}', 'AgendaController@showAgendaDateSchedules')->name('show.agenda-schedule');
 
 
     // Permissions

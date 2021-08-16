@@ -48,6 +48,10 @@ table.dataTable thead th {
     width: 100% !important;
 }
 
+.select2 option {
+    margin-left: 15px !important;
+}
+
 .select2-selection__rendered {
     padding-bottom: 5px !important;
 }

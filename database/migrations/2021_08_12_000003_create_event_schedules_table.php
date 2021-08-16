@@ -10,8 +10,8 @@ class CreateEventSchedulesTable extends Migration
     {
         Schema::create('event_schedules', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->time('time_start');
-            $table->time('time_end');
+            $table->string('time_start');
+            $table->string('time_end');
             $table->string('topic')->unique();
             $table->longText('description')->nullable();
             $table->timestamps();

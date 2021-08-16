@@ -40,7 +40,8 @@ class EventScheduleController extends Controller
         $eventSchedule = EventSchedule::create($request->all());
         $eventSchedule->speakers()->sync($request->input('speakers', []));
 
-        return redirect()->route('admin.event-schedules.index');
+        // return redirect()->route('admin.event-schedules.index');
+        return redirect()->back()->with('success','Agenda created successfully!');
     }
 
     public function edit(EventSchedule $eventSchedule)

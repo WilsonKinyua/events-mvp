@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-    Agenda
+    {{-- Agenda({{ $eventSchedules->agenda_date }}) --}}
 @endsection
 
 @section('css')
@@ -87,19 +87,6 @@
 
             <div class="tab-content">
                 <ul class="nav nav-tabs d-flex tabs-round has-gap nav-justified mb-4 event-shedule" role="tablist">
-                    {{-- <li role="presentation"><a href="#tab16" aria-controls="tab16" class="active" role="tab"
-                            data-toggle="tab">Apr 21, 2015</a></li>
-                    <li role="presentation"><a href="#tab17" aria-controls="tab17" role="tab" data-toggle="tab">Apr 22,
-                            2015
-                        </a></li>
-                    <li role="presentation"><a href="#tab18" aria-controls="tab18" role="tab" data-toggle="tab">Apr 23,
-                            2015</a></li>
-                    <li role="presentation"><a href="#tab18" aria-controls="tab18" role="tab" data-toggle="tab">Apr 24,
-                            2015</a></li>
-                    <li role="presentation"><a href="#tab18" aria-controls="tab18" role="tab" data-toggle="tab">Apr 24,
-                            2015</a></li>
-                    <li role="presentation"><a href="#tab18" aria-controls="tab18" role="tab" data-toggle="tab">Apr 24,
-                            2015</a></li> --}}
                     @if (count($event_program_dates) > 0)
                         @foreach ($event_program_dates as $dates)
                             <li role="presentation"><a class="mt-3"
@@ -225,7 +212,7 @@
                                 <div class="col-xl-12 col-md-12">
                                     <div class="ms-panel">
                                         <div class="ms-panel-body text-center">
-                                            <h2 class="text-danger text-uppercase">No agenda for the first date!</h2>
+                                            <h2 class="text-danger text-uppercase">No agenda for the selected date!</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -234,8 +221,6 @@
 
                         </div>
                     </div>
-
-
                 </div>
             </div>
 
@@ -243,11 +228,3 @@
 
     </div>
 @endsection
-{{-- @section('scripts')
-    @parent
-    <script>
-        $(document).ready(function () {
-
-        });
-    </script>
-@endsection --}}
