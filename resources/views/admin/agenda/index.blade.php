@@ -80,7 +80,7 @@
                         <li role="presentation"><a href="{{ route('admin.view.attendee') }}"> <i
                                     class="flaticon-user"></i> <br>Attendees </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.meeting') }}"> <i
-                                    class="flaticon-layers"></i> <br>Meetings </a></li>
+                                    class="flaticon-layers"></i> <br>My Meetings </a></li>
                     </ul>
                 </div>
             </div>

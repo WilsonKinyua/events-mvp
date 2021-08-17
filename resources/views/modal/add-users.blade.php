@@ -211,7 +211,7 @@
                     </div>
                     <div class="form-group">
                         <button class="btn btn-success" type="submit">
-                            {{ trans('global.add') }} {{ trans('cruds.attendee.title_singular') }}
+                            {{ trans('global.add') }} 
                         </button>
                     </div>
                 </form>

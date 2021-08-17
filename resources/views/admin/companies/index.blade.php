@@ -282,24 +282,24 @@
                     </div>
                     <ul class="nav nav-tabs d-flex nav-justified " role="tablist">
                         <li role="presentation">
-                            <a href="{{ route('admin.home')}}">
+                            <a href="{{ route('admin.home') }}">
                                 <i class="flaticon-browser"></i> <br>
                                 Reception
                             </a>
                         </li>
-                        <li role="presentation"><a href="{{ route('admin.view.agenda')}}"> <i
+                        <li role="presentation"><a href="{{ route('admin.view.agenda') }}"> <i
                                     class="flaticon-internet"></i> <br>Agenda </a></li>
-                        <li role="presentation"><a href="{{ route('admin.view.event-feed')}}"> <i
+                        <li role="presentation"><a href="{{ route('admin.view.event-feed') }}"> <i
                                     class="flaticon-chat"></i> <br>Event Feed </a></li>
-                        <li role="presentation"><a href="{{ route('admin.view.speaker')}}"> <i
-                                    class="flaticon-user"></i> <br>Speakers </a></li>
+                        <li role="presentation"><a href="{{ route('admin.view.speaker') }}"> <i class="flaticon-user"></i>
+                                <br>Speakers </a></li>
                         <li role="presentation"><a class="active" href="{{ route('admin.companies.index') }}"> <i
                                     class="flaticon-user"></i> <br>Companies </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.attendee') }}"> <i
                                     class="flaticon-user"></i> <br>Attendees </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.meeting') }}"> <i
                                     class="flaticon-layers"></i>
-                                <br>Meetings </a></li>
+                                <br>My Meetings </a></li>
                     </ul>
                 </div>
             </div>
@@ -342,8 +342,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label class="required"
-                                                                        for="name">{{ trans('cruds.company.fields.name') }}
-                                                                        <span class="text-danger">*</span></label>
+                                                                        for="name">{{ trans('cruds.company.fields.name') }}</label>
                                                                     <input
                                                                         class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
                                                                         type="text" name="name" id="name"
@@ -355,6 +354,17 @@
                                                                     @endif
                                                                     <span
                                                                         class="help-block">{{ trans('cruds.company.fields.name_helper') }}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="website" class="required">Category</label>
+                                                                    <select name="category" id="category" class="form-control"
+                                                                        required>
+                                                                        <option disabled selected>Select option</option>
+                                                                        <option value="sponsor">Sponsor</option>
+                                                                        <option value="non-sponsor">non-sponsors</option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
@@ -425,7 +435,7 @@
                                                                         class="help-block">{{ trans('cruds.company.fields.industry_helper') }}</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-4">
                                                                 <div class="form-group">
                                                                     <label
                                                                         for="facebook">{{ trans('cruds.company.fields.facebook') }}</label>
@@ -442,7 +452,7 @@
                                                                         class="help-block">{{ trans('cruds.company.fields.facebook_helper') }}</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-4">
                                                                 <div class="form-group">
                                                                     <label
                                                                         for="twitter">{{ trans('cruds.company.fields.twitter') }}</label>
@@ -459,7 +469,7 @@
                                                                         class="help-block">{{ trans('cruds.company.fields.twitter_helper') }}</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-4">
                                                                 <div class="form-group">
                                                                     <label
                                                                         for="instagram">{{ trans('cruds.company.fields.instagram') }}</label>
@@ -616,8 +626,17 @@
                             </div>
                         </div>
 
+                        <div class="col-xl-12">
+                            <h2 class="ms-active-site d-inline-block">
+                                Sponsors
+                            </h2>
+                        </div>
+                        <div class="col-xl-2 col-md-2">
+                            <hr>
+                        </div>
+                        <div class="col-xl-10 col-md-10"></div>
                         {{-- companies list --}}
-                        @foreach ($companies as $key => $company)
+                        @foreach ($companies_sponsor as $key => $company)
                             <div class="col-xl-2 col-md-2">
                                 <div class="ms-panel">
                                     <div class="ms-panel-body">
@@ -641,6 +660,41 @@
                             </div>
                         @endforeach
 
+                        <div class="col-xl-12 col-md-12">
+                            <hr>
+                        </div>
+                        <div class="col-xl-12">
+                            <h2 class="ms-active-site d-inline-block">
+                                Participating Companies
+                            </h2>
+                        </div>
+                        <div class="col-xl-2 col-md-2">
+                            <hr>
+                        </div>
+                        <div class="col-xl-10 col-md-10"></div>
+                        @foreach ($companies_non_sponsor as $key => $company)
+                            <div class="col-xl-2 col-md-2">
+                                <div class="ms-panel">
+                                    <div class="ms-panel-body">
+                                        <a href="{{ route('admin.companies.show', $company->id) }}">
+                                            <div class="campany-card-logo text-center">
+                                                @if ($company->logo)
+                                                    <img src="{{ $company->logo->getUrl() }}"
+                                                        class="card-img-top company-display-logo">
+                                                @else
+                                                    <img src="https://www.latermicamalaga.com/book/files/uploads/logo-placeholder@2x.png"
+                                                        class="card-img-top company-display-logo">
+                                                @endif
+                                            </div>
+                                            <h5 class="card-text text-center">
+                                                {{-- {!! Str::limit($company->about, 140, '...') !!} --}}
+                                                {{ $company->name }}
+                                            </h5>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
 
                     </div>
                 </div>

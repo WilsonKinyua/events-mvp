@@ -36,6 +36,7 @@ class Company extends Model implements HasMedia
         'website',
         'headquarters',
         'type',
+        'category',
         'industry',
         'facebook',
         'twitter',

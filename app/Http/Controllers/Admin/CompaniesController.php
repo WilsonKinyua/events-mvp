@@ -24,10 +24,12 @@ class CompaniesController extends Controller
     {
         // abort_if(Gate::denies('company_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $companies = Company::with(['media'])->get();
+        $companies_sponsor = Company::with(['media'])->where('category',"=","sponsor")->get();
+        $companies_non_sponsor = Company::with(['media'])->where("category", "=", "non-sponsor")->get();
+
         $eventSetting = EventSetting::with(['media'])->get()->first();
 
-        return view('admin.companies.index', compact('companies','eventSetting'));
+        return view('admin.companies.index', compact('companies_sponsor', 'companies_non_sponsor','eventSetting'));
     }
 
     public function create()

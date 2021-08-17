@@ -217,7 +217,7 @@
                                                     </h4>
                                                 </div>
                                             </div>
-                                            @if (count($user->interests) > 0)
+                                            {{-- @if (count($user->interests) > 0)
                                             <div class="interests p-3">
                                                 <hr>
                                                 <h2>Interests</h2>
@@ -227,7 +227,7 @@
                                                 @endforeach
 
                                             </div>
-                                        @endif
+                                        @endif --}}
                                             <div class="profile-about p-3 mb-2">
                                                 <h2>About</h2>
                                                 <p>{!! $user->about ?? '' !!}</p>

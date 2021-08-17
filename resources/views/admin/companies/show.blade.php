@@ -430,7 +430,7 @@
 
     </div>
 
-    <div class="col-md-12">
+    {{-- <div class="col-md-12">
         <div class="ms-panel">
             <div class="ms-panel-body">
                 <h2 class="section-title">People</h2>
@@ -516,7 +516,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
 @endsection
 @section('scripts')

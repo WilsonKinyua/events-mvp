@@ -67,7 +67,7 @@
                                     class="flaticon-user"></i>
                                 <br>Attendees </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.meeting') }}"> <i
-                                    class="flaticon-layers"></i><br>Meetings </a></li>
+                                    class="flaticon-layers"></i><br>My Meetings </a></li>
                         {{-- <li role="presentation"><a href="#tab3" aria-controls="tab5" role="tab" data-toggle="tab"> <i
                   class="flaticon-chat"></i> <br>Event Feed </a></li> --}}
                         {{-- <li role="presentation"><a href="#tab18" aria-controls="tab18" role="tab" data-toggle="tab"> <i
@@ -78,11 +78,10 @@
                   class="flaticon-archive"></i> <br>Lounge </a></li>
             <li role="presentation"><a href="#tab22" aria-controls="tab22" role="tab" data-toggle="tab"> <i
                   class="flaticon-browser"></i> <br>Rooms </a></li> --}}
-                        @can('event_setting_create')
+                        {{-- Sliders modal --}}
+                        {{-- @can('event_setting_create')
                             <a class="edit-button m-3" title="Edit Sliders" data-toggle="modal" data-target="#slidersmodal"> <i
                                     class="fa fa-edit"></i></a>
-
-                            {{-- Sliders modal --}}
                             <div class="modal fade events" id="slidersmodal" tabindex="-1" role="dialog"
                                 aria-labelledby="slidersmodal">
                                 <div class="modal-dialog modal-dialog-centered modal-min" role="document">
@@ -115,7 +114,7 @@
                                     </div>
                                 </div>
                             </div>
-                        @endcan
+                        @endcan --}}
                     </ul>
                 </div>
             </div>
@@ -387,7 +386,9 @@
                                         <div class="card-image">
                                             <div class="embed-responsive embed-responsive-16by9">
                                                 <iframe width="560" height="315"
-                                                    src="https://www.youtube.com/embed/tKraaQeolzs" frameborder="0"
+                                                    src="https://www.youtube.com/embed/e-tb-AvwhBs"
+                                                    {{-- title="YouTube video player" frameborder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" --}}
                                                     allowfullscreen></iframe>
                                             </div>
 
