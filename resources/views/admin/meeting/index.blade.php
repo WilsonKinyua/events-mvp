@@ -79,7 +79,7 @@
                         <div class="col-xl-12 col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-body text-center">
-                                    <h2 class="text-danger">Coming Soon meetings!!</h2>
+                                    <h2 class="text-info">Coming Soon!!</h2>
                                 </div>
                             </div>
                         </div>

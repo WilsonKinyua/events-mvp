@@ -4,7 +4,9 @@ Route::get('/debug-sentry', function () {
     throw new Exception('My first Sentry error!');
 });
 
-Route::redirect('/', '/login');
+// Route::redirect('/', '/login');
+Route::get('/', 'HomepageController@welcome', 301);
+
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));
