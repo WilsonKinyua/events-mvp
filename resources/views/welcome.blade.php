@@ -28,6 +28,7 @@
             <video autoplay loop muted id="bgvid"
                 poster="https://cdn.pixabay.com/photo/2014/05/05/20/29/conference-room-338563_960_720.jpg">
                 <source src="{{ asset('video/homepage.mp4') }}" type="video/mp4">
+                    {{-- <source src="{{ asset('video/newmac.mp4') }}" type="video/mp4"> --}}
                 <source src="{{ asset('landing/video/vb.webm') }}" type="video/webm">
             </video>
 

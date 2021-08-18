@@ -223,11 +223,11 @@
                                                         class="img-fluid rounded-start" alt="Company Logo">
                                                 @endif
                                             </div>
-                                            <h3 class="text-bold text-center mt-3">
+                                            <h5 class="text-bold text-center mt-3">
                                                 @if ($eventSetting->event_start === null)
                                                     Event Start Date @else {!! $eventSetting->event_start->toFormattedDateString() !!} @endif - @if ($eventSetting->event_end === null) Event
                                                     End Date @else {!! $eventSetting->event_end->toFormattedDateString() !!} @endif
-                                            </h3>
+                                            </h5>
                                         </div>
                                         <div class="col-xl-8 col-md-12">
 

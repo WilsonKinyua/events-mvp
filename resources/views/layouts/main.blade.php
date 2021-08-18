@@ -108,8 +108,10 @@
 
     </main>
 
-    <!-- Quick bar of the likes of chart -->
-
+    <!-- Logout -->
+    <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
 
     <!-- SCRIPTS -->
     <!-- Global Required Scripts Start -->
