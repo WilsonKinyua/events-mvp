@@ -72,6 +72,13 @@ $(function() {
 
     });
 
+    $(".sponsors-slider").owlCarousel({
+
+        items: 7,
+        itemsDesktop: [1199, 3],
+        itemsDesktopSmall: [979, 2]
+
+    });
 
     /* ==========================================================================
    Smooth Scroll

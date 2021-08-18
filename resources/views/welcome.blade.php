@@ -25,8 +25,9 @@
         <!--Hero section-->
         <header class="hero-section">
 
-            <video autoplay loop muted id="bgvid" poster="{{ asset('landing/video/video-poster.jpg') }}">
-                <source src="{{ asset('landing/video/vb.mp4') }}" type="video/mp4">
+            <video autoplay loop muted id="bgvid"
+                poster="https://cdn.pixabay.com/photo/2014/05/05/20/29/conference-room-338563_960_720.jpg">
+                <source src="{{ asset('video/homepage.mp4') }}" type="video/mp4">
                 <source src="{{ asset('landing/video/vb.webm') }}" type="video/webm">
             </video>
 
@@ -82,9 +83,9 @@
         <div class="counter text-center" id="counter">
             <!--container-->
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-1 col-xs-6">
-                    </div>
+                <div class="row text-center">
+                    {{-- <div class="col-sm-1 col-xs-6">
+                    </div> --}}
                     <div class="col-sm-3 col-xs-6"> <i class="fa fa-user fa-3x"></i>
                         <h3 class="total-number-1">{{ count($speakers) }}</h3>
                         <p>Speakers</p>
@@ -122,7 +123,7 @@
                         @endif
                     </div>
                     <div class="col-md-8">
-                        <h2>About {{ $eventSetting->event_name ?? '' }}</h2>
+                        <h2>About Event</h2>
                         {!! $eventSetting->about ?? '' !!}
                     </div>
                 </div>
@@ -131,7 +132,7 @@
         <!--about end-->
 
         <!--schedule-->
-        <section class="schedule section-spacing" id="schedule">
+        {{-- <section class="schedule section-spacing" id="schedule">
             <div class="container">
                 <header class="text-center">
                     <h2>The Schedule</h2>
@@ -143,20 +144,20 @@
 
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs content-tabs" role="tablist">
-                                <li role="presentation" class="active"><a href="#day-1" aria-controls="day-1" role="tab"
-                                        data-toggle="tab"><i class="fa fa-calendar"></i>Thursday 10<span>th</span>
-                                        June</a></li>
-                                <li role="presentation"><a href="#day-2" aria-controls="day-2" role="tab"
-                                        data-toggle="tab"><i class="fa fa-calendar"></i>Friday 11<span>th</span> June
-                                    </a></li>
-                                <li role="presentation"><a href="#day-3" aria-controls="day-3" role="tab"
-                                        data-toggle="tab"><i class="fa fa-calendar"></i>Saturday 12<span>th</span> June
-                                    </a></li>
+                                @foreach ($event_program_dates as $dates)
+                                    <li role="presentation">
+                                        <a href="{{ route('day.agendas', $dates->id)}}">
+                                            <i class="fa fa-calendar"></i>
+                                            Friday 11
+                                            <span>th</span>
+                                            June
+                                        </a>
+                                    </li>
+                                @endforeach
                             </ul>
 
                             <!-- Tab panes -->
                             <div class="tab-content">
-
                                 <!-- Day 1 -->
                                 <div role="tabpanel" class="tab-pane fade in active" id="day-1">
                                     <ul class="timeline">
@@ -250,198 +251,12 @@
                                 </div>
                                 <!-- Day 1 end -->
 
-                                <!-- Day 2 -->
-                                <div role="tabpanel" class="tab-pane fade" id="day-2">
-                                    <ul class="timeline">
-
-                                        <!-- event schedule 1 -->
-                                        <li class="event">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <p>8:00 am</p>
-                                                    <h4>Check In</h4>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!--event schedule 1 end-->
-
-                                        <!--event schedule 2-->
-                                        <li class="event">
-                                            <div class="row">
-                                                <div class="col-md-3 text-center"><img
-                                                        src="img/speaker/schedule-speaker-1.jpg" alt="schedule-speaker"
-                                                        data-no-retina></div>
-                                                <div class="col-md-9">
-                                                    <p>9:00 am</p>
-                                                    <h4>jQuery UI</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque,
-                                                        aperiam, voluptate
-                                                        perspiciatis ex consequuntur at. Lorem ipsum dolor sit amet,
-                                                        consectetur adipisicing elit.
-                                                        Eaque, aperiam, voluptate perspiciatis ex consequuntur at.</p>
-                                                    <p class="event-speaker">- By John Doe</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!--event schedule 2 end-->
-
-                                        <!--event schedule 3-->
-                                        <li class="event">
-                                            <div class="row">
-                                                <div class="col-md-3 col-md-push-9 text-center"><img
-                                                        src="img/speaker/schedule-speaker-2.jpg" alt="schedule-speaker"
-                                                        data-no-retina></div>
-                                                <div class="col-md-9 col-md-pull-3">
-                                                    <p>11:00 am</p>
-                                                    <h4>Functional JavaScript</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque,
-                                                        aperiam, voluptate
-                                                        perspiciatis ex consequuntur at. Lorem ipsum dolor sit amet,
-                                                        consectetur adipisicing elit.
-                                                        Eaque, aperiam, voluptate perspiciatis ex consequuntur at.</p>
-                                                    <p class="event-speaker">- By Betty Doe</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!--event schedule 3 end-->
-
-                                        <!--event schedule 4-->
-                                        <li class="event">
-                                            <p>1:00 pm</p>
-                                            <h4>Lunch And Refreshments</h4>
-                                        </li>
-                                        <!--event schedule 4 end-->
-
-                                        <!--event schedule 5-->
-                                        <li class="event">
-                                            <div class="row">
-                                                <div class="col-md-3 text-center"><img
-                                                        src="img/speaker/schedule-speaker-3.jpg" alt="schedule-speaker"
-                                                        data-no-retina></div>
-                                                <div class="col-md-8">
-                                                    <p>3:00 pm</p>
-                                                    <h4>Responsive Web Design </h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque,
-                                                        aperiam, voluptate
-                                                        perspiciatis ex consequuntur at. Lorem ipsum dolor sit amet,
-                                                        consectetur adipisicing elit.
-                                                        Eaque, aperiam, voluptate perspiciatis ex consequuntur at.</p>
-                                                    <p class="event-speaker">- By Jasmine Doe</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!--event schedule 5 end-->
-
-                                        <!--event schedule 6-->
-                                        <li class="event">
-                                            <p>5:00 pm</p>
-                                            <h4>Meetup And Party</h4>
-                                        </li>
-                                        <!--event schedule 6 end-->
-
-                                    </ul>
-                                </div>
-                                <!-- Day 2 end -->
-
-                                <!-- Day 3 -->
-                                <div role="tabpanel" class="tab-pane fade" id="day-3">
-                                    <ul class="timeline">
-
-                                        <!-- event schedule 1 -->
-                                        <li class="event">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <p>8:00 am</p>
-                                                    <h4>Check In</h4>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!--event schedule 1 end-->
-
-                                        <!--event schedule 2-->
-                                        <li class="event">
-                                            <div class="row">
-                                                <div class="col-md-3 text-center"><img
-                                                        src="img/speaker/schedule-speaker-1.jpg" alt="schedule-speaker"
-                                                        data-no-retina></div>
-                                                <div class="col-md-9">
-                                                    <p>9:00 am</p>
-                                                    <h4>PHP</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque,
-                                                        aperiam, voluptate
-                                                        perspiciatis ex consequuntur at. Lorem ipsum dolor sit amet,
-                                                        consectetur adipisicing elit.
-                                                        Eaque, aperiam, voluptate perspiciatis ex consequuntur at.</p>
-                                                    <p class="event-speaker">- By John Doe</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!--event schedule 2 end-->
-
-                                        <!--event schedule 3-->
-                                        <li class="event">
-                                            <div class="row">
-                                                <div class="col-md-3 col-md-push-9 text-center"><img
-                                                        src="img/speaker/schedule-speaker-2.jpg" alt="schedule-speaker"
-                                                        data-no-retina></div>
-                                                <div class="col-md-9 col-md-pull-3">
-                                                    <p>11:00 am</p>
-                                                    <h4>Functional JavaScript</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque,
-                                                        aperiam, voluptate
-                                                        perspiciatis ex consequuntur at. Lorem ipsum dolor sit amet,
-                                                        consectetur adipisicing elit.
-                                                        Eaque, aperiam, voluptate perspiciatis ex consequuntur at.</p>
-                                                    <p class="event-speaker">- By Betty Doe</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!--event schedule 3 end-->
-
-                                        <!--event schedule 4-->
-                                        <li class="event">
-                                            <p>1:00 pm</p>
-                                            <h4>Lunch And Refreshments</h4>
-                                        </li>
-                                        <!--event schedule 4 end-->
-
-                                        <!--event schedule 5-->
-                                        <li class="event">
-                                            <div class="row">
-                                                <div class="col-md-3 text-center"><img
-                                                        src="img/speaker/schedule-speaker-3.jpg" alt="schedule-speaker"
-                                                        data-no-retina></div>
-                                                <div class="col-md-8">
-                                                    <p>3:00 pm</p>
-                                                    <h4>Responsive Web Design </h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque,
-                                                        aperiam, voluptate
-                                                        perspiciatis ex consequuntur at. Lorem ipsum dolor sit amet,
-                                                        consectetur adipisicing elit.
-                                                        Eaque, aperiam, voluptate perspiciatis ex consequuntur at.</p>
-                                                    <p class="event-speaker">- By Jasmine Doe</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!--event schedule 5 end-->
-
-                                        <!--event schedule 6-->
-                                        <li class="event">
-                                            <p>5:00 pm</p>
-                                            <h4>Meetup And Party</h4>
-                                        </li>
-                                        <!--event schedule 6 end-->
-
-                                    </ul>
-                                </div>
-                                <!-- Day 3 end -->
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!--schedule end-->
 
         <!--speaker-->
@@ -490,6 +305,34 @@
         </section>
         <!--speaker end-->
 
+        <!-- sponsors -->
+        <section class="speaker section-spacing text-center" id="speaker">
+            <div class="container">
+                <header>
+                    <h2 class="text-uppercase">The SPONSORS</h2>
+                    <h3>Experts who will be speaking at the event</h3>
+                </header>
+                <div class="row">
+                    <div class="sponsors-slider">
+                        @foreach ($companies as $key => $company)
+                            <div class="item">
+                                <div class="event-sponsors">
+                                    <figure>
+                                        @if ($company->logo)
+                                            <img src="{{ $company->logo->getUrl() }}" title="{{ $company->name }}"  alt="sponsor" data-no-retina>
+                                        @else
+                                            <img title="{{ $company->name }}" src="https://www.latermicamalaga.com/book/files/uploads/logo-placeholder@2x.png"  alt="sponsor" data-no-retina>
+                                        @endif
+                                    </figure>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- sponsors -->
 
         {{-- <!--sponsor-->
         <section class="sponsor section-spacing text-center">

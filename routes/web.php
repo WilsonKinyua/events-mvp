@@ -7,6 +7,8 @@ Route::get('/debug-sentry', function () {
 // Route::redirect('/', '/login');
 Route::get('/', 'HomepageController@welcome', 301);
 
+// Route::get('/day/{id}','HomepageController@agendaDay')->name('day.agendas');
+
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));
