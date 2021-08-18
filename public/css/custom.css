@@ -294,3 +294,10 @@ table.dataTable thead .sorting_desc {
     color: #a5a5a5;
     /* font-size: 16px; */
 }
+.pattern {
+    background-repeat: no-repeat;
+    background-size: 30px auto;
+    height: 28px;
+    background-position: center;
+    width: 100%;
+}

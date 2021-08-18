@@ -4,6 +4,15 @@
     Meeting
 @endsection
 
+@section('css')
+<style>
+    .fa-exclamation-triangle {
+        font-size: 70px;
+        color: #17a2b8;
+    }
+</style>
+@endsection
+
 @section('content')
     <div class="row">
 
@@ -39,6 +48,7 @@
                         </a>
                     </div>
                     <ul class="nav nav-tabs d-flex nav-justified " role="tablist">
+                        <img class="pattern" src="{{ asset('img/pattern.png')}}" alt="Pattern" >
                         <li role="presentation">
                             <a href="{{ route('admin.home') }}">
                                 <i class="flaticon-browser"></i> <br>
@@ -54,7 +64,7 @@
                         <li role="presentation"><a href="{{ route('admin.companies.index') }}"> <i
                                     class="flaticon-user"></i> <br>Companies </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.attendee') }}"> <i
-                                    class="flaticon-user"></i> <br>Attendes </a></li>
+                                    class="flaticon-user"></i> <br>ATTENDEES </a></li>
                         <li role="presentation"><a class="active" href="{{ route('admin.view.meeting') }}"> <i
                                     class="flaticon-layers"></i>
                                 <br>Meetings </a></li>
@@ -72,6 +82,7 @@
                         <div class="col-xl-12 col-md-12">
                             <div class="ms-panel">
                                 <div class="ms-panel-body text-center">
+                                    <i class="fa fa-exclamation-triangle mb-3"></i>
                                     <h2 class="text-info">Coming Soon!!</h2>
                                 </div>
                             </div>

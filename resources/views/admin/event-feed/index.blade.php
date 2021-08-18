@@ -53,6 +53,7 @@
                         </a>
                     </div>
                     <ul class="nav nav-tabs d-flex nav-justified " role="tablist">
+                        <img class="pattern" src="{{ asset('img/pattern.png')}}" alt="Pattern" >
                         <li role="presentation">
                             <a href="{{ route('admin.home') }}">
                                 <i class="flaticon-browser"></i> <br>
