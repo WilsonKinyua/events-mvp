@@ -40,6 +40,7 @@
         .user-details {
             height: 150px;
         }
+
     </style>
 @endsection
 @section('content')
@@ -52,29 +53,19 @@
                     <div id="arrowSlider" class="ms-arrow-slider carousel slide" data-ride="carousel" data-interval="4000">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100"
-                                    src="https://cdn.hubilo.com/banner/community_banner/1402283/1036/2386_8116_985594001623905692.jpeg"
-                                    alt="First slide">
+                                <img class="d-block w-100" src="{{ asset('sliders/1.png') }}" alt="First slide">
                             </div>
                             <div class="carousel-item ">
-                                <img class="d-block w-100"
-                                    src="https://cdn.hubilo.com/banner/community_banner/1402283/1036/4759_8987_148087001623905807.jpeg"
-                                    alt="Second slide">
+                                <img class="d-block w-100" src="{{ asset('sliders/2.png') }}" alt="Second slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100"
-                                    src="https://cdn.hubilo.com/banner/community_banner/1402283/1036/3379_5134_573177001623920266.jpeg"
-                                    alt="Third slide">
+                                <img class="d-block w-100" src="{{ asset('sliders/3.png') }}" alt="Third slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100"
-                                    src="https://cdn.hubilo.com/banner/community_banner/1402283/1036/1377_6527_058721001623905831.jpeg"
-                                    alt="Third slide">
+                                <img class="d-block w-100" src="{{ asset('sliders/4.png') }}" alt="Third slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100"
-                                    src="https://cdn.hubilo.com/banner/community_banner/1402283/1036/4407_9624_156534001623905786.jpeg"
-                                    alt="Third slide">
+                                <img class="d-block w-100" src="{{ asset('sliders/5.png') }}" alt="Third slide">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#arrowSlider" role="button" data-slide="prev">
@@ -105,6 +96,8 @@
                                     class="flaticon-user"></i> <br>Attendees </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.meeting') }}"> <i
                                     class="flaticon-layers"></i> <br>Meetings </a></li>
+                        <li role="presentation"><a href="{{ route('admin.view.newsroom') }}"> <i
+                                    class="flaticon-reader"></i><br>Newsroom</a></li>   
                     </ul>
                 </div>
             </div>

@@ -25,8 +25,11 @@ Route::group(['prefix' => 'app', 'as' => 'admin.', 'namespace' => 'Admin', 'midd
     // attendee
     Route::get('attendee', 'AttendeeController@index')->name('view.attendee');
 
-    // attendee
+    // meetings
     Route::get('meeting', 'MeetingController@index')->name('view.meeting');
+
+    // meetings
+    Route::get('newsroom', 'NewsroomController@index')->name('view.newsroom');
 
     // speakers tab
     Route::get('speaker', 'SpeakerController@index')->name('view.speaker');

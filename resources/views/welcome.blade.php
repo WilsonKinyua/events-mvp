@@ -47,14 +47,15 @@
                                 alt="site name" class="logo-head">
                                 <img src="img/logo-nav.png"
                                 data-at2x="img/logo-nav@2x.png" alt="site name" class="logo-nav"> --}}
-                            <h3 class="text-uppercase">Logo</h3>
+                            {{-- <h3 class="text-uppercase">Logo</h3> --}}
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#schedule">Schedule</a></li>
+                            {{-- <li><a href="#schedule">Schedule</a></li> --}}
                             <li><a href="#speaker">Speakers</a></li>
-                            <li><a href="login" class="bttn" target="_blank">Login</a></li>
+                            <li><a href="#sponsors">Sponsors</a></li>
+                            <li><a href="/login" class="bttn" target="_blank">Login</a></li>
                         </ul>
                     </div>
                 </div>
@@ -306,7 +307,7 @@
         <!--speaker end-->
 
         <!-- sponsors -->
-        <section class="speaker section-spacing text-center" id="speaker">
+        <section class="speaker section-spacing text-center" id="sponsors">
             <div class="container">
                 <header>
                     <h2 class="text-uppercase">The SPONSORS</h2>

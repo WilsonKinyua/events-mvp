@@ -14,29 +14,19 @@
                     <div id="arrowSlider" class="ms-arrow-slider carousel slide" data-ride="carousel" data-interval="4000">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100"
-                                    src="https://cdn.hubilo.com/banner/community_banner/1402283/1036/2386_8116_985594001623905692.jpeg"
-                                    alt="First slide">
+                                <img class="d-block w-100" src="{{ asset('sliders/1.png') }}" alt="First slide">
                             </div>
                             <div class="carousel-item ">
-                                <img class="d-block w-100"
-                                    src="https://cdn.hubilo.com/banner/community_banner/1402283/1036/4759_8987_148087001623905807.jpeg"
-                                    alt="Second slide">
+                                <img class="d-block w-100" src="{{ asset('sliders/2.png') }}" alt="Second slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100"
-                                    src="https://cdn.hubilo.com/banner/community_banner/1402283/1036/3379_5134_573177001623920266.jpeg"
-                                    alt="Third slide">
+                                <img class="d-block w-100" src="{{ asset('sliders/3.png') }}" alt="Third slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100"
-                                    src="https://cdn.hubilo.com/banner/community_banner/1402283/1036/1377_6527_058721001623905831.jpeg"
-                                    alt="Third slide">
+                                <img class="d-block w-100" src="{{ asset('sliders/4.png') }}" alt="Third slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100"
-                                    src="https://cdn.hubilo.com/banner/community_banner/1402283/1036/4407_9624_156534001623905786.jpeg"
-                                    alt="Third slide">
+                                <img class="d-block w-100" src="{{ asset('sliders/5.png') }}" alt="Third slide">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#arrowSlider" role="button" data-slide="prev">
@@ -68,6 +58,8 @@
                                 <br>Attendees </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.meeting') }}"> <i
                                     class="flaticon-layers"></i><br>My Meetings </a></li>
+                        <li role="presentation"><a href="{{ route('admin.view.newsroom') }}"> <i
+                                    class="flaticon-reader"></i><br>Newsroom</a></li>
                         {{-- <li role="presentation"><a href="#tab3" aria-controls="tab5" role="tab" data-toggle="tab"> <i
                   class="flaticon-chat"></i> <br>Event Feed </a></li> --}}
                         {{-- <li role="presentation"><a href="#tab18" aria-controls="tab18" role="tab" data-toggle="tab"> <i
@@ -386,8 +378,7 @@
                                         <div class="card-image">
                                             <div class="embed-responsive embed-responsive-16by9">
                                                 <iframe width="560" height="315"
-                                                    src="https://www.youtube.com/embed/e-tb-AvwhBs"
-                                                    {{-- title="YouTube video player" frameborder="0"
+                                                    src="https://www.youtube.com/embed/e-tb-AvwhBs" {{-- title="YouTube video player" frameborder="0"
                                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" --}}
                                                     allowfullscreen></iframe>
                                             </div>

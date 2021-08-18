@@ -14,19 +14,29 @@
                     <div id="arrowSlider" class="ms-arrow-slider carousel slide" data-ride="carousel" data-interval="4000">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="{{ asset('sliders/1.png') }}" alt="First slide">
+                                <img class="d-block w-100"
+                                    src="{{ asset('sliders/1.png')}}"
+                                    alt="First slide">
                             </div>
                             <div class="carousel-item ">
-                                <img class="d-block w-100" src="{{ asset('sliders/2.png') }}" alt="Second slide">
+                                <img class="d-block w-100"
+                                    src="{{ asset('sliders/2.png')}}"
+                                    alt="Second slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('sliders/3.png') }}" alt="Third slide">
+                                <img class="d-block w-100"
+                                    src="{{ asset('sliders/3.png')}}"
+                                    alt="Third slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('sliders/4.png') }}" alt="Third slide">
+                                <img class="d-block w-100"
+                                    src="{{ asset('sliders/4.png')}}"
+                                    alt="Third slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('sliders/5.png') }}" alt="Third slide">
+                                <img class="d-block w-100"
+                                    src="{{ asset('sliders/5.png')}}"
+                                    alt="Third slide">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#arrowSlider" role="button" data-slide="prev">
@@ -40,26 +50,25 @@
                     </div>
                     <ul class="nav nav-tabs d-flex nav-justified " role="tablist">
                         <li role="presentation">
-                            <a href="{{ route('admin.home') }}">
+                            <a href="{{ route('admin.home')}}">
                                 <i class="flaticon-browser"></i> <br>
                                 Reception
                             </a>
                         </li>
-                        <li role="presentation"><a href="{{ route('admin.view.agenda') }}"> <i
+                        <li role="presentation"><a href="{{ route('admin.view.agenda')}}"> <i
                                     class="flaticon-internet"></i> <br>Agenda </a></li>
-                        <li role="presentation"><a href="{{ route('admin.view.event-feed') }}"> <i
+                        <li role="presentation"><a href="{{ route('admin.view.event-feed')}}"> <i
                                     class="flaticon-chat"></i> <br>Event Feed </a></li>
-                        <li role="presentation"><a href="{{ route('admin.view.speaker') }}"> <i class="flaticon-user"></i>
-                                <br>Speakers </a></li>
-                        <li role="presentation"><a href="{{ route('admin.companies.index') }}"> <i
+                        <li role="presentation"><a href="{{ route('admin.view.speaker')}}"> <i
+                                    class="flaticon-user"></i> <br>Speakers </a></li>
+                        <li role="presentation"><a href="{{ route('admin.companies.index')}}"> <i
                                     class="flaticon-user"></i> <br>Companies </a></li>
                         <li role="presentation"><a href="{{ route('admin.view.attendee') }}"> <i
-                                    class="flaticon-user"></i> <br>Attendes </a></li>
-                        <li role="presentation"><a class="active" href="{{ route('admin.view.meeting') }}"> <i
-                                    class="flaticon-layers"></i>
+                                    class="flaticon-user"></i> <br>Attendees </a></li>
+                        <li role="presentation"><a href="{{ route('admin.view.meeting') }}"> <i class="flaticon-layers"></i>
                                 <br>Meetings </a></li>
-                        <li role="presentation"><a href="{{ route('admin.view.newsroom') }}"> <i
-                                    class="flaticon-reader"></i><br>Newsroom</a></li>
+                        <li role="presentation"><a class="active" href="{{ route('admin.view.newsroom') }}"> <i
+                            class="flaticon-reader"></i><br>Newsroom</a></li>
                     </ul>
                 </div>
             </div>
