@@ -28,7 +28,7 @@
             <video autoplay loop muted id="bgvid"
                 poster="https://cdn.pixabay.com/photo/2014/05/05/20/29/conference-room-338563_960_720.jpg">
                 <source src="{{ asset('video/homepage.mp4') }}" type="video/mp4">
-                    {{-- <source src="{{ asset('video/newmac.mp4') }}" type="video/mp4"> --}}
+                {{-- <source src="{{ asset('video/newmac.mp4') }}" type="video/mp4"> --}}
                 <source src="{{ asset('landing/video/vb.webm') }}" type="video/webm">
             </video>
 
@@ -321,9 +321,12 @@
                                 <div class="event-sponsors">
                                     <figure>
                                         @if ($company->logo)
-                                            <img src="{{ $company->logo->getUrl() }}" title="{{ $company->name }}"  alt="sponsor" data-no-retina>
+                                            <img src="{{ $company->logo->getUrl() }}" title="{{ $company->name }}"
+                                                alt="sponsor" data-no-retina>
                                         @else
-                                            <img title="{{ $company->name }}" src="https://www.latermicamalaga.com/book/files/uploads/logo-placeholder@2x.png"  alt="sponsor" data-no-retina>
+                                            <img title="{{ $company->name }}"
+                                                src="https://www.latermicamalaga.com/book/files/uploads/logo-placeholder@2x.png"
+                                                alt="sponsor" data-no-retina>
                                         @endif
                                     </figure>
                                 </div>
