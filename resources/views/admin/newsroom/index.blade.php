@@ -314,13 +314,32 @@
                                         <button class="btn btn-category"><a href="#">tag</a></button>
                                         <button class="btn btn-category"><a href="#">tag</a></button>
                                     </div>
-                                    {{-- <div class="row">
-                                        <div class="col-md-6 mt-2">
-                                            <a href="#"><p> <i class="fa fa-angle-right"></i> Business</p></a>
-                                        </div>
-                                    </div> --}}
                                 </div>
                             </div>
+                            <div class="ms-panel mt-4">
+                                <div class="">
+                                    <div id="arrowSlider" class="ms-arrow-slider carousel slide" data-ride="carousel" data-interval="4000">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img class="d-block w-100" src="https://rstheme.com/products/html/news24/news-magazine/images/add/2.jpg" alt="First slide">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img class="d-block w-100" src="https://rstheme.com/products/html/news24/news-magazine/images/add/2.jpg" alt="Second slide">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block w-100" src="https://rstheme.com/products/html/news24/news-magazine/images/add/2.jpg" alt="Third slide">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block w-100" src="https://rstheme.com/products/html/news24/news-magazine/images/add/2.jpg" alt="Third slide">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block w-100" src="https://rstheme.com/products/html/news24/news-magazine/images/add/2.jpg" alt="Third slide">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         {{-- <div class="col-xl-12 col-md-12">
                             <div class="ms-panel">
