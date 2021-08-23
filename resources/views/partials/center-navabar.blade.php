@@ -1,6 +1,6 @@
 <li role="presentation">
     <a href="{{ route('admin.home') }}"
-        class="{{ request()->is('app') || request()->is('app/*') ? 'active' : '' }}">
+        class="{{ request()->is('app') || request()->is('app/*') ? '' : '' }}">
         <i class="flaticon-internet"></i> <br>
         Reception
     </a>
