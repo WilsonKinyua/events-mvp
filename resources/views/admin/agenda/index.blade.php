@@ -54,26 +54,7 @@
                     </div>
                     <ul class="nav nav-tabs d-flex nav-justified " role="tablist">
                         <img class="pattern" src="{{ asset('img/pattern.png')}}" alt="Pattern" >
-                        <li role="presentation">
-                            <a href="{{ route('admin.home') }}">
-                                <i class="flaticon-browser"></i> <br>
-                                Reception
-                            </a>
-                        </li>
-                        <li role="presentation"><a class="active" href="{{ route('admin.view.agenda') }}"> <i
-                                    class="flaticon-internet"></i> <br>Agenda </a></li>
-                        <li role="presentation"><a href="{{ route('admin.view.event-feed') }}"> <i
-                                    class="flaticon-chat"></i> <br>Event Feed </a></li>
-                        <li role="presentation"><a href="{{ route('admin.view.speaker') }}"> <i class="flaticon-user"></i>
-                                <br>Speakers </a></li>
-                        <li role="presentation"><a href="{{ route('admin.companies.index') }}"> <i
-                                    class="flaticon-user"></i> <br>Companies </a></li>
-                        <li role="presentation"><a href="{{ route('admin.view.attendee') }}"> <i
-                                    class="flaticon-user"></i> <br>Attendees </a></li>
-                        <li role="presentation"><a href="{{ route('admin.view.meeting') }}"> <i
-                                    class="flaticon-layers"></i> <br>My Meetings </a></li>
-                        <li role="presentation"><a href="{{ route('admin.view.newsroom') }}"> <i
-                                    class="flaticon-reader"></i><br>Newsroom</a></li>
+                        @include('partials.center-navabar')
                     </ul>
                 </div>
             </div>
