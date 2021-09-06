@@ -316,6 +316,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="ms-panel mt-4">
                                 <div class="">
                                     <div id="arrowSlider" class="ms-arrow-slider carousel slide" data-ride="carousel" data-interval="4000">
