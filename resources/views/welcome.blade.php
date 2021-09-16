@@ -1,430 +1,549 @@
 <!DOCTYPE html>
-
-<html lang="en" class="no-js">
-
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<html lang="en">
 
 <head>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,300italic,700,400,300' rel='stylesheet'>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        {{ $eventSetting->event_name ?? '' }} || Welcome
-    </title>
-    <meta name="description" content="">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://ems.wezadevelopment.com/asset/img/favicon.ico">
-    <link href="{{ 'landing/css/bootstrap.min.css' }}" rel="stylesheet">
-    <link href="{{ 'landing/css/font-awesome.min.css' }}" rel="stylesheet">
-    <link href="{{ 'landing/css/owl.carousel.css' }}" rel="stylesheet">
-    <link href="{{ 'landing/css/main.css' }}" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <title>{{ $eventSetting->event_name ?? '' }} || Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ asset('landing/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('landing/css/responsive.css') }}" />
 </head>
 
 <body>
-    <main>
-        <!--Hero section-->
-        <header class="hero-section">
 
-            <video autoplay loop muted id="bgvid"
-                poster="https://cdn.pixabay.com/photo/2014/05/05/20/29/conference-room-338563_960_720.jpg">
-                <source src="{{ asset('video/homepage.mp4') }}" type="video/mp4">
-                {{-- <source src="{{ asset('video/newmac.mp4') }}" type="video/mp4"> --}}
-                <source src="{{ asset('landing/video/vb.webm') }}" type="video/webm">
-            </video>
+    <nav class="navbar navbar-default header header-navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <h6 class="logo-text">Logo</h6>
+                    <!-- <img src="img/logo.png" alt="Awesome Image" /> -->
+                </a>
+            </div>
 
-            <div class="overlay"></div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse  navbar-collapse" id="main-menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li>
+                        <a href="#speakers">Speakers</a>
+                    </li>
+                    <li><a href="#sponsors">Sponsors</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
 
-            <!--nav-->
-
-            <nav class="navbar navbar-default">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#bs-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span
-                                class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-                        </button>
-                        <a href="/" class="logo-brand">
-                            {{-- <img src="img/logo.png" data-at2x="img/logo@2x.png"
-                                alt="site name" class="logo-head">
-                                <img src="img/logo-nav.png"
-                                data-at2x="img/logo-nav@2x.png" alt="site name" class="logo-nav"> --}}
-                            {{-- <h3 class="text-uppercase">Logo</h3> --}}
-                        </a>
+    <section class="banner">
+        <div class="container">
+            <div class="col-md-7 col-sm-12 col-xs-12 pull-left">
+                <div class="event-details-card">
+                    <h2>September 14, 2021</h2>
+                    <h1>The Future Of Transportation</h1>
+                    <p>12:30 PM - 2:00 PM ET</p>
+                    <!-- <ul class="list-inline coundown"> -->
+                    <!-- content loading via js -->
+                    <!-- </ul> -->
+                    <div class="buttons-div mt-4">
+                        <a href="{{ route('login')}}" class="btn">Register Now</a>
+                        <a class="btn" href="#"><i class="fa fa-calendar-plus"></i> Add to calendar </a>
                     </div>
-                    <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            {{-- <li><a href="#schedule">Schedule</a></li> --}}
-                            <li><a href="#speaker">Speakers</a></li>
-                            <li><a href="#sponsors">Sponsors</a></li>
-                            <li><a href="/login" class="bttn" target="_blank">Login</a></li>
-                        </ul>
-                    </div>
+                    <h4 class="mt-4 text-white text-below">STREAMING AVAILABLE FROM 12:30PM, SEPTEMBER 14</h4>
                 </div>
-            </nav>
+            </div><!-- /.col-md-5 -->
+            <div class="col-md-4 col-sm-12 col-xs-12 pull-right">
+                <!-- <form class="banner-form" action="#">
+     <div class="form-header">
+      <h3>Register now</h3>
+     </div>
+     <div class="form-box">
+      <input type="text" placeholder="Full Name" />
+      <input type="text" placeholder="Email Address" />
+      <input type="text" placeholder="Phone Number" />
+      <button type="submit">Register Now</button>
+     </div>
+    </form> -->
+            </div><!-- /.col-md-4 -->
+        </div><!-- /.container -->
+    </section><!-- /.banner -->
 
-            <!--nav end-->
+    <section id="about" class="about-section sec-pad">
+        <div class="container">
+            <div class="col-md-12">
+                <br />
+                <br />
+                <hr>
+                <h3 class="line-after headings">About</h3>
+                <!-- <h3>Our Event<span>Name</span></h3> -->
+                <br />
+                <br>
+                <p class="black">
+                    How will subways, airlines and railways not only recover but thrive in a world of drastically
+                    changed travel behavior? From drones to infrastructure, we'll talk to industry leaders about the
+                    ideas and innovations shaping the way we travel from A to B.
+                </p>
+                <br />
+                <br>
+                <!-- <p class="black">How will subways, airlines and railways not only recover but thrive in a world of
+     drastically changed travel behavior? From drones to infrastructure, we'll talk to industry leaders
+     about the ideas and innovations shaping the way we travel from A to B.</p>
+    <br /> -->
+                <!-- <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incidi
+     dunt ut labore et dolore magna aliqu enim ad minim veniam.</p>
+    <br />
+    <a href="#" class="btn">Buy Ticket</a> &emsp; <a href="#" class="btn btn-inverse">Read More</a> -->
 
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="welcome-message">
-                            <h1>{{ $eventSetting->event_name ?? '' }}</h1>
-                            @if ($eventSetting->event_start === null)
-                                Start Date @else {!! $eventSetting->event_start->toFormattedDateString() !!} @endif - @if ($eventSetting->event_end === null)
-                                End Date @else {!! $eventSetting->event_end->toFormattedDateString() !!} @endif
-                                {{-- <p>New York, USA</p> --}}
+            </div><!-- /.col-md-6 -->
+            <!-- <div class="col-md-6">
+    <img src="img/about-1.png" alt="Awesome Image" />
+   </div> -->
+            <!-- /.col-md-6 -->
+        </div><!-- /.container -->
+    </section><!-- /.about-section -->
+    <!--
+ <section class="counter-section has-overlay">
+  <div class="container">
+   <div class="col-md-3 text-center">
+    <i class="fa fa-microphone"></i>
+    <p>8 Speakers</p>
+   </div>
+   <div class="col-md-3 text-center">
+    <i class="fa fa-flag"></i>
+    <p>500 + Seats</p>
+   </div>
+   <div class="col-md-3 text-center">
+    <i class="fa fa-ticket"></i>
+    <p>300 Tickets</p>
+   </div>
+   <div class="col-md-3 text-center">
+    <i class="fa fa-calendar"></i>
+    <p>3 Days Event</p>
+   </div>
+  </div>
+ </section> -->
+
+    <section class="speaker-section sec-pad" id="speakers">
+        <div class="container">
+            <div class="headings-part">
+                <hr>
+                <h3 class="line-after headings" style="font-weight: 900 !important;">Speakers</h3>
+                <br />
+                <br>
+            </div>
+            <div class="team-carousel owl-theme">
+                <div class="item">
+                    <div class="single-speaker">
+                        <div class="img-box">
+                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/08/31153301/Tim-Ellis_Headshot.jpg"
+                                alt="" />
+                        </div><!-- /.img-box -->
+                        <h3 class="team-name">Tim Ellis</h3>
+                        <p>Co-Founder and CEO, Relativity Space</p>
+                        <p>The Future Of Transportation</p>
+                    </div><!-- /.single-speaker -->
+                </div><!-- /.item -->
+                <div class="item">
+                    <div class="single-speaker">
+                        <div class="img-box">
+                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/07/29210351/Aicha-Evans_headshot.jpg"
+                                alt="" />
+                        </div><!-- /.img-box -->
+                        <h3 class="team-name">Aicha Evans</h3>
+                        <p>CEO, Zoox</p>
+                        <p>The Future Of Transportation</p>
+                    </div><!-- /.single-speaker -->
+                </div><!-- /.item -->
+                <div class="item">
+                    <div class="single-speaker">
+                        <div class="img-box">
+                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/07/29210351/Aicha-Evans_headshot.jpg"
+                                alt="" />
+                        </div><!-- /.img-box -->
+                        <h3 class="team-name">Scott Kirby</h3>
+                        <p>CEO, United Airlines</p>
+                        <p>
+                            The Future Of Transportation
+                        </p>
+                    </div><!-- /.single-speaker -->
+                </div><!-- /.item -->
+                <!-- <div class="item">
+     <div class="single-speaker">
+      <div class="img-box">
+       <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/07/29210351/Aicha-Evans_headshot.jpg" alt="" />
+      </div>
+      <h3>Scott Kirby</h3>
+      <p>CEO, United Airlines</p>
+      <p>
+       The Future Of Transportation
+      </p>
+     </div>
+    </div> -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.speaker-section sec-pad -->
+
+
+    <section class="sponsors-section sec-pad" id="sponsors">
+        <div class="container">
+            <div class="headings-part">
+                <hr>
+                <h3 class="line-after headings" style="font-weight: 900 !important;">Sponsor Participants</h3>
+                <br />
+                <br>
+            </div>
+            <div class="team-carousel owl-theme">
+                <div class="item">
+                    <div class="single-speaker">
+                        <div class="img-box">
+                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/08/10205244/Bushey_Hitachi-Global-SIB-headshot.docx.jpg"
+                                alt="" />
+                        </div><!-- /.img-box -->
+                        <h3 class="team-name">Dean Bushey</h3>
+                        <p>Co-Founder and CEO, Relativity Space</p>
+                        <p>The Future Of Transportation</p>
+                    </div><!-- /.single-speaker -->
+                </div><!-- /.item -->
+                <div class="item">
+                    <div class="single-speaker">
+                        <div class="img-box">
+                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/08/10204750/Steve-Martin.jpg"
+                                alt="" />
+                        </div><!-- /.img-box -->
+                        <h3 class="team-name">Aicha Evans</h3>
+                        <p>CEO, Zoox</p>
+                        <p>The Future Of Transportation</p>
+                    </div><!-- /.single-speaker -->
+                </div><!-- /.item -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.speaker-section sec-pad -->
+
+    <section class="newsroom-section sec-pad" id="newsroom">
+        <div class="container">
+            <div class="headings-part">
+                <hr>
+                <h3 class="line-after headings" style="font-weight: 900 !important;">Newsroom Hosts</h3>
+                <br />
+                <br>
+            </div>
+            <div class="team-carousel owl-theme">
+                <div class="item">
+                    <div class="single-speaker">
+                        <div class="img-box">
+                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/05/03142836/KimLast-sized-1.jpg"
+                                alt="" />
+                        </div><!-- /.img-box -->
+                        <h3 class="team-name">Kim Last</h3>
+                        <p>Co-Founder and CEO, Relativity Space</p>
+                        <p>The Future Of Transportation</p>
+                    </div><!-- /.single-speaker -->
+                </div><!-- /.item -->
+                <div class="item">
+                    <div class="single-speaker">
+                        <div class="img-box">
+                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/08/30185254/Scott-McCartney_headshot.jpg"
+                                alt="" />
+                        </div><!-- /.img-box -->
+                        <h3 class="team-name">Scott McCartney</h3>
+                        <p>CEO, Zoox</p>
+                        <p>The Future Of Transportation</p>
+                    </div><!-- /.single-speaker -->
+                </div><!-- /.item -->
+                <div class="item">
+                    <div class="single-speaker">
+                        <div class="img-box">
+                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/04/22173005/Christopher-Mims-sized.jpg"
+                                alt="" />
+                        </div><!-- /.img-box -->
+                        <h3 class="team-name">Christopher Mims</h3>
+                        <p>CEO, Zoox</p>
+                        <p>The Future Of Transportation</p>
+                    </div><!-- /.single-speaker -->
+                </div><!-- /.item -->
+                <div class="item">
+                    <div class="single-speaker">
+                        <div class="img-box">
+                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/09/01173601/Zoe-Thomas_headshot-1-scaled.jpg"
+                                alt="" />
+                        </div><!-- /.img-box -->
+                        <h3 class="team-name">Zoe Thomas</h3>
+                        <p>CEO, Zoox</p>
+                        <p>The Future Of Transportation</p>
+                    </div><!-- /.single-speaker -->
+                </div><!-- /.item -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.speaker-section sec-pad -->
+
+    <section class="schedule-section sec-pad" id="schedule">
+        <div class="container">
+            <div class="headings-part">
+                <hr>
+                <h3 class="line-after headings" style="font-weight: 900 !important;">Agenda</h3>
+                <br />
+                <br>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="search-container">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search by keyword......" class="form-control" />
                         </div>
-                        <div class="action-btn"> <a href="#counter" class="bttn">About Event</a></div>
                     </div>
                 </div>
-            </div>
-        </header>
-        <!--Hero section end-->
+                <a href="">
+                    <div class="col-md-12">
+                        <div class="select-date-container">
+                            <div class="select-date">
+                                <h2><span>September 14,</span> <small>Tuesday</small></h2>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="col-md-12">
+                    <div class="row schedule-time-container">
+                        <div class="col-md-3">
+                            <div class="schedule-time">
+                                <h3>09:00 AM</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-9 schedule-content-div">
+                            <div class="schedule-content">
+                                <h5>12:30 PM - 12:35 PM</h5>
+                                <h2>Sponsor Session: A Next Wave of Innovation for Transportation</h2>
+                                <p>In conversation with: Willem Marx | Custom Programming Editor, Dow Jones</p>
+                                <p>This is a sponsored session. The Wall Street Journal newsroom was not involved in the
+                                    production of this session.</p>
+                            </div>
+                            <div class="schedule-speakers">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img class="schedule-speakers-img"
+                                            src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/08/10205244/Bushey_Hitachi-Global-SIB-headshot.docx.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="col-md-10 schedule-speakers-content">
+                                        <h3>Dean Bushey</h3>
+                                        <p>
+                                            Vice President, Hitachi’s <br> Global Social Innovation Business <br>
+                                            Hitachi, Ltd.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row schedule-time-container">
+                        <div class="col-md-3">
+                            <div class="schedule-time">
+                                <h3>09:00 AM</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-9 schedule-content-div">
+                            <div class="schedule-content">
+                                <h5>12:30 PM - 12:35 PM</h5>
+                                <h2>Sponsor Session: A Next Wave of Innovation for Transportation</h2>
+                                <p>In conversation with: Willem Marx | Custom Programming Editor, Dow Jones</p>
+                                <p>This is a sponsored session. The Wall Street Journal newsroom was not involved in the
+                                    production of this session.</p>
+                            </div>
+                            <div class="schedule-speakers">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img class="schedule-speakers-img"
+                                            src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/08/10205244/Bushey_Hitachi-Global-SIB-headshot.docx.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="col-md-10 schedule-speakers-content">
+                                        <h3>Dean Bushey</h3>
+                                        <p>
+                                            Vice President, Hitachi’s <br> Global Social Innovation Business <br>
+                                            Hitachi, Ltd.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row schedule-time-container">
+                        <div class="col-md-3">
+                            <div class="schedule-time">
+                                <h3>09:00 AM</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-9 schedule-content-div">
+                            <div class="schedule-content">
+                                <h5>12:30 PM - 12:35 PM</h5>
+                                <h2>Sponsor Session: A Next Wave of Innovation for Transportation</h2>
+                                <p>In conversation with: Willem Marx | Custom Programming Editor, Dow Jones</p>
+                                <p>This is a sponsored session. The Wall Street Journal newsroom was not involved in the
+                                    production of this session.</p>
+                            </div>
+                            <div class="schedule-speakers">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img class="schedule-speakers-img"
+                                            src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/08/10205244/Bushey_Hitachi-Global-SIB-headshot.docx.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="col-md-10 schedule-speakers-content">
+                                        <h3>Dean Bushey</h3>
+                                        <p>
+                                            Vice President, Hitachi’s <br> Global Social Innovation Business <br>
+                                            Hitachi, Ltd.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.schedule-section sec-pad -->
 
-        <!--counter-->
-        <div class="counter text-center" id="counter">
-            <!--container-->
-            <div class="container">
-                <div class="row text-center">
-                    {{-- <div class="col-sm-1 col-xs-6">
-                    </div> --}}
-                    <div class="col-sm-3 col-xs-6"> <i class="fa fa-user fa-3x"></i>
-                        <h3 class="total-number-1">{{ count($speakers) }}</h3>
-                        <p>Speakers</p>
-                    </div>
-                    <div class="col-sm-3 col-xs-6"> <i class="fa fa-graduation-cap fa-3x"></i>
-                        <h3 class="total-number-2">{{ count($users) }}</h3>
-                        <p>Attending</p>
-                    </div>
-                    <div class="col-sm-3 col-xs-6"> <i class="fa fa-clock-o fa-3x"></i>
-                        <h3 class="total-number-3">{{ $days }}</h3>
-                        <p>Days</p>
-                    </div>
-                    {{-- <div class="col-sm-3 col-xs-6"> <i class="fa fa-exclamation-triangle fa-3x"></i>
-                        <h3 class="total-number-4">0</h3>
-                        <p>Tickets Left</p>
-                    </div> --}}
-                </div>
+    <section class="event-sponsor sec-pad" id="event-sponsors-logo">
+        <div class="container">
+            <div class="headings-part">
+                <hr>
+                <h3 class="line-after headings">Presenting Sponsors</h3>
+                <br />
+                <br>
             </div>
-            <!--container end-->
+            <ul class="sponsor-img-list list-inline">
+                <li>
+                    <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/05/25144218/HITACHI_INSPIRE_GRAY-sized-1.png"
+                        alt="" />
+                </li>
+                <li>
+                    <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/06/24153016/RyderLogo_EverBetter_Black_RGB.png"
+                        alt="" />
+                </li>
+            </ul>
+
         </div>
-        <!--counter end-->
+    </section>
 
-        <!--about-->
-        <section class="about section-spacing">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        {{-- <img src="{{ asset($eventSetting->logo)}}" alt="logo" data-no-retina> --}}
-                        @if ($eventSetting->event_logo)
-                            <img src="{{ $eventSetting->event_logo->getUrl() }}" class="img-fluid rounded-start"
-                                alt="logo" data-no-retina>
-                        @else
-                            <img src="{{ asset('img/logo-placeholder.jpg') }}" class="img-fluid rounded-start"
-                                alt="logo" data-no-retina>
-                        @endif
-                    </div>
-                    <div class="col-md-8">
-                        <h2>About Event</h2>
-                        {!! $eventSetting->about ?? '' !!}
-                    </div>
+    <section class="event-sponsor sec-pad" id="event-sponsors-logo">
+        <div class="container">
+            <div class="headings-part">
+                <hr>
+                <h3 class="line-after headings">Media Partners</h3>
+                <br />
+                <br>
+            </div>
+            <ul class="sponsor-img-list list-inline">
+                <li>
+                    <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/07/26162508/ctaa_logo_transparent.png"
+                        alt="" />
+                </li>
+                <li>
+                    <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/08/24204625/MassTransit_LogoTag2019.png"
+                        alt="" />
+                </li>
+                <li>
+                    <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/08/26174704/WIT-logo-highres.jpg"
+                        alt="" />
+                </li>
+                <li>
+                    <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/09/01193530/NPW-logo-colour.png"
+                        alt="" />
+                </li>
+            </ul>
+
+        </div>
+    </section>
+
+    <section class="footer-section p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h1>Questions?</h1>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <h1>read faqs <span> <i class="fa fa-arrow-right"></i></span></h1>
+                </div>
+                <div class="col-md-3">
+                    <h1>Contact Us <span><i class="fa fa-arrow-right"></i></span></h1>
                 </div>
             </div>
-        </section>
-        <!--about end-->
+    </section>
 
-        <!--schedule-->
-        {{-- <section class="schedule section-spacing" id="schedule">
-            <div class="container">
-                <header class="text-center">
-                    <h2>The Schedule</h2>
-                    <h3>Timing and agenda of event</h3>
-                </header>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div role="tabpanel" id="schedule-days">
-
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs content-tabs" role="tablist">
-                                @foreach ($event_program_dates as $dates)
-                                    <li role="presentation">
-                                        <a href="{{ route('day.agendas', $dates->id)}}">
-                                            <i class="fa fa-calendar"></i>
-                                            Friday 11
-                                            <span>th</span>
-                                            June
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <!-- Day 1 -->
-                                <div role="tabpanel" class="tab-pane fade in active" id="day-1">
-                                    <ul class="timeline">
-
-                                        <!-- event schedule 1 -->
-                                        <li class="event">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <p>8:00 am</p>
-                                                    <h4>Check In</h4>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!--event schedule 1 end-->
-
-                                        <!--event schedule 2-->
-                                        <li class="event">
-                                            <div class="row">
-                                                <div class="col-md-3 text-center"><img
-                                                        src="img/speaker/schedule-speaker-1.jpg" alt="schedule-speaker"
-                                                        data-no-retina></div>
-                                                <div class="col-md-9">
-                                                    <p>9:00 am</p>
-                                                    <h4>CSS3 Animation</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque,
-                                                        aperiam, voluptate
-                                                        perspiciatis ex consequuntur at. Lorem ipsum dolor sit amet,
-                                                        consectetur adipisicing elit.
-                                                        Eaque, aperiam, voluptate perspiciatis ex consequuntur at.</p>
-                                                    <p class="event-speaker">- By John Doe</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!--event schedule 2 end-->
-
-                                        <!--event schedule 3-->
-                                        <li class="event">
-                                            <div class="row">
-                                                <div class="col-md-3 col-md-push-9 text-center"><img
-                                                        src="img/speaker/schedule-speaker-2.jpg" alt="schedule-speaker"
-                                                        data-no-retina></div>
-                                                <div class="col-md-9 col-md-pull-3">
-                                                    <p>11:00 am</p>
-                                                    <h4>Functional JavaScript</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque,
-                                                        aperiam, voluptate
-                                                        perspiciatis ex consequuntur at. Lorem ipsum dolor sit amet,
-                                                        consectetur adipisicing elit.
-                                                        Eaque, aperiam, voluptate perspiciatis ex consequuntur at.</p>
-                                                    <p class="event-speaker">- By Betty Doe</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!--event schedule 3 end-->
-
-                                        <!--event schedule 4-->
-                                        <li class="event">
-                                            <p>1:00 pm</p>
-                                            <h4>Lunch And Refreshments</h4>
-                                        </li>
-                                        <!--event schedule 4 end-->
-
-                                        <!--event schedule 5-->
-                                        <li class="event">
-                                            <div class="row">
-                                                <div class="col-md-3 text-center"><img
-                                                        src="img/speaker/schedule-speaker-3.jpg" alt="schedule-speaker"
-                                                        data-no-retina></div>
-                                                <div class="col-md-8">
-                                                    <p>3:00 pm</p>
-                                                    <h4>Responsive Web Design </h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque,
-                                                        aperiam, voluptate
-                                                        perspiciatis ex consequuntur at. Lorem ipsum dolor sit amet,
-                                                        consectetur adipisicing elit.
-                                                        Eaque, aperiam, voluptate perspiciatis ex consequuntur at.</p>
-                                                    <p class="event-speaker">- By Jasmine Doe</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!--event schedule 5 end-->
-
-                                        <!--event schedule 6-->
-                                        <li class="event">
-                                            <p>5:00 pm</p>
-                                            <h4>Meetup And Party</h4>
-                                        </li>
-                                        <!--event schedule 6 end-->
-
-                                    </ul>
-                                </div>
-                                <!-- Day 1 end -->
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-        <!--schedule end-->
-
-        <!--speaker-->
-        <section class="speaker section-spacing text-center" id="speaker">
-            <div class="container">
-                <header>
-                    <h2>The Speakers</h2>
-                    <h3>Experts who will be speaking at the event</h3>
-                </header>
-                <div class="row">
-                    <div class="speaker-slider">
-                        @foreach ($speakers as $speaker)
-                            <div class="item">
-                                <div class="event-speaker">
-                                    <figure>
-                                        @if ($speaker->avatar)
-                                            <img src="{{ $speaker->avatar->getUrl() }}" alt="event-speaker"
-                                                data-no-retina>
-                                        @else
-                                            <img src="https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"
-                                                alt="event-speaker" data-no-retina>
-                                        @endif
-                                        <figcaption>
-                                            <h4>{{ $speaker->name ?? '' }}</h4>
-                                            <p>{{ $speaker->designation ?? '' }}</p>
-                                            <ul class="social">
-                                                <li>
-                                                    <a href="{{ $speaker->twitter ?? '' }}" target="_blank">
-                                                        <i class="fa fa-twitter"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ $speaker->linkedin ?? '' }}" target="_blank">
-                                                        <i class="fa fa-linkedin"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                            </div>
-                        @endforeach
-
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--speaker end-->
-
-        <!-- sponsors -->
-        <section class="speaker section-spacing text-center" id="sponsors">
-            <div class="container">
-                <header>
-                    <h2 class="text-uppercase">The SPONSORS</h2>
-                    <h3>Experts who will be speaking at the event</h3>
-                </header>
-                <div class="row">
-                    <div class="sponsors-slider">
-                        @foreach ($companies as $key => $company)
-                            <div class="item">
-                                <div class="event-sponsors">
-                                    <figure>
-                                        @if ($company->logo)
-                                            <img src="{{ $company->logo->getUrl() }}" title="{{ $company->name }}"
-                                                alt="sponsor" data-no-retina>
-                                        @else
-                                            <img title="{{ $company->name }}"
-                                                src="https://www.latermicamalaga.com/book/files/uploads/logo-placeholder@2x.png"
-                                                alt="sponsor" data-no-retina>
-                                        @endif
-                                    </figure>
-                                </div>
-                            </div>
-                        @endforeach
-
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- sponsors -->
-
-        {{-- <!--sponsor-->
-        <section class="sponsor section-spacing text-center">
-            <div class="container">
-                <header>
-                    <h2>The Sponsor</h2>
-                    <h3>Wonderful sponsors for this year's event</h3>
-                </header>
-                <div class="row">
-                    <div class="col-md-12">
-                        @foreach ($companies as $key => $company)
-                            <figure>
-                                @if ($company->logo)
-                                    <img src="{{ $company->logo->getUrl() }}"  alt="sponsor">
-                                @else
-                                    <img src="https://www.latermicamalaga.com/book/files/uploads/logo-placeholder@2x.png"  alt="sponsor">
-                                @endif
-                            </figure>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--sponsor end--> --}}
-
-        <!--site-footer-->
-        <footer class="site-footer section-spacing text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
-
-                    </div>
-                    {{-- <div class="col-sm-4">
-                        <figure>
-                            <img src="img/logo-nav.png" data-at2x="img/logo-nav@2x.png" alt="site name">
-                        </figure>
-                        <small>&copy; 2021 {{ $eventSetting->event_name ?? '' }}. All rights reserved.</small>
-                    </div> --}}
-                    <div class="col-sm-4">
-                        <p class="footer-contact-us">Contact Us</p>
-                        <!--social-->
-                        <ul class="social">
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#modal-contact-form">
-                                    <i class="fa fa-envelope-o"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/" target="_blank">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.facebook.com/" target="_blank">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <!--social end-->
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--site-footer end-->
-
-    </main>
-
-
-    <div>
-        <a href="#0" class="cd-speaker-bio-close">Close</a>
-    </div>
-    <!--speaker bio end-->
-    <!--scroll top-->
-    <p class="scroll-top"><a href="#"><i class="fa fa-chevron-up"></i></a></p>
-    <!--end scroll top-->
-
-    <script src="{{ asset('landing/js/jquery-2.1.3.min.js') }}"></script>
+    <footer>
+        <div class="container">
+            <div class="col-md-5">
+                <div class="about-widget">
+                    <a href="/">
+                        <!-- <img src="img/logo.png" alt="" /> -->
+                        <h6 class="logo-text">Logo</h6>
+                    </a>
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                        classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock a Latin
+                        professor. at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words
+                        consectetur.</p>
+                </div><!-- /.about-widget -->
+            </div><!-- /.col-md-5 -->
+            <div class="col-md-4">
+                <div class="link-widget">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/"><i class="fa fa-angle-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fa fa-angle-right"></i> About Us</a></li>
+                        <li><a href="#speakers"><i class="fa fa-angle-right"></i> Speakers</a></li>
+                        <li><a href="#sponsors"><i class="fa fa-angle-right"></i> Sponsors</a></li>
+                        <li><a href="#schedule"><i class="fa fa-angle-right"></i> Schedule</a></li>
+                    </ul>
+                </div><!-- /.link-widget -->
+            </div><!-- /.col-md-4 -->
+            <div class="col-md-3">
+                <div class="contact-widget">
+                    <h3>contact us</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.</p>
+                    <ul>
+                        <li>
+                            Location: 1201 park street, <br /> &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;Nairobi Kenya,
+                        </li>
+                        <li>Phone: [254] 757 524 332</li>
+                        <li>Email: info@event-name.com</li>
+                    </ul>
+                </div><!-- /.contact-widget -->
+            </div><!-- /.col-md-3 -->
+        </div><!-- /.container -->
+    </footer>
+    <section class="footer-bottom">
+        <div class="container">
+            <div class="left-text pull-left">
+                <p>event-name &copy; 2021 All Right Reserved</p>
+            </div><!-- /.left-text pull-left -->
+            <div class="social pull-right">
+                <ul class="list-inline">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                    <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                </ul><!-- /.list-inline -->
+            </div><!-- /.social pull-right -->
+        </div><!-- /.container -->
+    </section><!-- /.footer-bottom -->
+    <script src="{{ asset('landing/js/jquery-latest.min.js') }}"></script>
     <script src="{{ asset('landing/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('landing/js/waypoints.min.js') }}"></script>
-    <script src="{{ asset('landing/js/jquery.animateNumber.min.js') }}"></script>
-    <script src="{{ asset('landing/js/waypoints-sticky.min.js') }}"></script>
-    <script src="{{ asset('landing/js/retina.min.js') }}"></script>
+    <script src="{{ asset('landing/js/countdown.min.js') }}"></script>
     <script src="{{ asset('landing/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('landing/js/jquery.ajaxchimp.min.js') }}"></script>
-    <script src="{{ asset('landing/js/jquery.form.min.js') }}"></script>
-    <script src="{{ asset('landing/js/jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('landing/js/main.js') }}"></script>
+    <script src="{{ asset('landing/js/jquery.fancybox.pack.js') }}"></script>
+    <script src="{{ asset('landing/js/custom.js') }}"></script>
 </body>
 
 </html>
