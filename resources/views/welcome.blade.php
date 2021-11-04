@@ -40,6 +40,7 @@
                     </li>
                     <li><a href="#sponsors">Sponsors</a></li>
                     <li><a href="#schedule">Schedule</a></li>
+                    <li><a class="btn-primary" href="{{ route('login') }}">Login</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
