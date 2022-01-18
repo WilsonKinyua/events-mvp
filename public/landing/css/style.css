@@ -2,6 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 @import url("bootstrap.min.css");
 /* @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"); */
 @import url("font-awesome.min.css");
@@ -878,8 +879,7 @@ ul.coundown li span {
 .blog-section.blog-page .single-blog-post {
     margin-bottom: 30px;
 }
-.single-blog-post {
-}
+
 .single-blog-post .img-box {
     position: relative;
 }
@@ -1572,8 +1572,9 @@ footer .contact-widget ul li {
 .logo-text {
     font-size: 30px;
     font-weight: 900;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: #fff;
+    font-family: "Pacifico", cursive;
 }
 
 .text-white {
@@ -1787,4 +1788,11 @@ footer .contact-widget ul li {
     .newsroom-section .img-box img {
         height: 200px;
     }
+}
+
+.sponsors-section .img-box img,
+.newsroom-section .img-box img,
+.speaker-section .img-box img {
+    height: 250px;
+    object-fit: cover;
 }

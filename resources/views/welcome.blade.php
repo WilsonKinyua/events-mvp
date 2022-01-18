@@ -25,7 +25,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="/">
-                    <h6 class="logo-text">Logo</h6>
+                    <h6 class="logo-text">WezaEms</h6>
                     <!-- <img src="img/logo.png" alt="Awesome Image" /> -->
                 </a>
             </div>
@@ -33,7 +33,6 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse  navbar-collapse" id="main-menu">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li>
                         <a href="#speakers">Speakers</a>
@@ -57,7 +56,7 @@
                     <!-- content loading via js -->
                     <!-- </ul> -->
                     <div class="buttons-div mt-4">
-                        <a href="{{ route('login')}}" class="btn">Register Now</a>
+                        <a href="{{ route('login') }}" class="btn">Register Now</a>
                         <a class="btn" href="#"><i class="fa fa-calendar-plus"></i> Add to calendar </a>
                     </div>
                     <h4 class="mt-4 text-white text-below">STREAMING AVAILABLE FROM 12:30PM, SEPTEMBER 14</h4>
@@ -146,36 +145,23 @@
                 <div class="item">
                     <div class="single-speaker">
                         <div class="img-box">
-                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/08/31153301/Tim-Ellis_Headshot.jpg"
+                            <img src="https://informationcradle.com/wp-content/uploads/2019/05/MHUJj15g_400x400.jpeg"
                                 alt="" />
                         </div><!-- /.img-box -->
-                        <h3 class="team-name">Tim Ellis</h3>
-                        <p>Co-Founder and CEO, Relativity Space</p>
-                        <p>The Future Of Transportation</p>
+                        <h3 class="team-name">Robert Kiyosaki</h3>
+                        <p>Entrepreneur | Investor | Educator</p>
+                        {{-- <p>The Future Of Transportation</p> --}}
                     </div><!-- /.single-speaker -->
                 </div><!-- /.item -->
                 <div class="item">
                     <div class="single-speaker">
                         <div class="img-box">
-                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/07/29210351/Aicha-Evans_headshot.jpg"
+                            <img src="https://pbs.twimg.com/profile_images/1257396956881498114/Fj13PSh-_400x400.jpg"
                                 alt="" />
                         </div><!-- /.img-box -->
-                        <h3 class="team-name">Aicha Evans</h3>
-                        <p>CEO, Zoox</p>
-                        <p>The Future Of Transportation</p>
-                    </div><!-- /.single-speaker -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="single-speaker">
-                        <div class="img-box">
-                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/07/29210351/Aicha-Evans_headshot.jpg"
-                                alt="" />
-                        </div><!-- /.img-box -->
-                        <h3 class="team-name">Scott Kirby</h3>
-                        <p>CEO, United Airlines</p>
-                        <p>
-                            The Future Of Transportation
-                        </p>
+                        <h3 class="team-name">Tony Robbins</h3>
+                        <p>Chairman</p>
+                        <p>Tony Robbins Holdings, Inc.</p>
                     </div><!-- /.single-speaker -->
                 </div><!-- /.item -->
                 <!-- <div class="item">
@@ -207,23 +193,21 @@
                 <div class="item">
                     <div class="single-speaker">
                         <div class="img-box">
-                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/08/10205244/Bushey_Hitachi-Global-SIB-headshot.docx.jpg"
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg"
                                 alt="" />
                         </div><!-- /.img-box -->
-                        <h3 class="team-name">Dean Bushey</h3>
-                        <p>Co-Founder and CEO, Relativity Space</p>
-                        <p>The Future Of Transportation</p>
+                        <h3 class="team-name">Elon Reeve Musk</h3>
+                        <p>CEO, Chief Engineer SpaceX</p>
                     </div><!-- /.single-speaker -->
                 </div><!-- /.item -->
                 <div class="item">
                     <div class="single-speaker">
                         <div class="img-box">
-                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/08/10204750/Steve-Martin.jpg"
+                            <img src="https://www.biography.com/.image/t_share/MTY2NzA3ODE3OTgwMzcyMjYw/jeff-bezos-andrew-harrer_bloomberg-via-getty-images.jpg"
                                 alt="" />
                         </div><!-- /.img-box -->
-                        <h3 class="team-name">Aicha Evans</h3>
-                        <p>CEO, Zoox</p>
-                        <p>The Future Of Transportation</p>
+                        <h3 class="team-name">Jeffrey Preston</h3>
+                        <p>CEO, Amazon</p>
                     </div><!-- /.single-speaker -->
                 </div><!-- /.item -->
             </div><!-- /.row -->
@@ -242,45 +226,41 @@
                 <div class="item">
                     <div class="single-speaker">
                         <div class="img-box">
-                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/05/03142836/KimLast-sized-1.jpg"
+                            <img src="https://tvline.com/wp-content/uploads/2021/06/christiane-amanpour-cancer.jpeg"
                                 alt="" />
                         </div><!-- /.img-box -->
-                        <h3 class="team-name">Kim Last</h3>
-                        <p>Co-Founder and CEO, Relativity Space</p>
-                        <p>The Future Of Transportation</p>
+                        <h3 class="team-name">Christiane Amanpour</h3>
+                        <p>Chief International Anchor, CNN</p>
                     </div><!-- /.single-speaker -->
                 </div><!-- /.item -->
                 <div class="item">
                     <div class="single-speaker">
                         <div class="img-box">
-                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/08/30185254/Scott-McCartney_headshot.jpg"
+                            <img src="https://the1a.org/wp-content/uploads/sites/4/2021/09/GettyImages-1187282393-scaled.jpg"
                                 alt="" />
                         </div><!-- /.img-box -->
-                        <h3 class="team-name">Scott McCartney</h3>
-                        <p>CEO, Zoox</p>
-                        <p>The Future Of Transportation</p>
+                        <h3 class="team-name">Anderson Cooper</h3>
+                        <p>American broadcast journalist</p>
                     </div><!-- /.single-speaker -->
                 </div><!-- /.item -->
                 <div class="item">
                     <div class="single-speaker">
                         <div class="img-box">
-                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/04/22173005/Christopher-Mims-sized.jpg"
+                            <img src="https://www.chinadaily.com.cn/china/images/attachement/jpg/site1/20150331/00221910dbbd16842b1f24.jpg"
                                 alt="" />
                         </div><!-- /.img-box -->
-                        <h3 class="team-name">Christopher Mims</h3>
-                        <p>CEO, Zoox</p>
-                        <p>The Future Of Transportation</p>
+                        <h3 class="team-name">Hu Shuli</h3>
+                        <p>Professor,Sun Yat-sen University</p>
                     </div><!-- /.single-speaker -->
                 </div><!-- /.item -->
                 <div class="item">
                     <div class="single-speaker">
                         <div class="img-box">
-                            <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/09/01173601/Zoe-Thomas_headshot-1-scaled.jpg"
+                            <img src="https://www.uri.edu/news/wp-content/uploads/news/sites/16/2021/10/phillip2.jpg"
                                 alt="" />
                         </div><!-- /.img-box -->
-                        <h3 class="team-name">Zoe Thomas</h3>
-                        <p>CEO, Zoox</p>
-                        <p>The Future Of Transportation</p>
+                        <h3 class="team-name">Abby Phillip</h3>
+                        <p>American journalist </p>
                     </div><!-- /.single-speaker -->
                 </div><!-- /.item -->
             </div><!-- /.row -->
