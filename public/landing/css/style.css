@@ -219,19 +219,10 @@ body {
 }
 /* banner section styles */
 
-.banner {
-    background: #000
-        url("https://images.unsplash.com/photo-1519750157634-b6d493a0f77c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80")
-        0 0 no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-    padding-top: 230px;
-    padding-bottom: 155px;
-}
 .banner h1 {
-    font-size: 5em;
+    font-size: 4.5em;
     color: #ffffff;
-    line-height: 70px;
+    line-height: 50px;
     font-weight: 800;
     font-family: "Montserrat";
     text-transform: capitalize;
@@ -1795,4 +1786,77 @@ footer .contact-widget ul li {
 .speaker-section .img-box img {
     height: 250px;
     object-fit: cover;
+}
+
+/* header carousel */
+header .item {
+    height: 100vh;
+    position: relative;
+}
+header .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+header .item .cover {
+    padding: 75px 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+}
+header .item .cover .header-content {
+    position: relative;
+    overflow: hidden;
+    padding-top: 200px;
+    padding-bottom: 100px;
+    width: 120vh;
+}
+header .item .cover .header-content .line {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    border: 9px solid #fff;
+    -webkit-clip-path: polygon(0 0, 60% 0, 36% 100%, 0 100%);
+    clip-path: polygon(0 0, 60% 0, 36% 100%, 0 100%);
+}
+header .owl-item.active h1 {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-name: fadeInDown;
+    animation-delay: 0.3s;
+}
+header .owl-item.active h2 {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-name: fadeInDown;
+    animation-delay: 0.3s;
+}
+header .owl-item.active h4 {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-name: fadeInUp;
+    animation-delay: 0.3s;
+}
+header .owl-item.active .line {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-name: fadeInLeft;
+    animation-delay: 0.3s;
 }

@@ -326,4 +326,8 @@
     .schedule-content h2 {
         font-size: 2rem;
     }
+    .event-details-card {
+        width: 400px;
+    }
 }
+

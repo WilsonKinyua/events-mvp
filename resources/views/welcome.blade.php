@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'>
     <link rel="stylesheet" href="{{ asset('landing/css/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('landing/css/responsive.css') }}" />
 </head>
@@ -44,40 +45,78 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
     </nav>
-
     <section class="banner">
-        <div class="container">
-            <div class="col-md-8 col-sm-12 col-xs-12 pull-left">
-                <div class="event-details-card">
-                    <h2>September 14, 2021</h2>
-                    <h1>Future of online events in the metaverse</h1>
-                    <p>12:30 PM - 2:00 PM ET</p>
-                    <!-- <ul class="list-inline coundown"> -->
-                    <!-- content loading via js -->
-                    <!-- </ul> -->
-                    <div class="buttons-div mt-4">
-                        <a href="{{ route('login') }}" class="btn">Register Now</a>
-                        <a class="btn" href="#"><i class="fa fa-calendar-plus"></i> Add to calendar </a>
+        <header>
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1519750157634-b6d493a0f77c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+                        alt="images not found">
+                    <div class="cover">
+                        <div class="container">
+                            <div class="header-content">
+                                <div class="event-details-card">
+                                    <h2>September 14, 2022</h2>
+                                    <h1>Future of online events in the metaverse</h1>
+                                    <p>12:30 PM - 2:00 PM ET</p>
+                                    <div class="buttons-div mt-4">
+                                        <a href="{{ route('login') }}" class="btn">Register Now</a>
+                                        <a class="btn" href="#"><i class="fa fa-calendar-plus"></i> Add to
+                                            calendar </a>
+                                    </div>
+                                    <h4 class="mt-4 text-white text-below">STREAMING AVAILABLE FROM 12:30PM, SEPTEMBER
+                                        14</h4>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="mt-4 text-white text-below">STREAMING AVAILABLE FROM 12:30PM, SEPTEMBER 14</h4>
                 </div>
-            </div><!-- /.col-md-5 -->
-            <div class="col-md-4 col-sm-12 col-xs-12 pull-right">
-                <!-- <form class="banner-form" action="#">
-     <div class="form-header">
-      <h3>Register now</h3>
-     </div>
-     <div class="form-box">
-      <input type="text" placeholder="Full Name" />
-      <input type="text" placeholder="Email Address" />
-      <input type="text" placeholder="Phone Number" />
-      <button type="submit">Register Now</button>
-     </div>
-    </form> -->
-            </div><!-- /.col-md-4 -->
-        </div><!-- /.container -->
-    </section><!-- /.banner -->
-
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1673&q=80"
+                        alt="images not found">
+                    <div class="cover">
+                        <div class="container">
+                            <div class="header-content">
+                                <div class="event-details-card">
+                                    <h2>September 14, 2022</h2>
+                                    <h1>Future of online events in the metaverse</h1>
+                                    <p>12:30 PM - 2:00 PM ET</p>
+                                    <div class="buttons-div mt-4">
+                                        <a href="{{ route('login') }}" class="btn">Register Now</a>
+                                        <a class="btn" href="#"><i class="fa fa-calendar-plus"></i> Add to
+                                            calendar </a>
+                                    </div>
+                                    <h4 class="mt-4 text-white text-below">STREAMING AVAILABLE FROM 12:30PM, SEPTEMBER
+                                        14</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1582192730841-2a682d7375f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+                        alt="images not found">
+                    <div class="cover">
+                        <div class="container">
+                            <div class="header-content">
+                                <div class="event-details-card">
+                                    <h2>September 14, 2022</h2>
+                                    <h1>Future of online events in the metaverse</h1>
+                                    <p>12:30 PM - 2:00 PM ET</p>
+                                    <div class="buttons-div mt-4">
+                                        <a href="{{ route('login') }}" class="btn">Register Now</a>
+                                        <a class="btn" href="#"><i class="fa fa-calendar-plus"></i> Add to
+                                            calendar </a>
+                                    </div>
+                                    <h4 class="mt-4 text-white text-below">STREAMING AVAILABLE FROM 12:30PM, SEPTEMBER
+                                        14</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </section>
     <section id="about" class="about-section sec-pad">
         <div class="container">
             <div class="col-md-12">
@@ -525,6 +564,29 @@
     <script src="{{ asset('landing/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('landing/js/jquery.fancybox.pack.js') }}"></script>
     <script src="{{ asset('landing/js/custom.js') }}"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            dots: false,
+            nav: false,
+            mouseDrag: false,
+            autoplay: true,
+            animateOut: 'slideOutUp',
+            animateIn: 'slideInUp',
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
