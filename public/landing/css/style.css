@@ -229,13 +229,13 @@ body {
     padding-bottom: 155px;
 }
 .banner h1 {
-    font-size: 60px;
+    font-size: 5em;
     color: #ffffff;
-    line-height: 80px;
+    line-height: 70px;
     font-weight: 800;
     font-family: "Montserrat";
     text-transform: capitalize;
-    margin-top: 6px;
+    margin-top: 8px;
 }
 .banner p {
     font-size: 24px;

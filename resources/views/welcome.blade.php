@@ -47,10 +47,10 @@
 
     <section class="banner">
         <div class="container">
-            <div class="col-md-7 col-sm-12 col-xs-12 pull-left">
+            <div class="col-md-8 col-sm-12 col-xs-12 pull-left">
                 <div class="event-details-card">
                     <h2>September 14, 2021</h2>
-                    <h1>The Future Of Transportation</h1>
+                    <h1>Future of online events in the metaverse</h1>
                     <p>12:30 PM - 2:00 PM ET</p>
                     <!-- <ul class="list-inline coundown"> -->
                     <!-- content loading via js -->
@@ -89,9 +89,9 @@
                 <br />
                 <br>
                 <p class="black">
-                    How will subways, airlines and railways not only recover but thrive in a world of drastically
-                    changed travel behavior? From drones to infrastructure, we'll talk to industry leaders about the
-                    ideas and innovations shaping the way we travel from A to B.
+                    Virtual solutions are perfect for one-way informative events in corporate environments, like product
+                    launches and company presentations. They enable organizers to prepare a defined experience and
+                    control their story during the event
                 </p>
                 <br />
                 <br>
