@@ -184,7 +184,7 @@
                 <div class="item">
                     <div class="single-speaker">
                         <div class="img-box">
-                            <img src="https://informationcradle.com/wp-content/uploads/2019/05/MHUJj15g_400x400.jpeg"
+                            <img src="{{ asset('img/robert.jpeg')}}"
                                 alt="" />
                         </div><!-- /.img-box -->
                         <h3 class="team-name">Robert Kiyosaki</h3>
@@ -195,7 +195,7 @@
                 <div class="item">
                     <div class="single-speaker">
                         <div class="img-box">
-                            <img src="https://pbs.twimg.com/profile_images/1257396956881498114/Fj13PSh-_400x400.jpg"
+                            <img src="{{ asset('img/Fj13PSh-_400x400.jpg')}}"
                                 alt="" />
                         </div><!-- /.img-box -->
                         <h3 class="team-name">Tony Robbins</h3>
@@ -520,6 +520,7 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="/"><i class="fa fa-angle-right"></i> Home</a></li>
+                        <li><a target="_blank" href="https://school.moodledemo.net/login/index.php"><i class="fa fa-angle-right"></i> Elearning</a></li>
                         <li><a href="#about"><i class="fa fa-angle-right"></i> About Us</a></li>
                         <li><a href="#speakers"><i class="fa fa-angle-right"></i> Speakers</a></li>
                         <li><a href="#sponsors"><i class="fa fa-angle-right"></i> Sponsors</a></li>
