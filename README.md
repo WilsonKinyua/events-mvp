@@ -1,1 +1,1 @@
-# MVP CMS
+# WezaSMP 😃
