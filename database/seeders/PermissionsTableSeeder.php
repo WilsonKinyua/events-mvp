@@ -450,6 +450,42 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 110,
                 'title' => 'partner_access',
             ],
+            [
+                'id'    => 111,
+                'title' => 'event_feed_create',
+            ],
+            [
+                'id'    => 112,
+                'title' => 'event_feed_edit',
+            ],
+            [
+                'id'    => 113,
+                'title' => 'event_feed_show',
+            ],
+            [
+                'id'    => 114,
+                'title' => 'event_feed_delete',
+            ],
+            [
+                'id'    => 115,
+                'title' => 'event_feed_access',
+            ],
+            [
+                'id'    => 116,
+                'title' => 'company_access',
+            ],
+            [
+                'id'    => 117,
+                'title' => 'attendee_access',
+            ],
+            [
+                'id'    => 118,
+                'title' => 'my_meeting_access',
+            ],
+            [
+                'id'    => 119,
+                'title' => 'newsroom_access',
+            ],
         ];
 
         Permission::insert($permissions);

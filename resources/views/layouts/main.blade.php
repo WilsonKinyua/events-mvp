@@ -12,21 +12,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{{ asset('vendors/iconic-fonts/flat-icons/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendors/iconic-fonts/cryptocoins/cryptocoins.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendors/iconic-fonts/cryptocoins/cryptocoins-colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('iconic-fonts/flat-icons/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('iconic-fonts/cryptocoins/cryptocoins.css') }}">
+    <link rel="stylesheet" href="{{ asset('iconic-fonts/cryptocoins/cryptocoins-colors.css') }}">
     {{-- Drop zone --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet" />
     <!-- Bootstrap core CSS -->
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- jQuery UI -->
-    <link href="{{ asset('assets/css/jquery-ui.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/jquery-ui.min.css') }}" rel="stylesheet">
     <!-- Slick Slider.css -->
-    <link href="{{ asset('assets/css/slick.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/slick.css') }}" rel="stylesheet">
     <!-- styles -->
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon.ico')}}">
     {{-- toastr --}}
@@ -115,27 +115,27 @@
 
     <!-- SCRIPTS -->
     <!-- Global Required Scripts Start -->
-    <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
-    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/perfect-scrollbar.js') }}"> </script>
-    <script src="{{ asset('assets/js/jquery-ui.min.js') }}"> </script>
+    <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/perfect-scrollbar.js') }}"> </script>
+    <script src="{{ asset('js/jquery-ui.min.js') }}"> </script>
     <!-- Global Required Scripts End -->
 
     <!-- Page Specific Scripts Start -->
-    <script src="{{ asset('assets/js/slick.min.js') }}"> </script>
-    <script src="{{ asset('assets/js/moment.js') }}"> </script>
-    <script src="{{ asset('assets/js/jquery.webticker.min.js') }}"> </script>
-    <script src="{{ asset('assets/js/Chart.bundle.min.js') }}"> </script>
-    <script src="{{ asset('assets/js/Chart.Financial.js') }}"> </script>
-    <script src="{{ asset('assets/js/cryptocurrency.js') }}"> </script>
+    <script src="{{ asset('js/slick.min.js') }}"> </script>
+    <script src="{{ asset('js/moment.js') }}"> </script>
+    <script src="{{ asset('js/jquery.webticker.min.js') }}"> </script>
+    <script src="{{ asset('js/Chart.bundle.min.js') }}"> </script>
+    <script src="{{ asset('js/Chart.Financial.js') }}"> </script>
+    <script src="{{ asset('js/cryptocurrency.js') }}"> </script>
     <!-- Page Specific Scripts Finish -->
 
     <!-- Mystic core JavaScript -->
-    <script src="{{ asset('assets/js/framework.js') }}"></script>
+    <script src="{{ asset('js/framework.js') }}"></script>
 
     <!-- Settings -->
-    <script src="{{ asset('assets/js/settings.js') }}"></script>
+    <script src="{{ asset('js/settings.js') }}"></script>
     {{-- Dropzone --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
     {{-- <script src="{{ asset('js/main.js') }}"></script> --}}

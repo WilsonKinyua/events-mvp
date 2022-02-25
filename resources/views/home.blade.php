@@ -12,21 +12,38 @@
                 <div class="">
                     <div id="arrowSlider" class="ms-arrow-slider carousel slide" data-ride="carousel" data-interval="4000">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="{{ asset('sliders/1.png') }}" alt="First slide">
-                            </div>
-                            <div class="carousel-item ">
-                                <img class="d-block w-100" src="{{ asset('sliders/2.png') }}" alt="Second slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('sliders/3.png') }}" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('sliders/4.png') }}" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('sliders/5.png') }}" alt="Third slide">
-                            </div>
+
+                            @if (count($eventSetting->sliders) > 0)
+                                @foreach ($eventSetting->sliders as $key => $media)
+                                    @if ($key == 0)
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-100" src="{{ $media->first()->getUrl() }}"
+                                                alt="First slide">
+                                        </div>
+                                        @continue
+                                    @endif
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="{{ $media->getUrl() }}"
+                                            alt="{{ $media->file_name }}">
+                                    </div>
+                                @endforeach
+                            @else
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="{{ asset('sliders/1.png') }}" alt="First slide">
+                                </div>
+                                <div class="carousel-item ">
+                                    <img class="d-block w-100" src="{{ asset('sliders/2.png') }}" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="{{ asset('sliders/3.png') }}" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="{{ asset('sliders/4.png') }}" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="{{ asset('sliders/5.png') }}" alt="Third slide">
+                                </div>
+                            @endif
                         </div>
                         <a class="carousel-control-prev" href="#arrowSlider" role="button" data-slide="prev">
                             <span class="material-icons" aria-hidden="true">keyboard_arrow_left</span>
@@ -41,13 +58,14 @@
                         <img class="pattern" src="{{ asset('img/pattern.png') }}" alt="Pattern">
 
                         @include('partials.center-navabar')
+
                         {{-- Sliders settings --}}
                         @can('event_setting_create')
-                            <a class="edit-button m-3" title="Edit Sliders" data-toggle="modal" data-target="#slidersmodal"> <i
-                                    class="fa fa-edit"></i></a>
+                            <a class="edit-button m-3" title="Edit Sliders Images" data-toggle="modal"
+                                data-target="#slidersmodal"> <i class="fa fa-edit"></i></a>
                             <div class="modal fade events" id="slidersmodal" tabindex="-1" role="dialog"
                                 aria-labelledby="slidersmodal">
-                                <div class="modal-dialog modal-dialog-centered modal-min" role="document">
+                                <div class="modal-dialog modal-dialog-centered modal-lg modal-min" role="document">
                                     <div class="modal-content">
                                         <div class="modal-body">
                                             <button type="button" class="close" data-dismiss="modal"
@@ -71,7 +89,7 @@
                                                     <span
                                                         class="help-block">{{ trans('cruds.eventSetting.fields.sliders_helper') }}</span>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary shadow-none">Save Changes</button>
+                                                <button type="submit" class="btn btn-primary shadow-none">Upload</button>
                                             </form>
                                         </div>
                                     </div>
@@ -83,7 +101,6 @@
             </div>
 
             <div class="tab-content">
-
 
                 <div role="tabpanel" class="tab-pane active show fade in" id="tab1">
                     <div class="row">
