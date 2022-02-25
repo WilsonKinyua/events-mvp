@@ -16,7 +16,7 @@ class EventTableSeeder extends Seeder
     {
         $event = [
            [
-               "event_name" => "Mvp Name",
+               "event_name" => "WezaSMP Name",
                "about" => "
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non elit nisl. Class aptent
                 taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.

@@ -310,6 +310,146 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 75,
                 'title' => 'event_schedule_access',
             ],
+            [
+                'id'    => 76,
+                'title' => 'delegate_create',
+            ],
+            [
+                'id'    => 77,
+                'title' => 'delegate_edit',
+            ],
+            [
+                'id'    => 78,
+                'title' => 'delegate_show',
+            ],
+            [
+                'id'    => 79,
+                'title' => 'delegate_delete',
+            ],
+            [
+                'id'    => 80,
+                'title' => 'delegate_access',
+            ],
+            [
+                'id'    => 81,
+                'title' => 'speaker_create',
+            ],
+            [
+                'id'    => 82,
+                'title' => 'speaker_edit',
+            ],
+            [
+                'id'    => 83,
+                'title' => 'speaker_show',
+            ],
+            [
+                'id'    => 84,
+                'title' => 'speaker_delete',
+            ],
+            [
+                'id'    => 85,
+                'title' => 'speaker_access',
+            ],
+            [
+                'id'    => 86,
+                'title' => 'sponsor_create',
+            ],
+            [
+                'id'    => 87,
+                'title' => 'sponsor_edit',
+            ],
+            [
+                'id'    => 88,
+                'title' => 'sponsor_show',
+            ],
+            [
+                'id'    => 89,
+                'title' => 'sponsor_delete',
+            ],
+            [
+                'id'    => 90,
+                'title' => 'sponsor_access',
+            ],
+            [
+                'id'    => 91,
+                'title' => 'guest_of_honor_create',
+            ],
+            [
+                'id'    => 92,
+                'title' => 'guest_of_honor_edit',
+            ],
+            [
+                'id'    => 93,
+                'title' => 'guest_of_honor_show',
+            ],
+            [
+                'id'    => 94,
+                'title' => 'guest_of_honor_delete',
+            ],
+            [
+                'id'    => 95,
+                'title' => 'guest_of_honor_access',
+            ],
+            [
+                'id'    => 96,
+                'title' => 'exhibitors_create',
+            ],
+            [
+                'id'    => 97,
+                'title' => 'exhibitors_edit',
+            ],
+            [
+                'id'    => 98,
+                'title' => 'exhibitors_show',
+            ],
+            [
+                'id'    => 99,
+                'title' => 'exhibitors_delete',
+            ],
+            [
+                'id'    => 100,
+                'title' => 'exhibitors_access',
+            ],
+            [
+                'id'    => 101,
+                'title' => 'media_create',
+            ],
+            [
+                'id'    => 102,
+                'title' => 'media_edit',
+            ],
+            [
+                'id'    => 103,
+                'title' => 'media_show',
+            ],
+            [
+                'id'    => 104,
+                'title' => 'media_delete',
+            ],
+            [
+                'id'    => 105,
+                'title' => 'media_access',
+            ],
+            [
+                'id'    => 106,
+                'title' => 'partner_create',
+            ],
+            [
+                'id'    => 107,
+                'title' => 'partner_edit',
+            ],
+            [
+                'id'    => 108,
+                'title' => 'partner_show',
+            ],
+            [
+                'id'    => 109,
+                'title' => 'partner_delete',
+            ],
+            [
+                'id'    => 110,
+                'title' => 'partner_access',
+            ],
         ];
 
         Permission::insert($permissions);

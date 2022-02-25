@@ -28,7 +28,7 @@
     <!-- styles -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/fav.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon.ico')}}">
     {{-- toastr --}}
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">

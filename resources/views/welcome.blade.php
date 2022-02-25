@@ -55,16 +55,21 @@
                         <div class="container">
                             <div class="header-content">
                                 <div class="event-details-card">
-                                    <h2>September 14, 2022</h2>
-                                    <h1>Future of online events in the metaverse</h1>
-                                    <p>12:30 PM - 2:00 PM ET</p>
+                                    {{-- <h2>September 14, 2022</h2> --}}
+                                    <h1>Your unified event platform  that brings together all of  your event
+                                        needs under
+                                        one  umbrella.</h1>
+                                    <h4 class="mt-4 text-white text-below">
+                                        Engage. Manage. Measure.
+                                    </h4>
+                                    {{-- <p>12:30 PM - 2:00 PM ET</p>
                                     <div class="buttons-div mt-4">
                                         <a href="{{ route('login') }}" class="btn">Register Now</a>
                                         <a class="btn" href="#"><i class="fa fa-calendar-plus"></i> Add to
                                             calendar </a>
                                     </div>
                                     <h4 class="mt-4 text-white text-below">STREAMING AVAILABLE FROM 12:30PM, SEPTEMBER
-                                        14</h4>
+                                        14</h4> --}}
                                 </div>
                             </div>
                         </div>
@@ -77,16 +82,12 @@
                         <div class="container">
                             <div class="header-content">
                                 <div class="event-details-card">
-                                    <h2>September 14, 2022</h2>
-                                    <h1>Future of online events in the metaverse</h1>
-                                    <p>12:30 PM - 2:00 PM ET</p>
-                                    <div class="buttons-div mt-4">
-                                        <a href="{{ route('login') }}" class="btn">Register Now</a>
-                                        <a class="btn" href="#"><i class="fa fa-calendar-plus"></i> Add to
-                                            calendar </a>
-                                    </div>
-                                    <h4 class="mt-4 text-white text-below">STREAMING AVAILABLE FROM 12:30PM, SEPTEMBER
-                                        14</h4>
+                                    <h1>Your unified event platform  that brings together all of  your event
+                                        needs under
+                                        one  umbrella.</h1>
+                                    <h4 class="mt-4 text-white text-below">
+                                        Engage. Manage. Measure.
+                                    </h4>
                                 </div>
                             </div>
                         </div>
@@ -99,16 +100,12 @@
                         <div class="container">
                             <div class="header-content">
                                 <div class="event-details-card">
-                                    <h2>September 14, 2022</h2>
-                                    <h1>Future of online events in the metaverse</h1>
-                                    <p>12:30 PM - 2:00 PM ET</p>
-                                    <div class="buttons-div mt-4">
-                                        <a href="{{ route('login') }}" class="btn">Register Now</a>
-                                        <a class="btn" href="#"><i class="fa fa-calendar-plus"></i> Add to
-                                            calendar </a>
-                                    </div>
-                                    <h4 class="mt-4 text-white text-below">STREAMING AVAILABLE FROM 12:30PM, SEPTEMBER
-                                        14</h4>
+                                    <h1>Your unified event platform that brings together all of your event
+                                        needs under
+                                        one umbrella.</h1>
+                                    <h4 class="mt-4 text-white text-below">
+                                        Engage. Manage. Measure.
+                                    </h4>
                                 </div>
                             </div>
                         </div>
@@ -134,44 +131,11 @@
                 </p>
                 <br />
                 <br>
-                <!-- <p class="black">How will subways, airlines and railways not only recover but thrive in a world of
-     drastically changed travel behavior? From drones to infrastructure, we'll talk to industry leaders
-     about the ideas and innovations shaping the way we travel from A to B.</p>
-    <br /> -->
-                <!-- <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incidi
-     dunt ut labore et dolore magna aliqu enim ad minim veniam.</p>
-    <br />
-    <a href="#" class="btn">Buy Ticket</a> &emsp; <a href="#" class="btn btn-inverse">Read More</a> -->
 
             </div><!-- /.col-md-6 -->
-            <!-- <div class="col-md-6">
-    <img src="img/about-1.png" alt="Awesome Image" />
-   </div> -->
             <!-- /.col-md-6 -->
         </div><!-- /.container -->
     </section><!-- /.about-section -->
-    <!--
- <section class="counter-section has-overlay">
-  <div class="container">
-   <div class="col-md-3 text-center">
-    <i class="fa fa-microphone"></i>
-    <p>8 Speakers</p>
-   </div>
-   <div class="col-md-3 text-center">
-    <i class="fa fa-flag"></i>
-    <p>500 + Seats</p>
-   </div>
-   <div class="col-md-3 text-center">
-    <i class="fa fa-ticket"></i>
-    <p>300 Tickets</p>
-   </div>
-   <div class="col-md-3 text-center">
-    <i class="fa fa-calendar"></i>
-    <p>3 Days Event</p>
-   </div>
-  </div>
- </section> -->
-
     <section class="speaker-section sec-pad" id="speakers">
         <div class="container">
             <div class="headings-part">
@@ -184,8 +148,7 @@
                 <div class="item">
                     <div class="single-speaker">
                         <div class="img-box">
-                            <img src="{{ asset('img/robert.jpeg')}}"
-                                alt="" />
+                            <img src="{{ asset('img/robert.jpeg') }}" alt="" />
                         </div><!-- /.img-box -->
                         <h3 class="team-name">Robert Kiyosaki</h3>
                         <p>Entrepreneur | Investor | Educator</p>
@@ -195,26 +158,13 @@
                 <div class="item">
                     <div class="single-speaker">
                         <div class="img-box">
-                            <img src="{{ asset('img/Fj13PSh-_400x400.jpg')}}"
-                                alt="" />
+                            <img src="{{ asset('img/Fj13PSh-_400x400.jpg') }}" alt="" />
                         </div><!-- /.img-box -->
                         <h3 class="team-name">Tony Robbins</h3>
                         <p>Chairman</p>
                         <p>Tony Robbins Holdings, Inc.</p>
                     </div><!-- /.single-speaker -->
                 </div><!-- /.item -->
-                <!-- <div class="item">
-     <div class="single-speaker">
-      <div class="img-box">
-       <img src="https://images.dowjones.com/wp-content/uploads/sites/262/2021/07/29210351/Aicha-Evans_headshot.jpg" alt="" />
-      </div>
-      <h3>Scott Kirby</h3>
-      <p>CEO, United Airlines</p>
-      <p>
-       The Future Of Transportation
-      </p>
-     </div>
-    </div> -->
             </div><!-- /.row -->
         </div><!-- /.container -->
     </section><!-- /.speaker-section sec-pad -->
@@ -520,7 +470,8 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="/"><i class="fa fa-angle-right"></i> Home</a></li>
-                        <li><a target="_blank" href="https://school.moodledemo.net/login/index.php"><i class="fa fa-angle-right"></i> Elearning</a></li>
+                        <li><a target="_blank" href="https://school.moodledemo.net/login/index.php"><i
+                                    class="fa fa-angle-right"></i> Elearning</a></li>
                         <li><a href="#about"><i class="fa fa-angle-right"></i> About Us</a></li>
                         <li><a href="#speakers"><i class="fa fa-angle-right"></i> Speakers</a></li>
                         <li><a href="#sponsors"><i class="fa fa-angle-right"></i> Sponsors</a></li>
@@ -571,10 +522,10 @@
             margin: 10,
             dots: false,
             nav: false,
-            mouseDrag: false,
+            mouseDrag: true,
             autoplay: true,
-            animateOut: 'slideOutUp',
-            animateIn: 'slideInUp',
+            // animateOut: 'slideOutUp',
+            // animateIn: 'slideInRight',
             responsive: {
                 0: {
                     items: 1

@@ -1,13 +1,6 @@
 <?php
-// capture errors using sentry
-Route::get('/debug-sentry', function () {
-    throw new Exception('My first Sentry error!');
-});
-
 // Route::redirect('/', '/login');
 Route::get('/', 'HomepageController@welcome', 301);
-
-// Route::get('/day/{id}','HomepageController@agendaDay')->name('day.agendas');
 
 Route::get('/home', function () {
     if (session('status')) {
@@ -93,11 +86,6 @@ Route::group(['prefix' => 'app', 'as' => 'admin.', 'namespace' => 'Admin', 'midd
     Route::post('companies/parse-csv-import', 'CompaniesController@parseCsvImport')->name('companies.parseCsvImport');
     Route::post('companies/process-csv-import', 'CompaniesController@processCsvImport')->name('companies.processCsvImport');
     Route::resource('companies', 'CompaniesController');
-    // Route::get('/link', function () {
-    //     $target = '/home2/kwizera/mvp/storage/app/public';
-    //     $shortcut = '/home2/kwizera/public_html/mvp/storage';
-    //     symlink($target, $shortcut);
-    //  });
 
     // Interests
     Route::delete('interests/destroy', 'InterestsController@massDestroy')->name('interests.massDestroy');

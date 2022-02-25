@@ -135,11 +135,11 @@
                   class="flaticon-gear mr-2"></i> Account Settings</span> </a> --}}
                 </li>
                 <li class="dropdown-divider"></li>
-                <li class="dropdown-menu-footer">
+                {{-- <li class="dropdown-menu-footer">
                     <a class="media fs-14 p-2" href="#"
                         onclick="event.preventDefault(); document.getElementById('logoutform').submit();"> <span><i
                                 class="flaticon-security mr-2"></i> Lock</span> </a>
-                </li>
+                </li> --}}
                 <li class="dropdown-menu-footer">
                     <a class="media fs-14 p-2" href="#"
                         onclick="event.preventDefault(); document.getElementById('logoutform').submit();"> <span><i

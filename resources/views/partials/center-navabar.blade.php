@@ -1,6 +1,5 @@
 <li role="presentation">
-    <a href="{{ route('admin.home') }}"
-        class="{{ request()->is('app') || request()->is('app/*') ? '' : '' }}">
+    <a href="{{ route('admin.home') }}" class="{{ request()->is('app') || request()->is('app/*') ? '' : '' }}">
         <i class="flaticon-internet"></i> <br>
         Reception
     </a>
@@ -19,6 +18,15 @@
         <br>Event Feed
     </a>
 </li>
+@can('delegates_access')
+    <li role="presentation">
+        <a class="{{ request()->is('app/speaker') || request()->is('app/speaker/*') ? 'active' : '' }}"
+            href="{{ route('admin.view.speaker') }}">
+            <i class="fa fa-users"></i>
+            <br>Delegates
+        </a>
+    </li>
+@endcan
 <li role="presentation">
     <a class="{{ request()->is('app/speaker') || request()->is('app/speaker/*') ? 'active' : '' }}"
         href="{{ route('admin.view.speaker') }}">

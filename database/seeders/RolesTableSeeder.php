@@ -12,16 +12,48 @@ class RolesTableSeeder extends Seeder
         $roles = [
             [
                 'id'    => 1,
-                'title' => 'Admin',
+                'title' => 'Super Admin',
             ],
             [
-                'id'    => 2,
+                "id"    => 2,
+                "title" => "Admin"
+            ],
+            [
+                'id'    => 3,
+                'title' => 'Speaker',
+            ],
+            [
+                'id'    => 4,
+                'title' => 'Delegate',
+            ],
+            [
+                'id'    => 5,
+                'title' => 'Sponsor',
+            ],
+            [
+                'id'    => 6,
+                'title' => 'Exhibitors',
+            ],
+            [
+                'id'    => 7,
+                'title' => 'Media',
+            ],
+            [
+                'id'    => 8,
+                'title' => 'Partners',
+            ],
+            [
+                'id'    => 9,
+                'title' => 'Delegate',
+            ],
+            [
+                'id'    => 10,
+                'title' => 'Guest of Honour',
+            ],
+            [
+                'id'    => 11,
                 'title' => 'User',
             ],
-            [
-                "id" => 3,
-                "title" => "Speaker"
-            ]
         ];
 
         Role::insert($roles);

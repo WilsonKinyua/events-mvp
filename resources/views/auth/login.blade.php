@@ -4,7 +4,6 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-    <!-- Meta data -->
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta content="" name="description">
@@ -12,22 +11,24 @@
     <meta name="keywords" content="" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!-- Title -->
     <title>Sign In to your account - {{ trans('panel.site_title') }}</title>
 
     <!--Favicon -->
-    <link rel="icon" href="https://ems.wezadevelopment.com/asset/img/favicon.ico">
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
 
     <!--Bootstrap css -->
-    <link href="{{ asset('login_assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('auth/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Style css -->
-    <link href="{{ asset('login_assets/css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('auth/css/style.css') }}" rel="stylesheet" />
+
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
+
     <!---Icons css-->
-    <link href="{{ asset('login_assets/css/icons.css') }}" rel="stylesheet" />
+    <link href="{{ asset('auth/css/icons.css') }}" rel="stylesheet" />
 
     <!-- Color Skin css -->
-    <link href="{{ asset('login_assets/colors/color1.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('auth/colors/color1.css') }}" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -43,9 +44,9 @@
                                     <div class="card p-4">
                                         <div class="card-body">
                                             <div class="text-center title-style mb-6">
-                                                <h1 class="mb-2">Login</h1>
-                                                <hr>
-                                                <p class="text-muted">Sign In to your account</p>
+                                                <h1>Login</h1>
+                                                <hr class="mt-4">
+                                                {{-- <p class="text-muted">Sign In to your account</p> --}}
                                                 @if (session('message'))
                                                     <div class="alert alert-info" role="alert">
                                                         {{ session('message') }}
@@ -60,8 +61,8 @@
 														class="fa fa-twitter fa-1x"></i></a>
 												<a href="#" class="btn btn-facebook"><i
 														class="fa fa-facebook fa-1x"></i></a>
-											</div> --}}
-                                            {{-- <hr class="divider my-6"> --}}
+											</div>
+                                            <hr class="divider my-6"> --}}
                                             <form method="POST" action="{{ route('login') }}" class="">
                                                 @csrf
                                                 <div class="input-group mb-4">
@@ -114,7 +115,7 @@
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <button type="submit"
-                                                            class="btn  btn-primary btn-block px-4">Login</button>
+                                                            class="btn btn-primary btn-block px-4">Login</button>
                                                     </div>
                                                     {{-- <div class="col-12 text-center">
                                                         <a href="#"
@@ -144,7 +145,7 @@
                                                 <div></div>
                                                 <div></div>
                                             </div>
-                                            <img src="{{ asset('login_assets/images/png/login.png') }}" alt="img">
+                                            <img src="{{ asset('auth/images/png/login.png') }}" alt="img">
                                         </div>
                                     </div>
                                 </div>
