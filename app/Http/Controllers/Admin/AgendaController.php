@@ -17,12 +17,11 @@ class AgendaController extends Controller
 
         $speakers = User::pluck('name', 'id');
         $id = AgendaDate::orderBy('id', 'asc')->get()->first();
-        // print_r(json_encode($id->id));
+
         $eventSchedules = EventSchedule::with(['event_program_date', 'speakers'])
-            ->where('event_program_date_id', "=", $id->id)
+            // ->where('event_program_date_id', "=", $id->id)
             ->get();
 
-        // print_r(json_encode($eventSchedules));
         return view('admin.agenda.index', compact('event_program_dates', 'speakers', 'eventSchedules'));
     }
 

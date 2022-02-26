@@ -23,57 +23,12 @@
 
         <!-- carousel -->
         <div class="col-md-12">
-            <div class="ms-panel">
-                <div class="">
-                    <div id="arrowSlider" class="ms-arrow-slider carousel slide" data-ride="carousel" data-interval="4000">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="{{ asset('sliders/1.png') }}" alt="First slide">
-                            </div>
-                            <div class="carousel-item ">
-                                <img class="d-block w-100" src="{{ asset('sliders/2.png') }}" alt="Second slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('sliders/3.png') }}" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('sliders/4.png') }}" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('sliders/5.png') }}" alt="Third slide">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#arrowSlider" role="button" data-slide="prev">
-                            <span class="material-icons" aria-hidden="true">keyboard_arrow_left</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#arrowSlider" role="button" data-slide="next">
-                            <span class="material-icons" aria-hidden="true">keyboard_arrow_right</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <ul class="nav nav-tabs d-flex nav-justified " role="tablist">
-                        <img class="pattern" src="{{ asset('img/pattern.png')}}" alt="Pattern" >
-                        @include('partials.center-navabar')
-                    </ul>
-                </div>
-            </div>
+
+            {{-- carousel panel --}}
+            @include('partials.sliders')
 
             <div class="tab-content">
                 <ul class="nav nav-tabs d-flex tabs-round has-gap nav-justified mb-4 event-shedule" role="tablist">
-                    {{-- <li role="presentation"><a href="#tab16" aria-controls="tab16" class="active" role="tab"
-                            data-toggle="tab">Apr 21, 2015</a></li>
-                    <li role="presentation"><a href="#tab17" aria-controls="tab17" role="tab" data-toggle="tab">Apr 22,
-                            2015
-                        </a></li>
-                    <li role="presentation"><a href="#tab18" aria-controls="tab18" role="tab" data-toggle="tab">Apr 23,
-                            2015</a></li>
-                    <li role="presentation"><a href="#tab18" aria-controls="tab18" role="tab" data-toggle="tab">Apr 24,
-                            2015</a></li>
-                    <li role="presentation"><a href="#tab18" aria-controls="tab18" role="tab" data-toggle="tab">Apr 24,
-                            2015</a></li>
-                    <li role="presentation"><a href="#tab18" aria-controls="tab18" role="tab" data-toggle="tab">Apr 24,
-                            2015</a></li> --}}
                     @if (count($event_program_dates) > 0)
                         @foreach ($event_program_dates as $dates)
                             <li role="presentation"><a class="mt-3"
@@ -81,7 +36,7 @@
                             </li>
                         @endforeach
                     @else
-                        <li role="presentation"><a href="{{ route('admin.agenda') }}">No agenda dates available!!</a>
+                        <li role="presentation"><a>No agenda dates available!!</a>
                         </li>
                     @endif
                     @can('event_schedule_access')
@@ -93,7 +48,6 @@
                         @endcan
                     @endcan
                 </ul>
-
                 <div class="tab-content agenda-cards">
 
                     {{-- add agenda --}}
@@ -152,7 +106,6 @@
                                                                 {{-- <img src="{{ $user->avatar->getUrl() }}"> --}}
                                                                 <img class="speaker-img"
                                                                     src="{{ $item->avatar->getUrl() }}" alt="Speaker">
-
                                                             @endif
 
                                                         </div>
@@ -168,8 +121,8 @@
                                                     <div class="modal-content">
 
                                                         <div class="modal-body">
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                aria-label="Close"><span
+                                                            <button type="button" class="close"
+                                                                data-dismiss="modal" aria-label="Close"><span
                                                                     aria-hidden="true">&times;</span></button>
                                                             <h1>Speakers</h1>
                                                             <ul class="ms-list">
