@@ -53,7 +53,7 @@
                         </a>
                     </div>
                     <ul class="nav nav-tabs d-flex nav-justified " role="tablist">
-                        <img class="pattern" src="{{ asset('img/pattern.png')}}" alt="Pattern" >
+                        <img class="pattern" src="{{ asset('img/pattern.png') }}" alt="Pattern">
                         @include('partials.center-navabar')
                     </ul>
                 </div>
@@ -139,7 +139,6 @@
                                                                 {{-- <img src="{{ $user->avatar->getUrl() }}"> --}}
                                                                 <img class="speaker-img"
                                                                     src="{{ $item->avatar->getUrl() }}" alt="Speaker">
-
                                                             @endif
 
                                                         </div>
@@ -155,8 +154,8 @@
                                                     <div class="modal-content">
 
                                                         <div class="modal-body">
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                aria-label="Close"><span
+                                                            <button type="button" class="close"
+                                                                data-dismiss="modal" aria-label="Close"><span
                                                                     aria-hidden="true">&times;</span></button>
                                                             <h1>Speakers</h1>
                                                             <ul class="ms-list">

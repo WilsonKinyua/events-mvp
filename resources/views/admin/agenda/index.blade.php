@@ -99,7 +99,7 @@
                                                                     class="fa fa-chevron-right"></i>
                                                             </h4>
                                                         </div>
-                                                    </div> 
+                                                    </div>
                                                     <div class="d-flex justify-content-start">
                                                         @foreach ($eventSchedule->speakers as $key => $item)
                                                             <div>
