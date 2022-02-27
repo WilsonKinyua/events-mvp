@@ -13,7 +13,6 @@ class SpeakerController extends Controller
     // view speakers
     public function index()
     {
-
         $roles = Role::pluck('title', 'id');
         $users = User::with(["roles", "media"])->whereHas("roles", function ($query) {
             $query->where("id", 3);

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-    Speaker
+    Delegates
 @endsection
 @section('css')
     <style>
@@ -48,41 +48,9 @@
 
         <!-- carousel -->
         <div class="col-md-12">
-            <div class="ms-panel">
-                <div class="">
-                    <div id="arrowSlider" class="ms-arrow-slider carousel slide" data-ride="carousel" data-interval="4000">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="{{ asset('sliders/1.png') }}" alt="First slide">
-                            </div>
-                            <div class="carousel-item ">
-                                <img class="d-block w-100" src="{{ asset('sliders/2.png') }}" alt="Second slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('sliders/3.png') }}" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('sliders/4.png') }}" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('sliders/5.png') }}" alt="Third slide">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#arrowSlider" role="button" data-slide="prev">
-                            <span class="material-icons" aria-hidden="true">keyboard_arrow_left</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#arrowSlider" role="button" data-slide="next">
-                            <span class="material-icons" aria-hidden="true">keyboard_arrow_right</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <ul class="nav nav-tabs d-flex nav-justified " role="tablist">
-                        <img class="pattern" src="{{ asset('img/pattern.png') }}" alt="Pattern">
-                        @include('partials.center-navabar')
-                    </ul>
-                </div>
-            </div>
+
+            {{-- carousel panel --}}
+            @include('partials.sliders')
 
             <div class="tab-content">
 
@@ -94,15 +62,13 @@
                                 <div style="margin-bottom: 10px;" class="row">
                                     <div class="col-lg-12">
                                         <button class="btn btn-success" data-toggle="modal" data-target="#addUserModal">
-                                            Add Speaker
+                                            <i class="fa fa-plus-circle"></i> Add Delegate
                                         </button>
                                         @include('modal.add-users')
                                     </div>
                                 </div>
                             @endcan
-
                         </div>
-
                         @foreach ($users as $key => $user)
                             <div class="col-lg-3 col-md-6 col-sm-6">
                                 <div class="ms-panel mb-3 ">

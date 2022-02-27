@@ -5,7 +5,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
                 <h3>
-                    Add User
+                    Create
                 </h3>
                 <hr>
                 <form method="POST" action="{{ route('admin.users.store') }}" enctype="multipart/form-data">

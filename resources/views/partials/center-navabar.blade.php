@@ -24,8 +24,8 @@
 @endcan
 @can('delegate_access')
     <li role="presentation">
-        <a class="{{ request()->is('app/speaker') || request()->is('app/speaker/*') ? 'active' : '' }}"
-            href="{{ route('admin.view.speaker') }}">
+        <a class="{{ request()->is('app/delegate') || request()->is('app/delegate/*') ? 'active' : '' }}"
+            href="{{ route('admin.view.delegate') }}">
             <i class="fa fa-user-tie"></i>
             <br>Delegates
         </a>

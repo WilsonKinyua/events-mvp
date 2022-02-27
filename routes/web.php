@@ -24,8 +24,11 @@ Route::group(['prefix' => 'app', 'as' => 'admin.', 'namespace' => 'Admin', 'midd
     // meetings
     Route::get('newsroom', 'NewsroomController@index')->name('view.newsroom');
 
-    // speakers tab
+    // speakers 
     Route::get('speaker', 'SpeakerController@index')->name('view.speaker');
+
+    // delegates
+    Route::get('delegate', 'DelegateController@index')->name('view.delegate');
 
     // event feed tab
     Route::get('feed', 'EventFeedController@index')->name('view.event-feed');
