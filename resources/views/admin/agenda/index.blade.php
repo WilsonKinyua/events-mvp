@@ -58,13 +58,13 @@
                     @endcan
                     {{-- tabs --}}
                     <div role="tabpanel" class="tab-pane active  show fade in" id="tab17">
-                        <div class="row">
+                        <div class="row ">
                             @if (count($eventSchedules) > 0)
                                 @foreach ($eventSchedules as $key => $eventSchedule)
-                                    <div class="col-xl-6 col-md-12">
-                                        <div class="ms-panel">
+                                    <div class="col-xl-4 col-md-12">
+                                        <div class="ms-panel agenda-card">
                                             <div class="ms-panel-header bg-dark">
-                                                <div class="d-flex justify-content-start">
+                                                <div class="d-flex justify-content-start text-capitalize">
                                                     <div>
                                                         <button
                                                             class="btn btn-calendar btn-block">{{ $eventSchedule->time_start ?? '' }}
@@ -87,30 +87,32 @@
                                                     <p>{{ $eventSchedule->description ?? '' }}</p>
                                                 </div>
                                                 <hr>
-                                                <div class="d-flex justify-content-between m-2">
-                                                    <div>
-                                                        <h2 class="text-theme">SPEAKERS</h2>
-                                                    </div>
-                                                    <div>
-                                                        <h4 data-toggle="modal"
-                                                            data-target="#viewAllSpeakers{{ $eventSchedule->id ?? 'default' }}"
-                                                            class="text-theme view-all">VIEW ALL <i
-                                                                class="fa fa-chevron-right"></i>
-                                                        </h4>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-start">
-                                                    @foreach ($eventSchedule->speakers as $key => $item)
+                                                @if (count($eventSchedule->speakers) > 0)
+                                                    <div class="d-flex justify-content-between m-2">
                                                         <div>
-                                                            @if ($item->avatar)
-                                                                {{-- <img src="{{ $user->avatar->getUrl() }}"> --}}
-                                                                <img class="speaker-img"
-                                                                    src="{{ $item->avatar->getUrl() }}" alt="Speaker">
-                                                            @endif
-
+                                                            <h3 class="text-theme">SPEAKERS</h3>
                                                         </div>
-                                                    @endforeach
-                                                </div>
+                                                        <div>
+                                                            <h4 data-toggle="modal"
+                                                                data-target="#viewAllSpeakers{{ $eventSchedule->id ?? 'default' }}"
+                                                                class="text-theme view-all">VIEW ALL <i
+                                                                    class="fa fa-chevron-right"></i>
+                                                            </h4>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="d-flex justify-content-start">
+                                                        @foreach ($eventSchedule->speakers as $key => $item)
+                                                            <div>
+                                                                @if ($item->avatar)
+                                                                    <img class="speaker-img"
+                                                                        src="{{ $item->avatar->getUrl() }}" alt="Speaker">
+                                                                @endif
+
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                @endif
+
                                             </div>
 
                                             {{-- modal view all --}}

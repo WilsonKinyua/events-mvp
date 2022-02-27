@@ -8,8 +8,8 @@
 
     <div class="logo-sn logo-sm ms-d-block-sm">
         <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="{{ route('admin.home') }}">
-            <img src="https://newmark-imc.com/images/newmark-logo.png" alt="logo">
-            {{-- <h1 class="text-bold">Logo Name</h1> --}}
+            {{-- <img src="https://newmark-imc.com/images/newmark-logo.png" alt="logo"> --}}
+            <h1 class="text-bold">WezaSMP</h1>
         </a>
     </div>
 
