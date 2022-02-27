@@ -8,13 +8,16 @@ use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyUserRequest;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Mail\SetPassword;
 use App\Models\Interest;
 use App\Models\Role;
 use App\Models\User;
 use Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Str;
 
 class UsersController extends Controller
 {
@@ -46,6 +49,12 @@ class UsersController extends Controller
         $user = User::create($request->all());
         $user->interests()->sync($request->input('interests', []));
         $user->roles()->sync($request->input('roles', []));
+        $user->token = Str::random(60);
+        $user->update();
+
+        // send email to user to set password
+        Mail::to($user->email)->send(new SetPassword($user));
+        
         if ($request->input('avatar', false)) {
             $user->addMedia(storage_path('tmp/uploads/' . basename($request->input('avatar'))))->toMediaCollection('avatar');
         }

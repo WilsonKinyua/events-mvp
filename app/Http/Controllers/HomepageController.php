@@ -11,7 +11,8 @@ use Illuminate\Http\Request;
 
 class HomepageController extends Controller
 {
-    public function welcome() {
+    public function welcome()
+    {
         $eventSetting = EventSetting::with(['media'])->get()->first();
 
         $speakers = User::with(["roles", "media"])->whereHas("roles", function ($query) {
@@ -23,7 +24,7 @@ class HomepageController extends Controller
         $companies = Company::with(['media'])->get();
         $event_program_dates = AgendaDate::all();
 
-        return view('welcome', compact('eventSetting','speakers','users','days','companies','event_program_dates'));
+        return view('welcome', compact('eventSetting', 'speakers', 'users', 'days', 'companies', 'event_program_dates'));
     }
 
     // public function agendaDay($id){
@@ -43,4 +44,29 @@ class HomepageController extends Controller
 
     //     return view('single-agenda', compact('eventSetting','speakers','users','days','companies','event_program_dates','eventSchedules'));
     // }
+
+    public function setPassword($token) // display set password view
+    {
+        $user = User::where('token', $token)->first();
+        if (!$user) {
+            return redirect()->route('login')->with('error', 'Invalid token');
+        }
+        return view('auth.passwords.set-password', compact('user'));
+    }
+
+    public function createPassword(Request $request) // create user password
+    {
+        if ($request->password != $request->password_confirmation) {
+            return redirect()->back()->with('error', 'Password and Confirm Password does not match');
+        }
+
+        $user = User::where('token', $request->token)->first();
+        if (!$user) {
+            return redirect()->route('login')->with('error', 'Invalid token');
+        }
+        $user->password = bcrypt($request->password);
+        $user->token = null;
+        $user->update();
+        return redirect()->route('login')->with('success', 'Password set successfully. Please login');
+    }
 }

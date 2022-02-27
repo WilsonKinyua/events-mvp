@@ -59,3 +59,6 @@ class RolesTableSeeder extends Seeder
         Role::insert($roles);
     }
 }
+
+
+// don't edit roles especially id 😥

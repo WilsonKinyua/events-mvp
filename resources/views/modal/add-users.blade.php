@@ -5,13 +5,13 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
                 <h3>
-                    Create
+                    Create User
                 </h3>
                 <hr>
                 <form method="POST" action="{{ route('admin.users.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label class="required" for="name">{{ trans('cruds.user.fields.name') }}</label>
                                 <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text"
@@ -26,7 +26,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="required" for="email">{{ trans('cruds.user.fields.email') }}</label>
+                                <label class="required"
+                                    for="email">{{ trans('cruds.user.fields.email') }}</label>
                                 <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
                                     type="email" name="email" id="email" value="{{ old('email') }}" required>
                                 @if ($errors->has('email'))
@@ -39,9 +40,9 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="required">{{ trans('cruds.user.fields.gender') }}</label>
+                                <label class="">{{ trans('cruds.user.fields.gender') }}</label>
                                 <select class="form-control {{ $errors->has('gender') ? 'is-invalid' : '' }}"
-                                    name="gender" id="gender" required>
+                                    name="gender" id="gender">
                                     <option value disabled {{ old('gender', null) === null ? 'selected' : '' }}>
                                         {{ trans('global.pleaseSelect') }}</option>
                                     @foreach (App\Models\User::GENDER_SELECT as $key => $label)
@@ -60,35 +61,37 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="required"
+                                <label class=""
                                     for="designation">{{ trans('cruds.user.fields.designation') }}</label>
                                 <input class="form-control {{ $errors->has('designation') ? 'is-invalid' : '' }}"
                                     type="text" name="designation" id="designation"
-                                    value="{{ old('designation', '') }}" required>
+                                    value="{{ old('designation', '') }}">
                                 @if ($errors->has('designation'))
                                     <div class="invalid-feedback">
                                         {{ $errors->first('designation') }}
                                     </div>
                                 @endif
-                                <span class="help-block">{{ trans('cruds.user.fields.designation_helper') }}</span>
+                                <span
+                                    class="help-block">{{ trans('cruds.user.fields.designation_helper') }}</span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="required"
+                                <label class=""
                                     for="organisation">{{ trans('cruds.user.fields.organisation') }}</label>
                                 <input class="form-control {{ $errors->has('organisation') ? 'is-invalid' : '' }}"
                                     type="text" name="organisation" id="organisation"
-                                    value="{{ old('organisation', '') }}" required>
+                                    value="{{ old('organisation', '') }}">
                                 @if ($errors->has('organisation'))
                                     <div class="invalid-feedback">
                                         {{ $errors->first('organisation') }}
                                     </div>
                                 @endif
-                                <span class="help-block">{{ trans('cruds.user.fields.organisation_helper') }}</span>
+                                <span
+                                    class="help-block">{{ trans('cruds.user.fields.organisation_helper') }}</span>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                             <div class="form-group">
                                 <label class="required"
                                     for="password">{{ trans('cruds.user.fields.password') }}</label>
@@ -101,7 +104,7 @@
                                 @endif
                                 <span class="help-block">{{ trans('cruds.user.fields.password_helper') }}</span>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
 
                     {{-- <div class="form-group">
@@ -211,7 +214,7 @@
                     </div>
                     <div class="form-group">
                         <button class="btn btn-success" type="submit">
-                            {{ trans('global.add') }} 
+                            {{ trans('global.add') }}
                         </button>
                     </div>
                 </form>

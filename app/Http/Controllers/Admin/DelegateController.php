@@ -13,10 +13,10 @@ class DelegateController extends Controller
     {
         $roles = Role::pluck('title', 'id');
         $users = User::with(["roles", "media"])
-        // ->whereHas("roles", function ($query) {
-        //     $query->where("id", 3);
-        // })
-        ->get();
+            ->whereHas("roles", function ($query) {
+                $query->where("id", 4);
+            })
+            ->get();
         return view('admin.delegate.index', compact('roles', 'users'));
     }
 }

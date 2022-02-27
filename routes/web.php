@@ -10,6 +10,10 @@ Route::get('/home', function () {
     return redirect()->route('admin.home');
 });
 
+// set password
+Route::get('user/set/password/{token}','HomepageController@setPassword')->name('user.set.password');
+Route::post('set/password','HomepageController@createPassword')->name('user.set.password.create');
+
 Auth::routes();
 
 Route::group(['prefix' => 'app', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
