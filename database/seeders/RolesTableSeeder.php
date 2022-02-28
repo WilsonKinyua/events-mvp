@@ -44,14 +44,10 @@ class RolesTableSeeder extends Seeder
             ],
             [
                 'id'    => 9,
-                'title' => 'Delegate',
-            ],
-            [
-                'id'    => 10,
                 'title' => 'Guest of Honour',
             ],
             [
-                'id'    => 11,
+                'id'    => 10,
                 'title' => 'User',
             ],
         ];

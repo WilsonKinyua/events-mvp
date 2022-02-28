@@ -33,6 +33,7 @@ Route::group(['prefix' => 'app', 'as' => 'admin.', 'namespace' => 'Admin', 'midd
 
     // delegates
     Route::get('delegate', 'DelegateController@index')->name('view.delegate');
+    Route::get('delegate/{id}/delete', 'DelegateController@destroy')->name('delete.delegate');
 
     // event feed tab
     Route::get('feed', 'EventFeedController@index')->name('view.event-feed');

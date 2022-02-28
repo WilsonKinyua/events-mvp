@@ -526,7 +526,7 @@ pre{
 }
 .ms-panel-header h6{
   margin-bottom: 0;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 700;
 }
 .ms-panel-header .btn{

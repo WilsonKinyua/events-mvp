@@ -9,6 +9,7 @@
     <title>{{ trans('panel.site_title') }} - @yield('title') </title>
     <!-- Iconic Fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {{-- font awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,18 +18,20 @@
     <link rel="stylesheet" href="{{ asset('iconic-fonts/cryptocoins/cryptocoins-colors.css') }}">
     {{-- Drop zone --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
-
+    {{-- select --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet" />
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap-->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- jQuery UI -->
     <link href="{{ asset('css/jquery-ui.min.css') }}" rel="stylesheet">
+    {{-- datatables --}}
+    <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet">
     <!-- Slick Slider.css -->
     <link href="{{ asset('css/slick.css') }}" rel="stylesheet">
     <!-- styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon.ico')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon.ico') }}">
     {{-- toastr --}}
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -67,8 +70,7 @@
 
     <!-- Overlays -->
     <div class="ms-aside-overlay ms-overlay-left ms-toggler" data-target="#ms-side-nav" data-toggle="slideLeft"></div>
-    <div class="ms-aside-overlay ms-overlay-right ms-toggler" data-target="#ms-recent-activity"
-        data-toggle="slideRight">
+    <div class="ms-aside-overlay ms-overlay-right ms-toggler" data-target="#ms-recent-activity" data-toggle="slideRight">
     </div>
 
     <!-- Sidebar Navigation Left -->
@@ -140,19 +142,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
     {{-- <script src="{{ asset('js/main.js') }}"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
-    </script>
     {{-- notification --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
-    {{-- <script>
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Your work has been saved',
-            showConfirmButton: false,
-            timer: 1500
-        })
-    </script> --}}
+
+    <script src="{{ asset('js/datatables.min.js') }}"> </script>
+    {{-- <script src="{{ asset('js/data-tables.js')}}"> </script> --}}
+
     <script>
         @if (Session::has('success'))
             toastr.options =
