@@ -18,145 +18,89 @@
 
     <!--Bootstrap css -->
     <link href="{{ asset('auth/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <!-- Style css -->
-    <link href="{{ asset('auth/css/style.css') }}" rel="stylesheet" />
-
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
-
-    <!---Icons css-->
-    <link href="{{ asset('auth/css/icons.css') }}" rel="stylesheet" />
-
-    <!-- Color Skin css -->
-    <link href="{{ asset('auth/colors/color1.css') }}" rel="stylesheet" type="text/css" />
-
 </head>
 
-<body class="h-100vh page-style1">
-    <div class="page">
-        <div class="page-single">
-            <div class="p-5">
-                <div class="row">
-                    <div class="col mx-auto">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-9 col-xl-8">
-                                <div class="card-group mb-0">
-                                    <div class="card p-4">
-                                        <div class="card-body">
-                                            <div class="text-center title-style mb-6">
-                                                <h1>Login</h1>
-                                                <hr class="mt-4">
-                                                {{-- <p class="text-muted">Sign In to your account</p> --}}
-                                                @if (session('message'))
-                                                    <div class="alert alert-info" role="alert">
-                                                        {{ session('message') }}
-                                                    </div>
-                                                @endif
-                                                @if (session('error'))
-                                                    <div class="alert alert-danger" role="alert">
-                                                        {{ session('error') }}
-                                                    </div>
-                                                @endif
-                                                @if (session('success'))
-                                                    <div class="alert alert-success" role="alert">
-                                                        {{ session('success') }}
-                                                    </div>
-                                                @endif
-                                            </div>
-                                            {{-- <div class="btn-list d-flex">
-												<a href="#"
-													class="btn btn-google btn-block"><i
-														class="fa fa-google fa-1x mr-2"></i> Google</a>
-												<a href="#" class="btn btn-twitter"><i
-														class="fa fa-twitter fa-1x"></i></a>
-												<a href="#" class="btn btn-facebook"><i
-														class="fa fa-facebook fa-1x"></i></a>
-											</div>
-                                            <hr class="divider my-6"> --}}
-                                            <form method="POST" action="{{ route('login') }}" class="">
-                                                @csrf
-                                                <div class="input-group mb-4">
-                                                    <div class="input-group-prepend">
-                                                        <div class="input-group-text">
-                                                            <i class="fe fe-user"></i>
-                                                        </div>
-                                                    </div>
-                                                    <input id="email" name="email" type="text"
-                                                        class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                                        required autocomplete="email" autofocus
-                                                        placeholder="{{ trans('global.login_email') }}"
-                                                        value="{{ old('email', null) }}">
-                                                    @if ($errors->has('email'))
-                                                        <div class="invalid-feedback">
-                                                            {{ $errors->first('email') }}
-                                                        </div>
-                                                    @endif
-                                                </div>
-                                                <div class="input-group mb-4">
-                                                    <div class="input-group-prepend">
-                                                        <div class="input-group-text">
-                                                            <i class="fe fe-lock"></i>
-                                                        </div>
-                                                    </div>
-                                                    <input id="password" name="password" type="password"
-                                                        class="form-control rounded-11{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                                        required placeholder="{{ trans('global.login_password') }}">
-                                                    @if ($errors->has('password'))
-                                                        <div class="invalid-feedback">
-                                                            {{ $errors->first('password') }}
-                                                        </div>
-                                                    @endif
-                                                </div>
-                                                {{-- <div class="form-group">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="checkbox-signup">
-                                                    <label class="custom-control-label" for="checkbox-signup">I accept <a
-                                                            href="#" class="text-muted">Terms and Conditions</a></label>
-                                                </div>
-                                            </div> --}}
+<body>
+    <style>
+        a {
+            text-decoration: none !important;
+        }
 
-                                                <div class="form-group">
-                                                    <label class="custom-control custom-checkbox">
-                                                        <input class="custom-control-input" name="remember"
-                                                            type="checkbox" id="remember" />
-                                                        <span class="custom-control-label">Remember me</span>
-                                                    </label>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <button type="submit"
-                                                            class="btn btn-primary btn-block px-4">Login</button>
-                                                    </div>
-                                                    {{-- <div class="col-12 text-center">
-                                                        <a href="#"
-                                                            class="btn btn-link box-shadow-0 px-0">Forgot password?</a>
-                                                    </div> --}}
-                                                </div>
-                                            </form>
-                                            {{-- <div class="text-center pt-4">
-                                                <div class="font-weight-normal fs-16">You Don't have an account <a
-                                                        class="btn-link font-weight-normal"
-                                                        href="#">Register Here</a>
-                                                </div>
-                                            </div> --}}
-                                        </div>
+    </style>
+
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-5">
+                <div class="card o-hidden border-0 shadow-lg my-5 ">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <a class="logo" href="{{ route('login') }}">
+                                            <img src="{{ asset('img/weza-logo.png') }}" width="150px" alt="">
+                                        </a>
+                                        <h3 class="h3 text-gray-900 mb-4 mt-4">
+                                            Stakeholder Management Platform (SMP)
+                                        </h3>
                                     </div>
-                                    <div class="card text-white bg-primary py-5 d-md-down-none page-content mt-0">
-                                        <div class="text-center justify-content-center page-single-content">
-                                            <div class="box">
-                                                <div></div>
-                                                <div></div>
-                                                <div></div>
-                                                <div></div>
-                                                <div></div>
-                                                <div></div>
-                                                <div></div>
-                                                <div></div>
-                                                <div></div>
-                                                <div></div>
+                                    <div class="text-center">
+                                        @if (session('message'))
+                                            <div class="alert alert-info" role="alert">
+                                                {{ session('message') }}
                                             </div>
-                                            <img src="{{ asset('auth/images/png/login.png') }}" alt="img">
+                                        @endif
+                                        @if (session('error'))
+                                            <div class="alert alert-danger" role="alert">
+                                                {{ session('error') }}
+                                            </div>
+                                        @endif
+                                        @if (session('success'))
+                                            <div class="alert alert-success" role="alert">
+                                                {{ session('success') }}
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <form method="POST" action="{{ route('login') }}" class="">
+                                        @csrf
+                                        <div class="form-group">
+                                            <input id="email" name="email" type="text"
+                                                class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                                required autocomplete="email" autofocus
+                                                placeholder="Enter {{ trans('global.login_email') }}"
+                                                value="{{ old('email', null) }}">
+                                            @if ($errors->has('email'))
+                                                <div class="invalid-feedback">
+                                                    {{ $errors->first('email') }}
+                                                </div>
+                                            @endif
                                         </div>
+                                        <div class="form-group">
+                                            <input id="password" name="password" type="password"
+                                                class="form-control rounded-11{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                                required placeholder="{{ trans('global.login_password') }}">
+                                            @if ($errors->has('password'))
+                                                <div class="invalid-feedback">
+                                                    {{ $errors->first('password') }}
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="checkbox-signup"
+                                                    name="remember">
+                                                <label class="custom-control-label" for="checkbox-signup">Remember me
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-block">
+                                            Login
+                                        </button>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small text-primary" href="{{ route('password.request') }}">Forgot
+                                            Password?</a>
                                     </div>
                                 </div>
                             </div>
@@ -166,8 +110,5 @@
             </div>
         </div>
     </div>
-
 </body>
-
-
 </html>
