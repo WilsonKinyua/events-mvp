@@ -30,6 +30,7 @@ Route::group(['prefix' => 'app', 'as' => 'admin.', 'namespace' => 'Admin', 'midd
 
     // speakers 
     Route::get('speaker', 'SpeakerController@index')->name('view.speaker');
+    Route::get('speaker/{id}/delete', 'SpeakerController@destroy')->name('delete.speaker');
 
     // delegates
     Route::get('delegate', 'DelegateController@index')->name('view.delegate');

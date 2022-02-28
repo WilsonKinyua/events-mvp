@@ -108,20 +108,20 @@
                                                                     <span
                                                                         class="badge badge-info">{{ $user->gender ?? '' }}</span>
                                                                 </td>
-                                                                <td>
+                                                                <td class="text-capitalize">
                                                                     {{ $user->organisation ?? '' }}
                                                                 </td>
-                                                                <td>
+                                                                <td class="text-capitalize">
                                                                     {{ $user->designation ?? '' }}
                                                                 </td>
                                                                 <td>
                                                                     @if ($user->token === null)
                                                                         <span class="badge badge-info">
-                                                                            Verified
+                                                                            Active
                                                                         </span>
                                                                     @else
                                                                         <span class="badge badge-warning">
-                                                                            Unverified
+                                                                            Inactive
                                                                         </span>
                                                                     @endif
                                                                 </td>
@@ -221,7 +221,7 @@
                                                         @endforeach
                                                     @else
                                                         <tr>
-                                                            <td colspan="7" class="text-center">No Delegates</td>
+                                                            <td colspan="8" class="text-center">No Delegates</td>
                                                         </tr>
                                                     @endif
                                                 </tbody>

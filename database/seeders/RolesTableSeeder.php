@@ -15,39 +15,35 @@ class RolesTableSeeder extends Seeder
                 'title' => 'Super Admin',
             ],
             [
-                "id"    => 2,
-                "title" => "Admin"
-            ],
-            [
-                'id'    => 3,
+                'id'    => 2,
                 'title' => 'Speaker',
             ],
             [
-                'id'    => 4,
+                'id'    => 3,
                 'title' => 'Delegate',
             ],
             [
-                'id'    => 5,
+                'id'    => 4,
                 'title' => 'Sponsor',
             ],
             [
-                'id'    => 6,
+                'id'    => 5,
                 'title' => 'Exhibitors',
             ],
             [
-                'id'    => 7,
+                'id'    => 6,
                 'title' => 'Media',
             ],
             [
-                'id'    => 8,
+                'id'    => 7,
                 'title' => 'Partners',
             ],
             [
-                'id'    => 9,
+                'id'    => 8,
                 'title' => 'Guest of Honour',
             ],
             [
-                'id'    => 10,
+                'id'    => 9,
                 'title' => 'User',
             ],
         ];
