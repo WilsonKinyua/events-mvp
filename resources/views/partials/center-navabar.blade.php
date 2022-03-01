@@ -69,9 +69,10 @@
 @endcan
 @can('guest_of_honor_access')
     <li role="presentation">
-        <a class="{{ request()->is('app/companies') || request()->is('app/companies/*') ? 'active' : '' }}" href="">
+        <a class="{{ request()->is('app/guest-of-honor') || request()->is('app/guest-of-honor/*') ? 'active' : '' }}"
+            href="{{ route('admin.view.guest-of-honor') }}">
             <i class="fa fa-user-tie"></i>
-            <br><small>Guest of Honor</small>
+            <br><small>Guests of Honor</small>
         </a>
     </li>
 @endcan

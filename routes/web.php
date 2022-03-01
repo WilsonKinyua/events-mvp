@@ -32,6 +32,10 @@ Route::group(['prefix' => 'app', 'as' => 'admin.', 'namespace' => 'Admin', 'midd
     Route::get('speaker', 'SpeakerController@index')->name('view.speaker');
     Route::get('speaker/{id}/delete', 'SpeakerController@destroy')->name('delete.speaker');
 
+    // speakers
+    Route::get('guest-of-honor', 'GuestOfHonorController@index')->name('view.guest-of-honor');
+    Route::get('guest-of-honor/{id}/delete', 'GuestOfHonorController@destroy')->name('delete.guest-of-honor');
+
     // sponsors
     Route::get('sponsor', 'SponsorController@index')->name('view.sponsor');
 
