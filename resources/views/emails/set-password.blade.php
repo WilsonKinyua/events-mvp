@@ -26,10 +26,10 @@
                     </tr>
                     <tr>
                         <td style="text-align:center;">
-                            <a href="{{ route('admin.home') }}" title="logo" target="_blank">
+                            {{-- <a href="{{ route('admin.home') }}" title="logo" target="_blank">
                                 <img width="100" src="https://newmark.vercel.app/assets/img/newmark-logo.png"
                                     title="logo" alt="logo">
-                            </a>
+                            </a> --}}
                         </td>
                     </tr>
                     <tr>

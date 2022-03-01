@@ -8,12 +8,16 @@ use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyCompanyRequest;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
+use App\Mail\SetPassword;
 use App\Models\Company;
 use App\Models\EventSetting;
+use App\Models\User;
 use Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Str;
 
 class CompaniesController extends Controller
 {
@@ -24,12 +28,10 @@ class CompaniesController extends Controller
     {
         abort_if(Gate::denies('company_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $companies_sponsor = Company::with(['media'])->where('category',"=","sponsor")->get();
-        $companies_non_sponsor = Company::with(['media'])->where("category", "=", "non-sponsor")->get();
-
+        $partners = Company::with(['media'])->where('category', "=", "partner")->get();
         $eventSetting = EventSetting::with(['media'])->get()->first();
 
-        return view('admin.companies.index', compact('companies_sponsor', 'companies_non_sponsor','eventSetting'));
+        return view('admin.companies.index', compact('eventSetting','partners'));
     }
 
     public function create()
@@ -41,7 +43,17 @@ class CompaniesController extends Controller
 
     public function store(StoreCompanyRequest $request)
     {
+        abort_if(Gate::denies('company_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $company = Company::create($request->all());
+        // create user for company
+        $user = User::create([
+            'name' => $company->name,
+            'email' => $company->email,
+            'token' => Str::random(60),
+        ]);
+        // send email to user to set password
+        Mail::to($user->email)->send(new SetPassword($user));
 
         if ($request->input('logo', false)) {
             $company->addMedia(storage_path('tmp/uploads/' . basename($request->input('logo'))))->toMediaCollection('logo');
@@ -59,8 +71,7 @@ class CompaniesController extends Controller
             Media::whereIn('id', $media)->update(['model_id' => $company->id]);
         }
 
-        // return redirect()->route('admin.companies.index');
-        return redirect()->back()->with("success","Company added successfully");
+        return redirect()->back()->with("success", "Company added successfully");
     }
 
     public function edit(Company $company)
@@ -110,7 +121,7 @@ class CompaniesController extends Controller
             }
         }
 
-        return redirect()->back()->with("success","Company updated successfully");
+        return redirect()->back()->with("success", "Company updated successfully");
     }
 
     public function show(Company $company)

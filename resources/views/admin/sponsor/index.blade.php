@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-    Companies
+    Sponsors
 @endsection
 
 @section('content')
@@ -25,7 +25,7 @@
                                 @can('company_access')
                                     @can('company_create')
                                         <button class="btn btn-info btn-sm mb-4" data-toggle="modal"
-                                            data-target="#addCompanyModal"><i class="fa fa-plus"></i> Add Partners</button>
+                                            data-target="#addCompanyModal"><i class="fa fa-plus"></i> Add Sponsor</button>
                                         {{-- <button class="btn btn-warning btn-sm mb-4" data-toggle="modal"
                                                 data-target="#csvImportModal">
                                                 <i class="fa fa-copy"></i> {{ trans('global.app_csvImport') }}
@@ -46,7 +46,7 @@
                                                         @csrf
                                                         <div class="row">
                                                             <div class="col-md-12">
-                                                                <h2>Add Partners</h2>
+                                                                <h2>Add Sponsor</h2>
                                                                 <p class="text-italic">The field labels marked with * are
                                                                     required input fields.</p>
                                                             </div>
@@ -72,7 +72,7 @@
                                                                     <label for="website" class="required">Category</label>
                                                                     <select name="category" id="category" class="form-control"
                                                                         required>
-                                                                        <option value="partner" selected>Partners</option>
+                                                                        <option value="sponsor">Sponsor</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -336,13 +336,13 @@
                             </div>
                         </div>
 
-                        @if (count($partners) > 0)
+                        @if (count($sponsor) > 0)
                             <div class="col-xl-2 col-md-2">
                                 <hr>
                             </div>
                             <div class="col-xl-10 col-md-10"></div>
                             {{-- companies list --}}
-                            @foreach ($partners as $key => $company)
+                            @foreach ($sponsor as $key => $company)
                                 <div class="col-xl-2 col-md-2">
                                     <div class="ms-panel">
                                         <div class="ms-panel-body">

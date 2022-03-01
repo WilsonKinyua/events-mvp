@@ -40,12 +40,30 @@
         </a>
     </li>
 @endcan
+@can('sponsor_access')
+    <li role="presentation">
+        <a class="{{ request()->is('app/sponsor') || request()->is('app/sponsor/*') ? 'active' : '' }}"
+            href="{{ route('admin.view.sponsor') }}">
+            <i class="fa fa-hands"></i>
+            <br>Sponsors
+        </a>
+    </li>
+@endcan
+@can('exhibitors_access')
+    <li role="presentation">
+        <a class="{{ request()->is('app/exhibitor') || request()->is('app/exhibitor/*') ? 'active' : '' }}"
+            href="{{ route('admin.view.exhibitor') }}">
+            <i class="fa fa-building"></i>
+            <br>exhibitors
+        </a>
+    </li>
+@endcan
 @can('company_access')
     <li role="presentation">
         <a class="{{ request()->is('app/companies') || request()->is('app/companies/*') ? 'active' : '' }}"
             href="{{ route('admin.companies.index') }}">
             <i class="fa fa-building"></i>
-            <br>Companies
+            <br>Partners
         </a>
     </li>
 @endcan

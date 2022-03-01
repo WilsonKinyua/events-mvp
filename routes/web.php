@@ -1,6 +1,6 @@
 <?php
-// Route::redirect('/', '/login');
-Route::get('/', 'HomepageController@welcome', 301);
+Route::redirect('/', '/login');
+// Route::get('/', 'HomepageController@welcome', 301);
 
 Route::get('/home', function () {
     if (session('status')) {
@@ -28,9 +28,15 @@ Route::group(['prefix' => 'app', 'as' => 'admin.', 'namespace' => 'Admin', 'midd
     // meetings
     Route::get('newsroom', 'NewsroomController@index')->name('view.newsroom');
 
-    // speakers 
+    // speakers
     Route::get('speaker', 'SpeakerController@index')->name('view.speaker');
     Route::get('speaker/{id}/delete', 'SpeakerController@destroy')->name('delete.speaker');
+
+    // sponsors
+    Route::get('sponsor', 'SponsorController@index')->name('view.sponsor');
+
+    // exhibitors
+    Route::get('exhibitor', 'EXhibitorController@index')->name('view.exhibitor');
 
     // delegates
     Route::get('delegate', 'DelegateController@index')->name('view.delegate');
