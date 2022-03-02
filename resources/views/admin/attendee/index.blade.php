@@ -26,41 +26,9 @@
 
         <!-- carousel -->
         <div class="col-md-12">
-            <div class="ms-panel">
-                <div class="">
-                    <div id="arrowSlider" class="ms-arrow-slider carousel slide" data-ride="carousel" data-interval="4000">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="{{ asset('sliders/1.png') }}" alt="First slide">
-                            </div>
-                            <div class="carousel-item ">
-                                <img class="d-block w-100" src="{{ asset('sliders/2.png') }}" alt="Second slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('sliders/3.png') }}" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('sliders/4.png') }}" alt="Third slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('sliders/5.png') }}" alt="Third slide">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#arrowSlider" role="button" data-slide="prev">
-                            <span class="material-icons" aria-hidden="true">keyboard_arrow_left</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#arrowSlider" role="button" data-slide="next">
-                            <span class="material-icons" aria-hidden="true">keyboard_arrow_right</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <ul class="nav nav-tabs d-flex nav-justified " role="tablist">
-                        <img class="pattern" src="{{ asset('img/pattern.png')}}" alt="Pattern" >
-                        @include('partials.center-navabar')
-                    </ul>
-                </div>
-            </div>
+
+            {{-- carousel panel --}}
+            @include('partials.sliders')
 
             <div class="tab-content">
 
@@ -75,149 +43,292 @@
                                             {{ trans('global.add') }} {{ trans('cruds.attendee.title_singular') }}
                                         </a> --}}
                                         <button class="btn btn-success" data-toggle="modal" data-target="#addUserModal">
-                                            {{ trans('global.add') }} {{ trans('cruds.attendee.title_singular') }}
+                                            <i class="fa fa-plus-circle"></i> {{ trans('global.add') }}
+                                            {{ trans('cruds.attendee.title_singular') }}
                                         </button>
                                         @include('modal.add-users')
 
-                                        <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
+                                        {{-- <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                                             {{ trans('global.app_csvImport') }}
                                         </button>
                                         @include('csvImport.modal', ['model' => 'User', 'route' =>
-                                        'admin.users.parseCsvImport'])
+                                        'admin.users.parseCsvImport']) --}}
                                     </div>
                                 </div>
                             @endcan
 
                         </div>
 
-                        @foreach ($users as $key => $user)
-                            <div class="col-lg-3 col-md-6 col-sm-6">
-                                <div class="card mb-3">
-                                    <div class="row g-0 no-gutters">
-                                        <div class="col-md-4">
-                                            @if ($user->avatar)
-                                                <img src="{{ $user->avatar->getUrl() }}"
-                                                    class="img-fluid profile-img rounded-start" alt="Profile picture">
-                                            @else
-                                                <img src="https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"
-                                                    class="img-fluid profile-img rounded-start" alt="...">
-                                            @endif
+                        @can('speaker_access')
+                            @if (Auth::user()->roles->first()->id == 1)
+                                <div class="col-md-12">
+                                    <div class="ms-panel">
+                                        <div class="ms-panel-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">Name</th>
+                                                            <th scope="col">Email</th>
+                                                            <th scope="col">Gender</th>
+                                                            <th scope="col">Organisation</th>
+                                                            <th scope="col">Designation</th>
+                                                            <th scope="col">Status</th>
+                                                            <th scope="col">Created At</th>
+                                                            <th scope="col">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @if (count($users) > 0)
+                                                            @foreach ($users as $key => $user)
+                                                                <tr>
+                                                                    <td class="ms-table-f-w">
+                                                                        @if ($user->avatar)
+                                                                            <img src="{{ $user->avatar->getUrl() }}"
+                                                                                alt="Profile picture">
+                                                                        @else
+                                                                            <img src="{{ asset('img/avatar.png') }}"
+                                                                                alt="...">
+                                                                        @endif
+                                                                        {{ $user->name ?? '' }}
+                                                                    </td>
+                                                                    <td>
+                                                                        <a class="text-primary"
+                                                                            href="mailto:{{ $user->email }}">{{ $user->email }}</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span
+                                                                            class="badge badge-info">{{ $user->gender ?? '' }}</span>
+                                                                    </td>
+                                                                    <td class="text-capitalize">
+                                                                        {{ $user->organisation ?? '' }}
+                                                                    </td>
+                                                                    <td class="text-capitalize">
+                                                                        {{ $user->designation ?? '' }}
+                                                                    </td>
+                                                                    <td>
+                                                                        @if ($user->token === null)
+                                                                            <span class="badge badge-info">
+                                                                                Active
+                                                                            </span>
+                                                                        @else
+                                                                            <span class="badge badge-warning">
+                                                                                Inactive
+                                                                            </span>
+                                                                        @endif
+                                                                    </td>
+                                                                    <td>
+                                                                        {{ $user->created_at->diffForHumans() ?? '' }}
+                                                                    </td>
+                                                                    <td>
+                                                                        @can('speaker_show')
+                                                                            <a data-toggle="modal"
+                                                                                data-target="#userDetailsModal{{ $user->id }}"
+                                                                                class="text-info d-inline-block"
+                                                                                data-toggle="tooltip" data-placement="top"
+                                                                                title="View">
+                                                                                <i class="fa fa-eye"></i>
+                                                                            </a>
+                                                                        @endcan
+                                                                        @can('speaker_delete')
+                                                                            <a href="{{ route('admin.delete.speaker', $user->id) }}"
+                                                                                class="text-danger d-inline-block"
+                                                                                data-toggle="tooltip" data-placement="top"
+                                                                                title="Delete">
+                                                                                <i class="fa fa-trash"></i>
+                                                                            </a>
+                                                                        @endcan
+                                                                    </td>
+                                                                </tr>
+                                                                {{-- modal --}}
+                                                                <div class="modal modalUserDetails fade events"
+                                                                    id="userDetailsModal{{ $user->id }}" tabindex="-1"
+                                                                    role="dialog"
+                                                                    aria-labelledby="userDetailsModal{{ $user->id }}">
+                                                                    <div class="modal-dialog modal-lg modal-min"
+                                                                        role="document">
+                                                                        <div class="modal-content">
+                                                                            <div
+                                                                                class="modal-body profile-main text-capitalize">
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-label="Close"><span
+                                                                                        aria-hidden="true">&times;</span></button>
+                                                                                <div
+                                                                                    class="d-flex justify-content-start profile-start p-4">
+                                                                                    <div class="mr-3">
+                                                                                        @if ($user->avatar)
+                                                                                            <img src="{{ $user->avatar->getUrl() }}"
+                                                                                                class="img-fluid rounded-start profile-img-modal"
+                                                                                                alt="Profile picture">
+                                                                                        @else
+                                                                                            <img src="{{ asset('img/avatar.png') }}"
+                                                                                                class="img-fluid rounded-start profile-img-modal"
+                                                                                                alt="...">
+                                                                                        @endif
+                                                                                    </div>
+                                                                                    <div class="mt-3">
+                                                                                        <span
+                                                                                            class="badge badge-warning text-capitalize">Attendee</span>
+                                                                                        <h1 class="text-white text-title">
+                                                                                            {{ $user->name ?? '' }}</h1>
+                                                                                        @if ($user->organisation != null)
+                                                                                            <h3 class="text-gray">
+                                                                                                <small>{{ $user->organisation ?? '' }}</small>
+                                                                                            </h3>
+                                                                                        @endif
+                                                                                        <br>
+                                                                                        @if ($user->designation != null)
+                                                                                            <h4 class="text-white">
+                                                                                                {{ $user->designation ?? '' }}
+                                                                                            </h4>
+                                                                                        @endif
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                @if (count($user->interests) > 0)
+                                                                                    <div class="interests p-3">
+                                                                                        <hr>
+                                                                                        <h2>Interests</h2>
+                                                                                        @foreach ($user->interests as $key => $item)
+                                                                                            <button type="button"
+                                                                                                class="btn btn-pill btn-sm btn-gradient-light">{{ $item->name }}</button>
+                                                                                        @endforeach
+
+                                                                                    </div>
+                                                                                @endif
+                                                                                @if ($user->about != null)
+                                                                                    <div class="profile-about p-3 mb-2">
+                                                                                        <h2>About</h2>
+                                                                                        <p>{!! $user->about ?? '' !!}</p>
+                                                                                    </div>
+                                                                                @endif
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+                                                        @else
+                                                            <tr>
+                                                                <td colspan="8" class="text-center">No attendees added</td>
+                                                            </tr>
+                                                        @endif
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
-                                        <div class="col-md-8 user-details" data-toggle="modal"
-                                            data-target="#userDetailsModal{{ $user->id }}">
-                                            <div class="card-body">
-                                                <h4 class="card-title">{{ $user->name ?? '' }}
-                                                    {{-- @can('user_edit')
+                                    </div>
+                                </div>
+                            @else
+                                @foreach ($users as $key => $user)
+                                    <div class="col-lg-3 col-md-6 col-sm-6">
+                                        <div class="card mb-3">
+                                            <div class="row g-0 no-gutters">
+                                                <div class="col-md-4">
+                                                    @if ($user->avatar)
+                                                        <img src="{{ $user->avatar->getUrl() }}"
+                                                            class="img-fluid profile-img rounded-start" alt="Profile picture">
+                                                    @else
+                                                        <img src="{{ asset('img/avatar.png') }}"
+                                                            class="img-fluid profile-img rounded-start" alt="...">
+                                                    @endif
+                                                </div>
+                                                <div class="col-md-8 user-details" data-toggle="modal"
+                                                    data-target="#userDetailsModal{{ $user->id }}">
+                                                    <div class="card-body text-capitalize">
+                                                        <h4 class="card-title">{{ $user->name ?? '' }}
+                                                            {{-- @can('user_edit')
                                                         @foreach ($user->roles as $key => $item)
                                                             <span
                                                                 class="badge badge-warning text-capitalize">{{ $item->title }}</span>
                                                         @endforeach
                                                     @endcan --}}
-                                                </h4>
-                                                <p class="card-text">
-                                                    {{ Str::limit($user->designation ?? '', 20, '...') }}</p>
-                                                <p class="card-text"><small
-                                                        class="text-muted">{{ Str::limit($user->organisation ?? '', 20, '...') }}</small>
-                                                </p>
+                                                        </h4>
+                                                        <p class="card-text">
+                                                            {{ Str::limit($user->designation ?? '', 20, '...') }}</p>
+                                                        <p class="card-text"><small
+                                                                class="text-muted">{{ Str::limit($user->organisation ?? '', 20, '...') }}</small>
+                                                        </p>
 
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    {{-- @if (Auth::user()->id == $user->id)
+                                            {{-- @if (Auth::user()->id == $user->id)
                                         <div class="d-flex justify-content-around m-4">
                                         </div>
                                     @else --}}
-                                    <div class="d-flex justify-content-around mb-2">
-                                        <div>
-                                            <button class="btn btn-chat btn-pill btn-sm">Meet</button>
-                                        </div>
-                                        <div>
-                                            <button class="btn btn-chat btn-pill btn-sm">chat</button>
+                                            <div class="d-flex justify-content-around mb-2">
+                                                <div>
+                                                    <button class="btn btn-chat btn-pill btn-sm">Meet</button>
+                                                </div>
+                                                <div>
+                                                    <button class="btn btn-chat btn-pill btn-sm">chat</button>
+                                                </div>
+                                            </div>
+                                            {{-- @endif --}}
+
                                         </div>
                                     </div>
-                                    {{-- @endif --}}
+                                    {{-- single user details modal --}}
+                                    <div class="modal modalUserDetails fade events" id="userDetailsModal{{ $user->id }}"
+                                        tabindex="-1" role="dialog" aria-labelledby="userDetailsModal{{ $user->id }}">
+                                        <div class="modal-dialog modal-lg modal-min" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-body profile-main">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <div class="d-flex justify-content-start profile-start p-4">
+                                                        <div class="mr-3">
+                                                            @if ($user->avatar)
+                                                                <img src="{{ $user->avatar->getUrl() }}"
+                                                                    class="img-fluid rounded-start profile-img-modal"
+                                                                    alt="Profile picture">
+                                                            @else
+                                                                <img src="{{ asset('img/avatar.png') }}"
+                                                                    class="img-fluid rounded-start profile-img-modal" alt="...">
+                                                            @endif
+                                                        </div>
+                                                        <div class="mt-3">
+                                                            <span class="badge badge-warning text-capitalize">Attendee</span>
+                                                            <h1 class="text-white text-title">{{ $user->name ?? '' }}</h1>
+                                                            @if ($user->organisation != null)
+                                                                <h3 class="text-gray">
+                                                                    <small>{{ $user->organisation ?? '' }}</small>
+                                                                </h3>
+                                                            @endif
+                                                            <br>
+                                                            @if ($user->designation != null)
+                                                                <h4 class="text-white">
+                                                                    {{ $user->designation ?? '' }}
+                                                                </h4>
+                                                            @endif
 
-                                </div>
-                            </div>
+                                                        </div>
+                                                    </div>
+                                                    @if (count($user->interests) > 0)
+                                                        <div class="interests p-3">
+                                                            <hr>
+                                                            <h2>Interests</h2>
+                                                            @foreach ($user->interests as $key => $item)
+                                                                <button type="button"
+                                                                    class="btn btn-pill btn-sm btn-gradient-light">{{ $item->name }}</button>
+                                                            @endforeach
 
-                            {{-- single user details modal --}}
-                            <div class="modal modalUserDetails fade events" id="userDetailsModal{{ $user->id }}"
-                                tabindex="-1" role="dialog" aria-labelledby="userDetailsModal{{ $user->id }}">
-                                <div class="modal-dialog modal-lg modal-min" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-body profile-main">
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <div class="d-flex justify-content-start profile-start p-4">
-                                                <div class="mr-3">
-                                                    @if ($user->avatar)
-                                                        <img src="{{ $user->avatar->getUrl() }}"
-                                                            class="img-fluid rounded-start profile-img-modal"
-                                                            alt="Profile picture">
-                                                    @else
-                                                        <img src="https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"
-                                                            class="img-fluid rounded-start profile-img-modal" alt="...">
+                                                        </div>
+                                                    @endif
+                                                    @if ($user->about != null)
+                                                        <div class="profile-about p-3 mb-2">
+                                                            <h2>About</h2>
+                                                            <p>{!! $user->about ?? '' !!}</p>
+                                                        </div>
                                                     @endif
                                                 </div>
-                                                <div class="mt-3">
-                                                    <h1 class="text-white text-title">{{ $user->name ?? '' }}</h1>
-                                                    <h3 class="text-gray"><small>{{ $user->organisation ?? '' }}</small>
-                                                    </h3> <br>
-                                                    <h4 class="text-white">
-                                                        {{ $user->designation ?? '' }}
-                                                    </h4>
-                                                    <div class="d-flex justify-content-around mb-2 mt-4">
-                                                        <div>
-                                                            <button class="btn btn-chat btn-pill btn-sm">Meet</button>
-                                                        </div>
-                                                        <div>
-                                                            <button class="btn btn-chat btn-pill btn-sm">chat</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            @if (count($user->interests) > 0)
-                                                <div class="interests p-3">
-                                                    <hr>
-                                                    <h2>Interests</h2>
-                                                    @foreach ($user->interests as $key => $item)
-                                                        <button type="button"
-                                                            class="btn btn-pill btn-sm btn-gradient-light">{{ $item->name }}</button>
-                                                    @endforeach
-
-                                                </div>
-                                            @endif
-                                            <div class="similar-profiles p-3">
-                                                <h5 class="text-white text-capitalize">SIMILAR PROFILES</h5>
-                                                <div class="d-flex justify-content-start">
-                                                    <div>
-                                                        <img src="https://cdn.hubilo.com/profile/5594995783_1624079343023.jpeg"
-                                                            alt="">
-                                                    </div>
-                                                    <div>
-                                                        <img src="https://cdn.hubilo.com/profile/5594995783_1624079343023.jpeg"
-                                                            alt="">
-                                                    </div>
-                                                    <div>
-                                                        <img src="https://cdn.hubilo.com/profile/5594995783_1624079343023.jpeg"
-                                                            alt="">
-                                                    </div>
-                                                    <div>
-                                                        <img src="https://cdn.hubilo.com/profile/5594995783_1624079343023.jpeg"
-                                                            alt="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="profile-about p-3 mb-2">
-                                                <h2>About</h2>
-                                                <p>{!! $user->about ?? '' !!}</p>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-                        @endforeach
+                                @endforeach
+                            @endif
+                        @endcan
                     </div>
                 </div>
             </div>

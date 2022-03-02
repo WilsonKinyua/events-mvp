@@ -146,9 +146,12 @@
                                     </div>
 
                                     <div class="ms-profile-skills">
-                                        <h2 class="section-title">Social Media <a class="edit-button-social m-3"
-                                                title="Edit About" data-toggle="modal" data-target="#socialmedialinks"> <i
-                                                    class="fa fa-edit"></i></a></h2>
+                                        <h2 class="section-title">Social Media
+                                            @can('event_setting_create')
+                                                <a class="edit-button-social m-3" title="Edit About" data-toggle="modal"
+                                                    data-target="#socialmedialinks"> <i class="fa fa-edit"></i></a>
+                                            @endcan
+                                        </h2>
                                         @can('event_setting_create')
                                             {{-- social media links edit --}}
                                             <div class="modal fade events" id="socialmedialinks" tabindex="-1" role="dialog"
@@ -255,24 +258,28 @@
                                         @endcan
                                         <ul class="ms-skill-list">
                                             @if ($eventSetting->facebook)
-                                                <li class="ms-skill"><a href="#"><i class="fab fa-facebook"></i></a>
+                                                <li class="ms-skill"><a href="{{ $eventSetting->facebook }}"><i
+                                                            class="fab fa-facebook"></i></a>
                                                 </li>
                                             @endif
                                             @if ($eventSetting->twitter)
-                                                <li class="ms-skill"><a href="#"><i class="fab fa-twitter"></i></a>
+                                                <li class="ms-skill"><a href="{{ $eventSetting->twitter }}"><i
+                                                            class="fab fa-twitter"></i></a>
                                                 </li>
                                             @endif
                                             @if ($eventSetting->instagram)
-                                                <li class="ms-skill"><a href="#"><i
+                                                <li class="ms-skill"><a href="{{ $eventSetting->instagram }}"><i
                                                             class="fab fa-instagram"></i></a>
                                                 </li>
                                             @endif
                                             @if ($eventSetting->youtube)
-                                                <li class="ms-skill"><a href="#"><i class="fab fa-youtube"></i></a>
+                                                <li class="ms-skill"><a href="{{ $eventSetting->youtube }}"><i
+                                                            class="fab fa-youtube"></i></a>
                                                 </li>
                                             @endif
                                             @if ($eventSetting->linkedin)
-                                                <li class="ms-skill"><a href="#"><i class="fab fa-linkedin"></i></a>
+                                                <li class="ms-skill"><a href="{{ $eventSetting->linkedin }}"><i
+                                                            class="fab fa-linkedin"></i></a>
                                                 </li>
                                             @endif
 

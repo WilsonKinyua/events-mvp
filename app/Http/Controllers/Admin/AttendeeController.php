@@ -19,14 +19,13 @@ class AttendeeController extends Controller
     public function index()
     {
 
-        // abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('attendee_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $interests = Interest::pluck('name', 'id');
 
         $roles = Role::pluck('title', 'id');
-        // $users = User::with(['interests', 'roles', 'media'])->get();
         $users = User::with(["roles", "media"])->whereHas("roles", function ($query) {
-            $query->where("id", 2);
+            $query->where("id", 9);
         })->get();
         return view('admin.attendee.index', compact('interests', 'roles','users'));
     }
