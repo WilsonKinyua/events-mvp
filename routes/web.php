@@ -1,6 +1,6 @@
 <?php
-Route::redirect('/', '/login');
-// Route::get('/', 'HomepageController@welcome', 301);
+// Route::redirect('/', '/login');
+Route::get('/', 'HomepageController@welcome', 301);
 
 Route::get('/home', function () {
     if (session('status')) {
